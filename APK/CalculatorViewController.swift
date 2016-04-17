@@ -12,8 +12,7 @@ class CalculatorViewController: UIViewController {
     
     var alkoholPercentage = ""
     var volume = ""
-    var price = ""
-//    var result = 
+    var price = "" 
     
     enum CalculatorState: Int {
         case AlcoholPercentageInputState
@@ -24,9 +23,27 @@ class CalculatorViewController: UIViewController {
     
     var calculatorState: CalculatorState = .AlcoholPercentageInputState {
         didSet {
-            print(calculatorState)
+            volButton.backgroundColor = UIColor(red:0.98, green:0.91, blue:0.21, alpha:1.00)
+            alkButton.backgroundColor = UIColor(red:0.98, green:0.91, blue:0.21, alpha:1.00)
+            sekButton.backgroundColor = UIColor(red:0.98, green:0.91, blue:0.21, alpha:1.00)
+            switch calculatorState {
+            case .AlcoholPercentageInputState:
+                alkButton.backgroundColor = UIColor(red:0.00, green:0.65, blue:0.28, alpha:1.00)
+                alkButton.titleLabel?.textColor = UIColor.whiteColor()
+            case .VolumeInputState:
+                volButton.backgroundColor = UIColor(red:0.00, green:0.65, blue:0.28, alpha:1.00)
+                volButton.titleLabel?.textColor = UIColor.whiteColor()
+            case .PriceInputState:
+                sekButton.backgroundColor = UIColor(red:0.00, green:0.65, blue:0.28, alpha:1.00)
+                sekButton.titleLabel?.textColor = UIColor.whiteColor()
+            default:
+                break
+            }
+            
         }
     }
+    
+    
 
     @IBOutlet weak var commaButton: UIButton!
     @IBOutlet weak var zeroButton: UIButton!
@@ -61,6 +78,8 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBAction func numberButtonDidPress(sender: UIButton) {
+        
+        
         
         let input = String(sender.tag)
         
