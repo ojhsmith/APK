@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E1A4D31A1CC3AC4100437454 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A4D3191CC3AC4100437454 /* AppDelegate.swift */; };
-		E1A4D31C1CC3AC4100437454 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A4D31B1CC3AC4100437454 /* ViewController.swift */; };
+		E1A4D31C1CC3AC4100437454 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A4D31B1CC3AC4100437454 /* CalculatorViewController.swift */; };
 		E1A4D31F1CC3AC4100437454 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A4D31D1CC3AC4100437454 /* Main.storyboard */; };
 		E1A4D3221CC3AC4100437454 /* APK.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E1A4D3201CC3AC4100437454 /* APK.xcdatamodeld */; };
 		E1A4D3241CC3AC4100437454 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1A4D3231CC3AC4100437454 /* Assets.xcassets */; };
@@ -37,7 +37,7 @@
 /* Begin PBXFileReference section */
 		E1A4D3161CC3AC4100437454 /* APK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A4D3191CC3AC4100437454 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E1A4D31B1CC3AC4100437454 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E1A4D31B1CC3AC4100437454 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		E1A4D31E1CC3AC4100437454 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1A4D3211CC3AC4100437454 /* APK.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = APK.xcdatamodel; sourceTree = "<group>"; };
 		E1A4D3231CC3AC4100437454 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				E1A4D3191CC3AC4100437454 /* AppDelegate.swift */,
-				E1A4D31B1CC3AC4100437454 /* ViewController.swift */,
+				E1A4D31B1CC3AC4100437454 /* CalculatorViewController.swift */,
 				E1A4D31D1CC3AC4100437454 /* Main.storyboard */,
 				E1A4D3231CC3AC4100437454 /* Assets.xcassets */,
 				E1A4D3251CC3AC4100437454 /* LaunchScreen.storyboard */,
@@ -259,7 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1A4D31C1CC3AC4100437454 /* ViewController.swift in Sources */,
+				E1A4D31C1CC3AC4100437454 /* CalculatorViewController.swift in Sources */,
 				E1A4D3221CC3AC4100437454 /* APK.xcdatamodeld in Sources */,
 				E1A4D31A1CC3AC4100437454 /* AppDelegate.swift in Sources */,
 			);
