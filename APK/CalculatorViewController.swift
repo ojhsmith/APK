@@ -9,6 +9,8 @@
 import UIKit
 
 class CalculatorViewController: UIViewController {
+    
+    var alkoholPercentage = ""
 
     @IBOutlet weak var commaButton: UIButton!
     @IBOutlet weak var zeroButton: UIButton!
@@ -33,14 +35,20 @@ class CalculatorViewController: UIViewController {
     
     @IBOutlet weak var inputLabel: UILabel!
     
-    @IBAction func numberButtonDidPress(sender: UIButton) {
-        print(sender.tag)
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    @IBAction func numberButtonDidPress(sender: UIButton) {
+        
+        alkoholPercentage = alkoholPercentage + String(sender.tag)
+        
+        inputLabel.text = alkoholPercentage
+        
+//        print(sender.tag)
     }
 
     override func didReceiveMemoryWarning() {
