@@ -11,6 +11,19 @@ import UIKit
 class CalculatorViewController: UIViewController {
     
     var alkoholPercentage = ""
+    
+    enum CalculatorState: Int {
+        case AlcoholPercentageInputState
+        case VolumeInputState
+        case PriceInputState
+        case ResultInputState
+    }
+    
+    var calculatorState: CalculatorState = .AlcoholPercentageInputState {
+        didSet {
+            print(calculatorState)
+        }
+    }
 
     @IBOutlet weak var commaButton: UIButton!
     @IBOutlet weak var zeroButton: UIButton!
@@ -35,6 +48,8 @@ class CalculatorViewController: UIViewController {
     
     @IBOutlet weak var inputLabel: UILabel!
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,6 +65,17 @@ class CalculatorViewController: UIViewController {
         
 //        print(sender.tag)
     }
+    
+ 
+    
+    @IBAction func calculatorStateButtonDidPress(sender: UIButton) {
+        guard let state = CalculatorState(rawValue: sender.tag) else {
+            return
+        }
+        calculatorState = state
+        
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
