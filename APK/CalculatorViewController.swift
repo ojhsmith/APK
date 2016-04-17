@@ -11,6 +11,9 @@ import UIKit
 class CalculatorViewController: UIViewController {
     
     var alkoholPercentage = ""
+    var volume = ""
+    var price = ""
+//    var result = 
     
     enum CalculatorState: Int {
         case AlcoholPercentageInputState
@@ -59,9 +62,25 @@ class CalculatorViewController: UIViewController {
     
     @IBAction func numberButtonDidPress(sender: UIButton) {
         
-        alkoholPercentage = alkoholPercentage + String(sender.tag)
+        let input = String(sender.tag)
         
-        inputLabel.text = alkoholPercentage
+        switch calculatorState {
+        case .AlcoholPercentageInputState:
+             alkoholPercentage = alkoholPercentage + input
+             inputLabel.text = alkoholPercentage
+        case .VolumeInputState:
+            volume = volume + input
+             inputLabel.text = volume
+        case .PriceInputState:
+            price = price + input
+             inputLabel.text = price
+        default:
+            break
+        }
+        
+       
+        
+  
         
 //        print(sender.tag)
     }
@@ -72,6 +91,7 @@ class CalculatorViewController: UIViewController {
         guard let state = CalculatorState(rawValue: sender.tag) else {
             return
         }
+        
         calculatorState = state
         
     }
