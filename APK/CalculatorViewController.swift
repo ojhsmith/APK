@@ -21,8 +21,12 @@ class CalculatorViewController: UIViewController {
         case ResultInputState
     }
     
+    enum FontSizes: CGFloat {
+        case Body = 12.0
+        case Header = 20.0
+    }
+
     var calculatorState: CalculatorState = .AlcoholPercentageInputState
-    
 
     @IBOutlet weak var commaButton: UIButton!
     @IBOutlet weak var zeroButton: UIButton!
@@ -46,37 +50,56 @@ class CalculatorViewController: UIViewController {
     
     @IBOutlet weak var inputLabel: UILabel!
     
-
+    var calculatorStateButtons : Array<UIButton> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let activeState = UIImage.imageWithColor(UIColor(red:0.00, green:0.65, blue:0.28, alpha:1.00))
-        alkButton.setBackgroundImage(activeState, forState: .Selected)
-        volButton.setBackgroundImage(activeState, forState: .Selected)
-        sekButton.setBackgroundImage(activeState, forState: .Selected)
+
+        calculatorStateButtons = [self.alkButton, self.volButton, self.sekButton]
+        
+    }
+    
+    @IBAction func calculatorStateButtonDidPress(sender: UIButton) {
+ 
+        for button in self.calculatorStateButtons {
+            
+            if button == sender {
+                button.selected = true
+                button.backgroundColor = UIColor.bolagetGreen()
+
+            }
+            else {
+                button.selected = false
+                button.backgroundColor = UIColor.bolagetYellow()
+            }
+        }
+
+        guard let state = CalculatorState(rawValue: sender.tag) else {
+            return
+        }
+   
+        calculatorState = state
+        
     }
     
     @IBAction func numberButtonDidPress(sender: UIButton) {
         
         
-        createDrink()
+//        createDrink()
         
         
         let input = String(sender.tag)
         
         switch calculatorState {
         case .AlcoholPercentageInputState:
-             alkoholPercentage = alkoholPercentage + input
-             inputLabel.text = alkoholPercentage
-            alkButton.selected = true
+            alkoholPercentage = alkoholPercentage + input
+            inputLabel.text = alkoholPercentage
         case .VolumeInputState:
             volume = volume + input
-             inputLabel.text = volume
-            volButton.selected = true
+            inputLabel.text = volume
         case .PriceInputState:
             price = price + input
-             inputLabel.text = price
-            sekButton.selected = true
+            inputLabel.text = price
         default:
             break
         }
@@ -87,33 +110,25 @@ class CalculatorViewController: UIViewController {
       //  let result = DrinkController.calculate(<#T##drink: Drink##Drink#>)
 //        print(sender.tag)
     }
+
     
- 
+    // Bart's data stuff
     
-    @IBAction func calculatorStateButtonDidPress(sender: UIButton) {
-        guard let state = CalculatorState(rawValue: sender.tag) else {
-            return
-        }
-        
-        calculatorState = state
-        
-    }
-    
-    func createDrink()
-    {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let managedObjectContext = appDelegate.managedObjectContext
-        let drink = Drink(context: managedObjectContext)
-        
-        drink.name = "Oskar"
-        
-        do{
-           try managedObjectContext.save()
-        } catch _{
-           print ("error saving object")
-        }
-    }
-    
+//    func createDrink()
+//    {
+//        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//        let managedObjectContext = appDelegate.managedObjectContext
+//        let drink = Drink(context: managedObjectContext)
+//        
+//        drink.name = "Oskar"
+//        
+//        do{
+//           try managedObjectContext.save()
+//        } catch _{
+//           print ("error saving object")
+//        }
+//    }
+//    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

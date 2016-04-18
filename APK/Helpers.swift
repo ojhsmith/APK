@@ -11,7 +11,7 @@ import UIKit
 extension UIImage {
     class func imageWithColor(color:UIColor?) -> UIImage! {
         let rect = CGRectMake(0.0, 0.0, 1.0, 1.0);
-        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
+        UIGraphicsBeginImageContextWithOptions(rect.size, true, 0)
         let context = UIGraphicsGetCurrentContext();
         if let color = color {
             color.setFill()
