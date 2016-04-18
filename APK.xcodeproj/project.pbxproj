@@ -15,6 +15,7 @@
 		E1A4D3271CC3AC4100437454 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A4D3251CC3AC4100437454 /* LaunchScreen.storyboard */; };
 		E1A4D3321CC3AC4100437454 /* APKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A4D3311CC3AC4100437454 /* APKTests.swift */; };
 		E1A4D33D1CC3AC4100437454 /* APKUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A4D33C1CC3AC4100437454 /* APKUITests.swift */; };
+		E1A4D34B1CC4284600437454 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A4D34A1CC4284500437454 /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		E1A4D3381CC3AC4100437454 /* APKUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APKUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A4D33C1CC3AC4100437454 /* APKUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APKUITests.swift; sourceTree = "<group>"; };
 		E1A4D33E1CC3AC4100437454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1A4D34A1CC4284500437454 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				E1A4D3191CC3AC4100437454 /* AppDelegate.swift */,
 				E1A4D31B1CC3AC4100437454 /* CalculatorViewController.swift */,
+				E1A4D34A1CC4284500437454 /* Helpers.swift */,
 				E1A4D31D1CC3AC4100437454 /* Main.storyboard */,
 				E1A4D3231CC3AC4100437454 /* Assets.xcassets */,
 				E1A4D3251CC3AC4100437454 /* LaunchScreen.storyboard */,
@@ -262,6 +265,7 @@
 				E1A4D31C1CC3AC4100437454 /* CalculatorViewController.swift in Sources */,
 				E1A4D3221CC3AC4100437454 /* APK.xcdatamodeld in Sources */,
 				E1A4D31A1CC3AC4100437454 /* AppDelegate.swift in Sources */,
+				E1A4D34B1CC4284600437454 /* Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

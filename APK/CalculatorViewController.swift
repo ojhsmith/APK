@@ -21,28 +21,7 @@ class CalculatorViewController: UIViewController {
         case ResultInputState
     }
     
-    var calculatorState: CalculatorState = .AlcoholPercentageInputState {
-        didSet {
-            volButton.backgroundColor = UIColor(red:0.98, green:0.91, blue:0.21, alpha:1.00)
-            alkButton.backgroundColor = UIColor(red:0.98, green:0.91, blue:0.21, alpha:1.00)
-            sekButton.backgroundColor = UIColor(red:0.98, green:0.91, blue:0.21, alpha:1.00)
-            switch calculatorState {
-            case .AlcoholPercentageInputState:
-                alkButton.backgroundColor = UIColor(red:0.00, green:0.65, blue:0.28, alpha:1.00)
-                alkButton.titleLabel?.textColor = UIColor.whiteColor()
-            case .VolumeInputState:
-                volButton.backgroundColor = UIColor(red:0.00, green:0.65, blue:0.28, alpha:1.00)
-                volButton.titleLabel?.textColor = UIColor.whiteColor()
-            case .PriceInputState:
-                sekButton.backgroundColor = UIColor(red:0.00, green:0.65, blue:0.28, alpha:1.00)
-                sekButton.titleLabel?.textColor = UIColor.whiteColor()
-            default:
-                break
-            }
-            
-        }
-    }
-    
+    var calculatorState: CalculatorState = .AlcoholPercentageInputState
     
 
     @IBOutlet weak var commaButton: UIButton!
@@ -72,9 +51,10 @@ class CalculatorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        // Do any additional setup after loading the view, typically from a nib.
+        let activeState = UIImage.imageWithColor(UIColor(red:0.00, green:0.65, blue:0.28, alpha:1.00))
+        alkButton.setBackgroundImage(activeState, forState: .Selected)
+        volButton.setBackgroundImage(activeState, forState: .Selected)
+        sekButton.setBackgroundImage(activeState, forState: .Selected)
     }
     
     @IBAction func numberButtonDidPress(sender: UIButton) {
@@ -87,12 +67,15 @@ class CalculatorViewController: UIViewController {
         case .AlcoholPercentageInputState:
              alkoholPercentage = alkoholPercentage + input
              inputLabel.text = alkoholPercentage
+            alkButton.selected = true
         case .VolumeInputState:
             volume = volume + input
              inputLabel.text = volume
+            volButton.selected = true
         case .PriceInputState:
             price = price + input
              inputLabel.text = price
+            sekButton.selected = true
         default:
             break
         }
