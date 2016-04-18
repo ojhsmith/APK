@@ -39,7 +39,6 @@ class CalculatorViewController: UIViewController {
     @IBOutlet weak var eraseButton: UIButton!
     
     @IBOutlet weak var alkButton: UIButton!
-
     @IBOutlet weak var volButton: UIButton!
     @IBOutlet weak var sekButton: UIButton!
     
@@ -59,6 +58,8 @@ class CalculatorViewController: UIViewController {
     
     @IBAction func numberButtonDidPress(sender: UIButton) {
         
+        
+        createDrink()
         
         
         let input = String(sender.tag)
@@ -80,10 +81,10 @@ class CalculatorViewController: UIViewController {
             break
         }
         
-       
-        
+       // let result = DrinkController.calculate(<#T##volume: Int##Int#>, price: <#T##Float#>, alcoholPercentage: <#T##Float#>)
+        //stuur result naar view
   
-        
+      //  let result = DrinkController.calculate(<#T##drink: Drink##Drink#>)
 //        print(sender.tag)
     }
     
@@ -96,6 +97,21 @@ class CalculatorViewController: UIViewController {
         
         calculatorState = state
         
+    }
+    
+    func createDrink()
+    {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedObjectContext = appDelegate.managedObjectContext
+        let drink = Drink(context: managedObjectContext)
+        
+        drink.name = "Oskar"
+        
+        do{
+           try managedObjectContext.save()
+        } catch _{
+           print ("error saving object")
+        }
     }
     
 

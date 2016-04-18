@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E1A17B4C1CC4E2E800900517 /* Drink+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A17B4A1CC4E2E800900517 /* Drink+CoreDataProperties.swift */; };
+		E1A17B4D1CC4E2E800900517 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A17B4B1CC4E2E800900517 /* Drink.swift */; };
+		E1A17B4F1CC4E4B000900517 /* DrinkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A17B4E1CC4E4B000900517 /* DrinkController.swift */; };
 		E1A4D31A1CC3AC4100437454 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A4D3191CC3AC4100437454 /* AppDelegate.swift */; };
 		E1A4D31C1CC3AC4100437454 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A4D31B1CC3AC4100437454 /* CalculatorViewController.swift */; };
 		E1A4D31F1CC3AC4100437454 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A4D31D1CC3AC4100437454 /* Main.storyboard */; };
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E1A17B4A1CC4E2E800900517 /* Drink+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Drink+CoreDataProperties.swift"; path = "../Drink+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E1A17B4B1CC4E2E800900517 /* Drink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Drink.swift; path = ../Drink.swift; sourceTree = "<group>"; };
+		E1A17B4E1CC4E4B000900517 /* DrinkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkController.swift; sourceTree = "<group>"; };
 		E1A4D3161CC3AC4100437454 /* APK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A4D3191CC3AC4100437454 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1A4D31B1CC3AC4100437454 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +107,9 @@
 		E1A4D3181CC3AC4100437454 /* APK */ = {
 			isa = PBXGroup;
 			children = (
+				E1A17B4A1CC4E2E800900517 /* Drink+CoreDataProperties.swift */,
+				E1A17B4B1CC4E2E800900517 /* Drink.swift */,
+				E1A17B4E1CC4E4B000900517 /* DrinkController.swift */,
 				E1A4D3191CC3AC4100437454 /* AppDelegate.swift */,
 				E1A4D31B1CC3AC4100437454 /* CalculatorViewController.swift */,
 				E1A4D34A1CC4284500437454 /* Helpers.swift */,
@@ -264,7 +273,10 @@
 			files = (
 				E1A4D31C1CC3AC4100437454 /* CalculatorViewController.swift in Sources */,
 				E1A4D3221CC3AC4100437454 /* APK.xcdatamodeld in Sources */,
+				E1A17B4C1CC4E2E800900517 /* Drink+CoreDataProperties.swift in Sources */,
+				E1A17B4F1CC4E4B000900517 /* DrinkController.swift in Sources */,
 				E1A4D31A1CC3AC4100437454 /* AppDelegate.swift in Sources */,
+				E1A17B4D1CC4E2E800900517 /* Drink.swift in Sources */,
 				E1A4D34B1CC4284600437454 /* Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -492,6 +504,7 @@
 				E1A4D3431CC3AC4100437454 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E1A4D3441CC3AC4100437454 /* Build configuration list for PBXNativeTarget "APKTests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +513,7 @@
 				E1A4D3461CC3AC4100437454 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E1A4D3471CC3AC4100437454 /* Build configuration list for PBXNativeTarget "APKUITests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +522,7 @@
 				E1A4D3491CC3AC4100437454 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
