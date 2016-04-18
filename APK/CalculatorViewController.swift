@@ -57,6 +57,8 @@ class CalculatorViewController: UIViewController {
 
         calculatorStateButtons = [self.alkButton, self.volButton, self.sekButton]
         
+
+        
     }
     
     @IBAction func calculatorStateButtonDidPress(sender: UIButton) {
@@ -66,6 +68,7 @@ class CalculatorViewController: UIViewController {
             if button == sender {
                 button.selected = true
                 button.backgroundColor = UIColor.bolagetGreen()
+                inputLabel.text = String(sender.tag)
 
             }
             else {
@@ -73,7 +76,7 @@ class CalculatorViewController: UIViewController {
                 button.backgroundColor = UIColor.bolagetYellow()
             }
         }
-
+        
         guard let state = CalculatorState(rawValue: sender.tag) else {
             return
         }
@@ -84,9 +87,9 @@ class CalculatorViewController: UIViewController {
     
     @IBAction func numberButtonDidPress(sender: UIButton) {
         
-        
 //        createDrink()
         
+        inputLabel.textColor = UIColor.whiteColor()
         
         let input = String(sender.tag)
         
