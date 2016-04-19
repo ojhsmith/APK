@@ -10,9 +10,9 @@ import UIKit
 
 class CalculatorViewController: UIViewController {
     
-    var alkoholPercentage = ""
-    var volume = ""
-    var price = "" 
+    var alkoholPercentage = "%"
+    var volume = "ml"
+    var price = "sek"
     
     enum CalculatorState: Int {
         case AlcoholPercentageInputState
@@ -20,13 +20,22 @@ class CalculatorViewController: UIViewController {
         case PriceInputState
         case ResultInputState
     }
-    
-    enum FontSizes: CGFloat {
-        case Body = 12.0
-        case Header = 20.0
-    }
 
-    var calculatorState: CalculatorState = .AlcoholPercentageInputState
+    var calculatorState: CalculatorState = .AlcoholPercentageInputState {
+        
+        didSet {
+            switch calculatorState {
+            case .AlcoholPercentageInputState:
+                inputLabel.text = alkoholPercentage
+            case .VolumeInputState:
+                inputLabel.text = volume
+            case .PriceInputState:
+                inputLabel.text = price
+            default:
+                break
+            }
+        }
+    }
 
     @IBOutlet weak var commaButton: UIButton!
     @IBOutlet weak var zeroButton: UIButton!
