@@ -10,9 +10,9 @@ import UIKit
 
 class CalculatorViewController: UIViewController {
     
-    var alkoholPercentage = "%"
-    var volume = "ml"
-    var price = "sek"
+    var alkoholPercentage = ""
+    var volume = ""
+    var price = ""
     
     enum CalculatorState: Int {
         case AlcoholPercentageInputState
@@ -65,9 +65,7 @@ class CalculatorViewController: UIViewController {
         super.viewDidLoad()
 
         calculatorStateButtons = [self.alkButton, self.volButton, self.sekButton]
-        
-
-        
+    
     }
     
     @IBAction func calculatorStateButtonDidPress(sender: UIButton) {
@@ -78,7 +76,6 @@ class CalculatorViewController: UIViewController {
                 button.selected = true
                 button.backgroundColor = UIColor.bolagetGreen()
                 inputLabel.text = String(sender.tag)
-
             }
             else {
                 button.selected = false
@@ -92,15 +89,25 @@ class CalculatorViewController: UIViewController {
    
         calculatorState = state
         
+        if inputLabel.text == "" && sender.tag == 0 {
+            inputLabel.text = "%"
+            inputLabel.textColor = UIColor.darkGrayColor()
+        } else if inputLabel.text == "" && sender.tag == 1 {
+            inputLabel.text = "ml"
+            inputLabel.textColor = UIColor.darkGrayColor()
+        } else if inputLabel.text == "" && sender.tag == 2 {
+            inputLabel.text = "sek"
+            inputLabel.textColor = UIColor.darkGrayColor()
+        }
     }
     
     @IBAction func numberButtonDidPress(sender: UIButton) {
         
 //        createDrink()
         
-        inputLabel.textColor = UIColor.whiteColor()
-        
         let input = String(sender.tag)
+        
+        inputLabel.textColor = UIColor.whiteColor()
         
         switch calculatorState {
         case .AlcoholPercentageInputState:
@@ -115,12 +122,12 @@ class CalculatorViewController: UIViewController {
         default:
             break
         }
+    }
+    
+    @IBAction func eraseButtonDidPress(sender: UIButton) {
         
-       // let result = DrinkController.calculate(<#T##volume: Int##Int#>, price: <#T##Float#>, alcoholPercentage: <#T##Float#>)
-        //stuur result naar view
-  
-      //  let result = DrinkController.calculate(<#T##drink: Drink##Drink#>)
-//        print(sender.tag)
+        
+        
     }
 
     
