@@ -126,8 +126,27 @@ class CalculatorViewController: UIViewController {
     
     @IBAction func eraseButtonDidPress(sender: UIButton) {
         
+        let currentString = self.inputLabel.text
         
+        if currentString?.characters.count == 0 {
+            return
+        }
         
+        let truncatedString = currentString!.substringToIndex(currentString!.endIndex.predecessor())
+        
+        switch calculatorState {
+        case .AlcoholPercentageInputState:
+            alkoholPercentage = truncatedString
+            inputLabel.text = (alkoholPercentage.characters.count == 0 ? "%" : alkoholPercentage)
+        case .VolumeInputState:
+            volume = truncatedString
+            inputLabel.text = (volume.characters.count == 0 ? "ml" : volume)
+        case .PriceInputState:
+            price = truncatedString
+            inputLabel.text = (price.characters.count == 0 ? "sek" : price)
+        default:
+            break
+        }
     }
 
     
