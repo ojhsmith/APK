@@ -65,7 +65,16 @@ class CalculatorViewController: UIViewController {
         super.viewDidLoad()
 
         calculatorStateButtons = [self.alkButton, self.volButton, self.sekButton]
-    
+
+        
+//        if currentString == "%" && "ml" && "sek" {
+//            inputLabel.textColor = UIColor.darkGrayColor()
+//        } else {
+//             inputLabel.textColor = UIColor.whiteColor()
+//        }
+
+
+
     }
     
     @IBAction func calculatorStateButtonDidPress(sender: UIButton) {
@@ -89,41 +98,32 @@ class CalculatorViewController: UIViewController {
    
         calculatorState = state
         
-        if inputLabel.text == "" && sender.tag == 0 {
-            inputLabel.text = "%"
-            inputLabel.textColor = UIColor.darkGrayColor()
-        } else if inputLabel.text == "" && sender.tag == 1 {
-            inputLabel.text = "ml"
-            inputLabel.textColor = UIColor.darkGrayColor()
-        } else if inputLabel.text == "" && sender.tag == 2 {
-            inputLabel.text = "sek"
-            inputLabel.textColor = UIColor.darkGrayColor()
-        }
-    }
+}
     
     @IBAction func numberButtonDidPress(sender: UIButton) {
         
 //        createDrink()
-        
+
         let input = String(sender.tag)
-        
-        inputLabel.textColor = UIColor.whiteColor()
-        
+
         switch calculatorState {
         case .AlcoholPercentageInputState:
             alkoholPercentage = alkoholPercentage + input
             inputLabel.text = alkoholPercentage
+            inputLabel.textColor = UIColor.whiteColor()
         case .VolumeInputState:
             volume = volume + input
             inputLabel.text = volume
+            inputLabel.textColor = UIColor.whiteColor()
         case .PriceInputState:
             price = price + input
             inputLabel.text = price
+            inputLabel.textColor = UIColor.whiteColor()
         default:
             break
         }
     }
-    
+
     @IBAction func eraseButtonDidPress(sender: UIButton) {
         
         let currentString = self.inputLabel.text
@@ -147,6 +147,12 @@ class CalculatorViewController: UIViewController {
         default:
             break
         }
+        
+//        if calculatorState(alkoholPercentage == 0) {
+//             inputLabel.textColor = UIColor.darkGrayColor()
+//        }
+
+        
     }
 
     
