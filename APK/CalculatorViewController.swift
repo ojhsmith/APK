@@ -57,12 +57,12 @@ class CalculatorViewController: UIViewController
     
     var operandStack = Array<Float>()
     
-    @IBAction func result()
-    {
-        if operandStack.count == 3 {
-            displayInputs[3] = (alcohol/100)*volume/price
-        }
-    }
+//    @IBAction func result()
+//    {
+//        if operandStack.count == 3 {
+//            displayInputs[3] = (alcohol/100)*volume/price
+//        }
+//    }
     
 //    var displayValue: Float {
 //        get {
