@@ -50,15 +50,11 @@ class CalculatorViewController: UIViewController {
         for displayInput in displayInputs {
             
             if(displayInput.tag == calculatorState.rawValue) {
-                if userIsInTheMiddleOfTypingANumber {
-                    displayInput.text =  displayInput.text! + digit!
-                } else {
-                    displayInput.text = digit
-                    userIsInTheMiddleOfTypingANumber = true
-                }
+                displayInput.text =  displayInput.text! + digit!
             }
         }
     }
+    
 
     
     // Switches display
@@ -83,8 +79,6 @@ class CalculatorViewController: UIViewController {
                 button.backgroundColor = UIColor.bolagetYellow()
             }
         }
-
-        userIsInTheMiddleOfTypingANumber = false
         
         for displayInput in displayInputs {
             
