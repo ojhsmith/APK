@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E12D77711CCE21CB001CB87A /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12D77701CCE21CB001CB87A /* CalculatorBrain.swift */; };
 		E1A17B4C1CC4E2E800900517 /* Drink+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A17B4A1CC4E2E800900517 /* Drink+CoreDataProperties.swift */; };
 		E1A17B4D1CC4E2E800900517 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A17B4B1CC4E2E800900517 /* Drink.swift */; };
 		E1A17B4F1CC4E4B000900517 /* DrinkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A17B4E1CC4E4B000900517 /* DrinkController.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E12D77701CCE21CB001CB87A /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
 		E1A17B4A1CC4E2E800900517 /* Drink+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Drink+CoreDataProperties.swift"; path = "../Drink+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E1A17B4B1CC4E2E800900517 /* Drink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Drink.swift; path = ../Drink.swift; sourceTree = "<group>"; };
 		E1A17B4E1CC4E4B000900517 /* DrinkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				E1A17B4E1CC4E4B000900517 /* DrinkController.swift */,
 				E1A4D3191CC3AC4100437454 /* AppDelegate.swift */,
 				E1A4D31B1CC3AC4100437454 /* CalculatorViewController.swift */,
+				E12D77701CCE21CB001CB87A /* CalculatorBrain.swift */,
 				E1A17B501CC524F600900517 /* colours.swift */,
 				E1A4D34A1CC4284500437454 /* Helpers.swift */,
 				E1A4D3251CC3AC4100437454 /* LaunchScreen.storyboard */,
@@ -280,6 +283,7 @@
 				E1A17B4F1CC4E4B000900517 /* DrinkController.swift in Sources */,
 				E1A4D31A1CC3AC4100437454 /* AppDelegate.swift in Sources */,
 				E1A17B4D1CC4E2E800900517 /* Drink.swift in Sources */,
+				E12D77711CCE21CB001CB87A /* CalculatorBrain.swift in Sources */,
 				E1A4D34B1CC4284600437454 /* Helpers.swift in Sources */,
 				E1A17B511CC524F600900517 /* colours.swift in Sources */,
 			);
@@ -428,6 +432,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = oskarsmith.APK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -440,6 +445,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = oskarsmith.APK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
