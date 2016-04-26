@@ -14,7 +14,12 @@ class CalculatorViewController: UIViewController {
     @IBOutlet weak var volButton: UIButton!
     @IBOutlet weak var sekButton: UIButton!
     
+    @IBOutlet weak var alcTextField: UITextField!
+    @IBOutlet weak var volTextField: UITextField!
+    @IBOutlet weak var sekTextField: UITextField!
+    
     var calculatorStateButtons : Array<UIButton> = []
+    var displayInputs : Array<UITextField> = []
     
     enum CalculatorState: Int {
         case AlcoholInputState
@@ -28,11 +33,9 @@ class CalculatorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    calculatorStateButtons = [self.alcButton, self.volButton, self.sekButton]
+        calculatorStateButtons = [self.alcButton, self.volButton, self.sekButton]
+        displayInputs = [self.alcTextField, self.volTextField, self.sekTextField]
     }
-
-
-    @IBOutlet var displayInputs: [UITextField]!
 
     var userIsInTheMiddleOfTypingANumber = false
     
@@ -96,25 +99,28 @@ class CalculatorViewController: UIViewController {
     
     // Remove digits from display
     
-    @IBAction func eraseButtonDidPress(sender: UIButton) {
-        let currentString = self.displayInputs[sender.tag].text
+    func correctString(textField:UITextField)
+    {
+        let currentString = textField.text
         
         if currentString?.characters.count == 0 {
             return
         }
         
-        let truncatedString = currentString!.substringToIndex(currentString!.endIndex.predecessor())
-        
+        textField.text = currentString!.substringToIndex(currentString!.endIndex.predecessor())
+    }
+    
+    @IBAction func eraseButtonDidPress(sender: UIButton) {
         switch calculatorState {
         case .AlcoholInputState:
-            alcohol = truncatedString
-            displayInputs[sender.tag].text = (alcohol.characters.count == 0 ? "%" : alcohol)
+            correctString(self.alcTextField)
+            break
         case .VolumeInputState:
-            volume = truncatedString
-            displayInputs[sender.tag].text = (volume.characters.count == 0 ? "ml" : volume)
+            correctString(self.volTextField)
+            break
         case .PriceInputState:
-            price = truncatedString
-            displayInputs[sender.tag].text = (price.characters.count == 0 ? "sek" : price)
+            correctString(self.sekTextField)
+            break
         default:
             break
         }

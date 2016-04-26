@@ -435,11 +435,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="alcButton" destination="r9f-m4-aID" id="jEd-Z5-kCt"/>
+                        <outlet property="alcTextField" destination="nGK-V5-8nN" id="7mg-TX-RdC"/>
                         <outlet property="sekButton" destination="tiL-9F-cJ0" id="yIK-9M-zfu"/>
+                        <outlet property="sekTextField" destination="GlD-s7-1Ec" id="eXu-8X-uhU"/>
                         <outlet property="volButton" destination="eKO-9V-5vX" id="H1O-cA-CCU"/>
-                        <outletCollection property="displayInputs" destination="nGK-V5-8nN" collectionClass="NSMutableArray" id="9UC-Zx-yCc"/>
-                        <outletCollection property="displayInputs" destination="GlD-s7-1Ec" collectionClass="NSMutableArray" id="ZDJ-DW-TQm"/>
-                        <outletCollection property="displayInputs" destination="fIq-cw-8xT" collectionClass="NSMutableArray" id="sNQ-zx-ntn"/>
+                        <outlet property="volTextField" destination="fIq-cw-8xT" id="AfX-ih-rh3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
