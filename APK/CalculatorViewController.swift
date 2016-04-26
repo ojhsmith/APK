@@ -10,6 +10,21 @@ import UIKit
 
 class CalculatorViewController: UIViewController {
     
+    @IBOutlet weak var alcButton: UIButton!
+    @IBOutlet weak var volButton: UIButton!
+    @IBOutlet weak var sekButton: UIButton!
+    
+    var calculatorStateButtons : Array<UIButton> = []
+    
+    enum CalculatorState: Int {
+        case AlcoholInputState
+        case VolumeInputState
+        case PriceInputState
+        case ResultInputState
+    }
+    
+    var calculatorState: CalculatorState = .AlcoholInputState
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,6 +35,7 @@ class CalculatorViewController: UIViewController {
     @IBOutlet var displayInputs: [UITextField]!
 
     var userIsInTheMiddleOfTypingANumber = false
+    
     var alcohol = ""
     var volume = ""
     var price = ""
@@ -28,9 +44,12 @@ class CalculatorViewController: UIViewController {
     // Add digits to display
     
     @IBAction func appendDigit(sender: UIButton) {
-        let digit = sender.currentTitle
         
-            for displayInput in displayInputs {
+        let digit = sender.currentTitle
+
+        for displayInput in displayInputs {
+            
+            if(displayInput.tag == calculatorState.rawValue) {
                 if userIsInTheMiddleOfTypingANumber {
                     displayInput.text =  displayInput.text! + digit!
                 } else {
@@ -38,6 +57,7 @@ class CalculatorViewController: UIViewController {
                     userIsInTheMiddleOfTypingANumber = true
                 }
             }
+        }
     }
 
     // Remove digits from display
@@ -68,30 +88,16 @@ class CalculatorViewController: UIViewController {
     }
     
     
-    
-    
     // Switches display
-    
-    @IBOutlet weak var alcButton: UIButton!
-    @IBOutlet weak var volButton: UIButton!
-    @IBOutlet weak var sekButton: UIButton!
-    
-    var calculatorStateButtons : Array<UIButton> = []
-  
-    enum CalculatorState: Int {
-        case AlcoholInputState
-        case VolumeInputState
-        case PriceInputState
-        case ResultInputState
-    }
-    
-    var calculatorState: CalculatorState = .AlcoholInputState
+
 
     @IBAction func calculatorStateButtonDidPress(sender: UIButton) {
    
         guard let state = CalculatorState(rawValue: sender.tag) else {
             return
         }
+        
+        calculatorState = state
         
         for button in self.calculatorStateButtons {
             
@@ -107,17 +113,12 @@ class CalculatorViewController: UIViewController {
 
         userIsInTheMiddleOfTypingANumber = false
         
-        switch state {
-        case .AlcoholInputState:
-            alcohol = alcohol + displayInputs[sender.tag].text!
-            displayInputs[sender.tag].text = alcohol
-        case .VolumeInputState:
-            volume = volume + displayInputs[sender.tag].text!
-            displayInputs[sender.tag].text = volume
-        case .PriceInputState:
-            price = price + displayInputs[sender.tag].text!
-            displayInputs[sender.tag].text = price
-        default: break
+        for displayInput in displayInputs {
+            if displayInput.tag == calculatorState.rawValue {
+                displayInput.hidden = false
+            } else {
+                displayInput.hidden = true
+            }
         }
     }
 }
