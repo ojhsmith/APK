@@ -308,6 +308,9 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <state key="disabled">
+                                    <color key="titleColor" red="0.78769141435623169" green="0.20719850063323975" blue="0.23934748768806458" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="appendDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ABG-hL-h13"/>
                                 </connections>
@@ -451,6 +454,7 @@
                     <connections>
                         <outlet property="alcButton" destination="r9f-m4-aID" id="jEd-Z5-kCt"/>
                         <outlet property="alcTextField" destination="nGK-V5-8nN" id="7mg-TX-RdC"/>
+                        <outlet property="commaButton" destination="LYl-RX-xwp" id="rnv-Bb-3i2"/>
                         <outlet property="sekButton" destination="tiL-9F-cJ0" id="yIK-9M-zfu"/>
                         <outlet property="sekTextField" destination="GlD-s7-1Ec" id="eXu-8X-uhU"/>
                         <outlet property="volButton" destination="eKO-9V-5vX" id="H1O-cA-CCU"/>

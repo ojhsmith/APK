@@ -18,11 +18,10 @@ class CalculatorViewController: UIViewController {
     @IBOutlet weak var volTextField: UITextField!
     @IBOutlet weak var sekTextField: UITextField!
     
+    @IBOutlet weak var commaButton: UIButton!
+    
     var calculatorStateButtons : Array<UIButton> = []
     var displayInputs : Array<UITextField> = []
-    
-    @NSCopying var attributedPlaceholder: NSAttributedString?
-    
     
     enum CalculatorState: Int {
         case AlcoholInputState
@@ -54,10 +53,30 @@ class CalculatorViewController: UIViewController {
     // Add digits to display
     
     @IBAction func appendDigit(sender: UIButton) {
+    
+//        if alcTextField.text?.rangeOfString(",") != nil {
+//            print("exists")
+//            return
+//        }
+
+//        guard alcTextField.text?.rangeOfString(",") == nil && sender.currentTitle != "," else {
+//            print("exists")
+//            return
+//        }
         
         let digit = sender.currentTitle
-
+        
         for displayInput in displayInputs {
+            
+            // Limit comma's
+            
+            if alcTextField.text?.rangeOfString(",") != nil && sender.currentTitle == ","  {
+                print("exists")
+                commaButton.enabled = false
+                return
+            } else {
+                commaButton.enabled = true
+            }
             
             if(displayInput.tag == calculatorState.rawValue) {
                 displayInput.text =  displayInput.text! + digit!
@@ -65,7 +84,6 @@ class CalculatorViewController: UIViewController {
         }
     }
     
-
     
     // Switches display
 
