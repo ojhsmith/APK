@@ -36,6 +36,9 @@ class CalculatorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        volTextField.hidden = true
+        sekTextField.hidden = true
+        
         alcButton.selected = true
         calculatorStateButtons = [self.alcButton, self.volButton, self.sekButton]
         displayInputs = [self.alcTextField, self.volTextField, self.sekTextField]
