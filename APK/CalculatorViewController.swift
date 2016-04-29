@@ -21,6 +21,9 @@ class CalculatorViewController: UIViewController {
     var calculatorStateButtons : Array<UIButton> = []
     var displayInputs : Array<UITextField> = []
     
+    @NSCopying var attributedPlaceholder: NSAttributedString?
+    
+    
     enum CalculatorState: Int {
         case AlcoholInputState
         case VolumeInputState
@@ -33,6 +36,7 @@ class CalculatorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        alcButton.selected = true
         calculatorStateButtons = [self.alcButton, self.volButton, self.sekButton]
         displayInputs = [self.alcTextField, self.volTextField, self.sekTextField]
     }
