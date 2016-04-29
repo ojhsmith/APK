@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "APK/CalculatorViewController.swift"
-            timestampString = "483630730.278368"
+            timestampString = "483639041.045122"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
-            landmarkName = "eraseButtonDidPress(_:)"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
+            landmarkName = "commaButtonDidPress(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,28 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "APK/CalculatorViewController.swift"
-            timestampString = "483630825.377218"
+            timestampString = "483639044.206847"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "appendDigit(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "APK/CalculatorViewController.swift"
-            timestampString = "483630829.482336"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "appendDigit(_:)"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "commaButtonDidPress(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

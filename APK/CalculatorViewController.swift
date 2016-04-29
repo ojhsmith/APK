@@ -41,6 +41,8 @@ class CalculatorViewController: UIViewController {
         alcButton.selected = true
         calculatorStateButtons = [self.alcButton, self.volButton, self.sekButton]
         displayInputs = [self.alcTextField, self.volTextField, self.sekTextField]
+        
+        
     }
 
     var userIsInTheMiddleOfTypingANumber = false
@@ -67,16 +69,6 @@ class CalculatorViewController: UIViewController {
         let digit = sender.currentTitle
         
         for displayInput in displayInputs {
-            
-            // Limit comma's
-            
-            if alcTextField.text?.rangeOfString(",") != nil && sender.currentTitle == ","  {
-                print("exists")
-                commaButton.enabled = false
-                return
-            } else {
-                commaButton.enabled = true
-            }
             
             if(displayInput.tag == calculatorState.rawValue) {
                 displayInput.text =  displayInput.text! + digit!
@@ -124,7 +116,7 @@ class CalculatorViewController: UIViewController {
     
     // Remove digits from display
     
-    func correctString(textField:UITextField)
+    func correctString(textField: UITextField)
     {
         let currentString = textField.text
         
@@ -152,4 +144,18 @@ class CalculatorViewController: UIViewController {
         
     }
     
+    // Limit comma's
+    
+    
+    
+    @IBAction func commaButtonDidPress(sender: UIButton) {
+        if alcTextField.text?.rangeOfString(",") != nil {
+                print("exists")
+                commaButton.enabled = false
+         
+            } else {
+            print("does not exist")
+            commaButton.enabled = true
+            }
+    }
 }

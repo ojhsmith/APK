@@ -313,6 +313,7 @@
                                 </state>
                                 <connections>
                                     <action selector="appendDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ABG-hL-h13"/>
+                                    <action selector="commaButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gjC-hg-d5N"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tiL-9F-cJ0">
