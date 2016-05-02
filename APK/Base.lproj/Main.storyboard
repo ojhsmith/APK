@@ -313,7 +313,6 @@
                                 </state>
                                 <connections>
                                     <action selector="appendDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ABG-hL-h13"/>
-                                    <action selector="commaButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gjC-hg-d5N"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tiL-9F-cJ0">
@@ -455,7 +454,7 @@
                     <connections>
                         <outlet property="alcButton" destination="r9f-m4-aID" id="jEd-Z5-kCt"/>
                         <outlet property="alcTextField" destination="nGK-V5-8nN" id="7mg-TX-RdC"/>
-                        <outlet property="commaButton" destination="LYl-RX-xwp" id="rnv-Bb-3i2"/>
+                        <outlet property="commaButton" destination="LYl-RX-xwp" id="Emn-mF-rYk"/>
                         <outlet property="sekButton" destination="tiL-9F-cJ0" id="yIK-9M-zfu"/>
                         <outlet property="sekTextField" destination="GlD-s7-1Ec" id="eXu-8X-uhU"/>
                         <outlet property="volButton" destination="eKO-9V-5vX" id="H1O-cA-CCU"/>

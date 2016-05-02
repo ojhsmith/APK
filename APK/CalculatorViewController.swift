@@ -72,7 +72,17 @@ class CalculatorViewController: UIViewController {
             
             if(displayInput.tag == calculatorState.rawValue) {
                 displayInput.text =  displayInput.text! + digit!
+                
+                if displayInput.text?.rangeOfString(",") != nil {
+                    print("exists")
+                    commaButton.enabled = false
+                } else {
+                    print("does not exist")
+                    commaButton.enabled = true
+                }
             }
+            
+
         }
     }
     
@@ -144,18 +154,17 @@ class CalculatorViewController: UIViewController {
         
     }
     
+    
     // Limit comma's
     
-    
-    
-    @IBAction func commaButtonDidPress(sender: UIButton) {
-        if alcTextField.text?.rangeOfString(",") != nil {
-                print("exists")
-                commaButton.enabled = false
-         
-            } else {
-            print("does not exist")
-            commaButton.enabled = true
-            }
-    }
+//    @IBAction func commaButtonDidPress(sender: UIButton) {
+//        if alcTextField.text?.rangeOfString(",") != nil {
+//                print("exists")
+//                commaButton.enabled = false
+//         
+//            } else {
+//            print("does not exist")
+//            commaButton.enabled = true
+//            }
+//    }
 }
