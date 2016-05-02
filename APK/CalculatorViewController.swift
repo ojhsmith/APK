@@ -135,9 +135,19 @@ class CalculatorViewController: UIViewController {
         }
         
         textField.text = currentString!.substringToIndex(currentString!.endIndex.predecessor())
+        
+        if textField.text!.rangeOfString(",") != nil {
+            print("exists")
+            commaButton.enabled = false
+        } else {
+            print("does not exist")
+            commaButton.enabled = true
+        }
+
     }
     
     @IBAction func eraseButtonDidPress(sender: UIButton) {
+        
         switch calculatorState {
         case .AlcoholInputState:
             correctString(self.alcTextField)
@@ -149,22 +159,9 @@ class CalculatorViewController: UIViewController {
             correctString(self.sekTextField)
             break
         default:
-            break
+          break
         }
         
+
     }
-    
-    
-    // Limit comma's
-    
-//    @IBAction func commaButtonDidPress(sender: UIButton) {
-//        if alcTextField.text?.rangeOfString(",") != nil {
-//                print("exists")
-//                commaButton.enabled = false
-//         
-//            } else {
-//            print("does not exist")
-//            commaButton.enabled = true
-//            }
-//    }
 }
