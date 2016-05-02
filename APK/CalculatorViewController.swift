@@ -121,6 +121,13 @@ class CalculatorViewController: UIViewController {
                 print("hide displayInput \(displayInput.tag)")
                 displayInput.hidden = true
             }
+            
+            if displayInput.text!.rangeOfString(",") != nil {
+                commaButton.enabled = false
+            } else {
+                print("does not exist")
+                commaButton.enabled = true
+            }
         }
     }
     
@@ -161,7 +168,5 @@ class CalculatorViewController: UIViewController {
         default:
           break
         }
-        
-
     }
 }
