@@ -59,16 +59,6 @@ class CalculatorViewController: UIViewController {
     // Add digits to display
     
     @IBAction func appendDigit(sender: UIButton) {
-    
-//        if alcTextField.text?.rangeOfString(",") != nil {
-//            print("exists")
-//            return
-//        }
-
-//        guard alcTextField.text?.rangeOfString(",") == nil && sender.currentTitle != "," else {
-//            print("exists")
-//            return
-//        }
         
         let digit = sender.currentTitle
         
@@ -93,11 +83,12 @@ class CalculatorViewController: UIViewController {
     
     // Switches display
 
-
     @IBAction func calculatorStateButtonDidPress(sender: UIButton) {
         
         resTextField.hidden = true
-   
+        resButton.selected = false
+        resButton.backgroundColor = UIColor.bolagetYellow()
+        
         guard let state = CalculatorState(rawValue: sender.tag) else {
             return
         }
@@ -109,7 +100,6 @@ class CalculatorViewController: UIViewController {
             if button == sender {
                 button.backgroundColor = UIColor.bolagetGreen()
                 button.selected = true
-                
             }
             else {
                 button.selected = false
@@ -181,12 +171,17 @@ class CalculatorViewController: UIViewController {
     
     @IBAction func resultButtonDidPress(sender: UIButton) {
         
-        resTextField.hidden = false
-        
-        resButton.selected = true
-        
         for displayInput in displayInputs {
-            displayInput.hidden = true
+            if displayInput.text == nil {
+                print("not enough values")
+                return
+                
+            } else {
+                displayInput.hidden = true
+                resTextField.hidden = false
+                resButton.backgroundColor = UIColor.bolagetGreen()
+                resButton.selected = true
+            }
         }
         
         for button in calculatorStateButtons {
@@ -194,7 +189,7 @@ class CalculatorViewController: UIViewController {
             button.backgroundColor = UIColor.bolagetYellow()
         }
 
-        guard let alcValue = Double(alcTextField.text!), let volValue = Double(volTextField.text!), let sekValue = Double(sekTextField.text!)  else {
+        guard var alcValue = Double(alcTextField.text!), var volValue = Double(volTextField.text!), var sekValue = Double(sekTextField.text!)  else {
             return
         }
 
