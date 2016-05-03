@@ -13,6 +13,7 @@ class CalculatorViewController: UIViewController {
     @IBOutlet weak var alcButton: UIButton!
     @IBOutlet weak var volButton: UIButton!
     @IBOutlet weak var sekButton: UIButton!
+    @IBOutlet weak var resButton: UIButton!
     
     @IBOutlet weak var alcTextField: UITextField!
     @IBOutlet weak var volTextField: UITextField!
@@ -182,6 +183,17 @@ class CalculatorViewController: UIViewController {
         
         resTextField.hidden = false
         
+        resButton.selected = true
+        
+        for displayInput in displayInputs {
+            displayInput.hidden = true
+        }
+        
+        for button in calculatorStateButtons {
+            button.selected = false
+            button.backgroundColor = UIColor.bolagetYellow()
+        }
+
         guard let alcValue = Double(alcTextField.text!), let volValue = Double(volTextField.text!), let sekValue = Double(sekTextField.text!)  else {
             return
         }
@@ -189,14 +201,5 @@ class CalculatorViewController: UIViewController {
         let result = calculatorBrain.calculateAPK(alcValue, volTextField: volValue, sekTextField: sekValue)
         
         resTextField.text = String(result)
-        
-        for displayInput in displayInputs {
-            displayInput.hidden = true
-
-        }
-        
-//        for button in calculatorStateButtons {
-//            button.enabled = false
-//        }
     }
 }

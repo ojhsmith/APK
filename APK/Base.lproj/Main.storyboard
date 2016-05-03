@@ -476,6 +476,7 @@
                         <outlet property="alcButton" destination="r9f-m4-aID" id="jEd-Z5-kCt"/>
                         <outlet property="alcTextField" destination="nGK-V5-8nN" id="7mg-TX-RdC"/>
                         <outlet property="commaButton" destination="LYl-RX-xwp" id="Emn-mF-rYk"/>
+                        <outlet property="resButton" destination="nuc-GH-6lV" id="3i4-5f-oXP"/>
                         <outlet property="resTextField" destination="xAd-ku-EeE" id="Fqs-uz-RLR"/>
                         <outlet property="sekButton" destination="tiL-9F-cJ0" id="yIK-9M-zfu"/>
                         <outlet property="sekTextField" destination="GlD-s7-1Ec" id="eXu-8X-uhU"/>
