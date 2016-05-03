@@ -172,13 +172,13 @@ class CalculatorViewController: UIViewController {
         }
     }
     
+    // Calculate APK
+    
     @IBAction func resultButtonDidPress(sender: UIButton) {
-//        guard () else {
-//        }
-        let result = calculatorBrain.calculateAPK
+
+        let result = CalculatorBrain().calculateAPK
         
         resTextField.text = String(result)
-        
     }
     
 }
