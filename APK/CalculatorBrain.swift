@@ -12,11 +12,11 @@ import Foundation
 
 var operandStack = Array<Float>()
 
-class CalculatorBrain: CalculatorViewController {
+class CalculatorBrain {
 
     func calculateAPK (alcTextField: Double, volTextField: Double, sekTextField: Double) -> Double {
         
-        let result = alcTextField/100 * volTextField / sekTextField
+        let result = ((alcTextField/100) * volTextField) / sekTextField
         
         return result
     }

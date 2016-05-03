@@ -51,7 +51,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xAd-ku-EeE">
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xAd-ku-EeE">
                                 <rect key="frame" x="20" y="105" width="560" height="67"/>
                                 <color key="textColor" red="0.99963909390000005" green="1" blue="0.99975615740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="56"/>
@@ -88,6 +88,26 @@
                                 </state>
                                 <connections>
                                     <action selector="eraseButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J1A-Tt-O9d"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuc-GH-6lV">
+                                <rect key="frame" x="450" y="456" width="150" height="80"/>
+                                <color key="backgroundColor" red="0.99104851484298706" green="0.92490285634994507" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="8Uu-X2-i1n"/>
+                                    <constraint firstAttribute="height" constant="80" id="YAN-1U-Qtc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="32"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="=">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="selected" backgroundImage="selectedStateBG">
+                                    <color key="titleColor" red="0.99963909387588501" green="1" blue="0.99975615739822388" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="resultButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zmm-jr-p0u"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z50-rI-wVy">
@@ -338,26 +358,6 @@
                                     <action selector="calculatorStateButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OQl-71-kc3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuc-GH-6lV">
-                                <rect key="frame" x="450" y="456" width="150" height="80"/>
-                                <color key="backgroundColor" red="0.99104851484298706" green="0.92490285634994507" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="8Uu-X2-i1n"/>
-                                    <constraint firstAttribute="height" constant="80" id="YAN-1U-Qtc"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="32"/>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="=">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <state key="selected" backgroundImage="selectedStateBG">
-                                    <color key="titleColor" red="0.99963909387588501" green="1" blue="0.99975615739822388" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="resultButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dxq-ry-71O"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -366,6 +366,7 @@
                             <constraint firstItem="rS2-YP-5oX" firstAttribute="leading" secondItem="aik-UI-53k" secondAttribute="trailing" id="1Kx-h2-GZL"/>
                             <constraint firstItem="r9f-m4-aID" firstAttribute="top" secondItem="nGK-V5-8nN" secondAttribute="bottom" constant="44" id="1x3-0u-0fj"/>
                             <constraint firstItem="aik-UI-53k" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="29U-7x-Bez"/>
+                            <constraint firstAttribute="trailing" secondItem="xAd-ku-EeE" secondAttribute="trailing" constant="20" id="2eN-Zz-7GT"/>
                             <constraint firstItem="tiL-9F-cJ0" firstAttribute="top" secondItem="eKO-9V-5vX" secondAttribute="bottom" id="2wS-Vb-J0w"/>
                             <constraint firstItem="gyJ-JE-EKN" firstAttribute="width" secondItem="aik-UI-53k" secondAttribute="width" id="4Iv-4Q-FNo"/>
                             <constraint firstItem="b7t-yY-gzJ" firstAttribute="width" secondItem="aik-UI-53k" secondAttribute="width" id="4Kg-jI-EtY"/>
@@ -374,6 +375,7 @@
                             <constraint firstAttribute="trailing" secondItem="eKO-9V-5vX" secondAttribute="trailing" id="7IW-b8-x3j"/>
                             <constraint firstItem="LYl-RX-xwp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7jb-ue-ZsP"/>
                             <constraint firstAttribute="trailing" secondItem="fIq-cw-8xT" secondAttribute="trailing" constant="20" id="7zK-Mw-47L"/>
+                            <constraint firstItem="r9f-m4-aID" firstAttribute="top" secondItem="xAd-ku-EeE" secondAttribute="bottom" constant="44" id="88Z-2J-dgp"/>
                             <constraint firstItem="SgE-2c-7e2" firstAttribute="width" secondItem="aik-UI-53k" secondAttribute="width" id="8l4-6k-WEc"/>
                             <constraint firstAttribute="trailing" secondItem="tiL-9F-cJ0" secondAttribute="trailing" id="9AV-3r-sJY"/>
                             <constraint firstAttribute="trailing" secondItem="nuc-GH-6lV" secondAttribute="trailing" id="A8W-uX-xIQ"/>
@@ -406,6 +408,7 @@
                             <constraint firstItem="LYl-RX-xwp" firstAttribute="top" secondItem="z50-rI-wVy" secondAttribute="bottom" id="ZYf-uO-RR5"/>
                             <constraint firstItem="Kwr-oB-pcG" firstAttribute="leading" secondItem="679-fj-489" secondAttribute="trailing" id="aMS-nB-vv4"/>
                             <constraint firstAttribute="trailing" secondItem="nGK-V5-8nN" secondAttribute="trailing" constant="20" id="b2W-ev-Gnv"/>
+                            <constraint firstItem="xAd-ku-EeE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="dmg-fb-PHf"/>
                             <constraint firstItem="eKO-9V-5vX" firstAttribute="top" secondItem="r9f-m4-aID" secondAttribute="bottom" id="e1D-r3-hwG"/>
                             <constraint firstItem="gyJ-JE-EKN" firstAttribute="leading" secondItem="rS2-YP-5oX" secondAttribute="trailing" id="esZ-5w-bJK"/>
                             <constraint firstItem="fIq-cw-8xT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="fns-Eu-JQd"/>
@@ -465,8 +468,6 @@
                         <outlet property="alcTextField" destination="nGK-V5-8nN" id="7mg-TX-RdC"/>
                         <outlet property="commaButton" destination="LYl-RX-xwp" id="Emn-mF-rYk"/>
                         <outlet property="resTextField" destination="xAd-ku-EeE" id="Fqs-uz-RLR"/>
-                        <outlet property="resultButton" destination="nuc-GH-6lV" id="Fve-Vv-a7k"/>
-                        <outlet property="resultButtonDidPress" destination="nuc-GH-6lV" id="lrY-fQ-ZXM"/>
                         <outlet property="sekButton" destination="tiL-9F-cJ0" id="yIK-9M-zfu"/>
                         <outlet property="sekTextField" destination="GlD-s7-1Ec" id="eXu-8X-uhU"/>
                         <outlet property="volButton" destination="eKO-9V-5vX" id="H1O-cA-CCU"/>

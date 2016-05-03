@@ -13,7 +13,6 @@ class CalculatorViewController: UIViewController {
     @IBOutlet weak var alcButton: UIButton!
     @IBOutlet weak var volButton: UIButton!
     @IBOutlet weak var sekButton: UIButton!
-    @IBOutlet weak var resultButton: UIButton!
     
     @IBOutlet weak var alcTextField: UITextField!
     @IBOutlet weak var volTextField: UITextField!
@@ -24,6 +23,8 @@ class CalculatorViewController: UIViewController {
     
     var calculatorStateButtons : Array<UIButton> = []
     var displayInputs : Array<UITextField> = []
+    
+    let calculatorBrain = CalculatorBrain()
     
     enum CalculatorState: Int {
         case AlcoholInputState
@@ -175,10 +176,18 @@ class CalculatorViewController: UIViewController {
     // Calculate APK
     
     @IBAction func resultButtonDidPress(sender: UIButton) {
+        
+        guard let alcValue = Double(alcTextField.text!), let volValue = Double(volTextField.text!), let sekValue = Double(sekTextField.text!)  else {
+            return
+        }
 
-        let result = CalculatorBrain().calculateAPK
+        let result = calculatorBrain.calculateAPK(alcValue, volTextField: volValue, sekTextField: sekValue)
         
         resTextField.text = String(result)
+        
+        for displayInput in displayInputs {
+            displayInput.hidden = true
+
+        }
     }
-    
 }
