@@ -189,5 +189,9 @@ class CalculatorViewController: UIViewController {
             displayInput.hidden = true
 
         }
+        
+        for button in calculatorStateButtons {
+            button.enabled = false
+        }
     }
 }

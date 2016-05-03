@@ -12,12 +12,29 @@ import Foundation
 
 var operandStack = Array<Float>()
 
-class CalculatorBrain {
 
+
+//extension Double {
+//    func format(f: String) -> String {
+//        return NSString(format: "%\(f)f", self) as String
+//    }
+//}
+//
+//let myDouble = 1.234567
+//println(myDouble.format(".3")
+
+class CalculatorBrain {
+    
     func calculateAPK (alcTextField: Double, volTextField: Double, sekTextField: Double) -> Double {
         
         let result = ((alcTextField/100) * volTextField) / sekTextField
         
-        return result
+        let numberOfPlaces = 2.0
+        let multiplier = pow(10.0, numberOfPlaces)
+        let rounded = round(result * multiplier) / multiplier
+        
+        return rounded
     }
+    
+    
 }
