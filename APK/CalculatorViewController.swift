@@ -94,6 +94,8 @@ class CalculatorViewController: UIViewController {
 
 
     @IBAction func calculatorStateButtonDidPress(sender: UIButton) {
+        
+        resTextField.hidden = true
    
         guard let state = CalculatorState(rawValue: sender.tag) else {
             return
@@ -106,6 +108,7 @@ class CalculatorViewController: UIViewController {
             if button == sender {
                 button.backgroundColor = UIColor.bolagetGreen()
                 button.selected = true
+                
             }
             else {
                 button.selected = false
@@ -177,6 +180,8 @@ class CalculatorViewController: UIViewController {
     
     @IBAction func resultButtonDidPress(sender: UIButton) {
         
+        resTextField.hidden = false
+        
         guard let alcValue = Double(alcTextField.text!), let volValue = Double(volTextField.text!), let sekValue = Double(sekTextField.text!)  else {
             return
         }
@@ -190,8 +195,8 @@ class CalculatorViewController: UIViewController {
 
         }
         
-        for button in calculatorStateButtons {
-            button.enabled = false
-        }
+//        for button in calculatorStateButtons {
+//            button.enabled = false
+//        }
     }
 }
