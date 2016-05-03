@@ -13,10 +13,12 @@ class CalculatorViewController: UIViewController {
     @IBOutlet weak var alcButton: UIButton!
     @IBOutlet weak var volButton: UIButton!
     @IBOutlet weak var sekButton: UIButton!
+    @IBOutlet weak var resultButton: UIButton!
     
     @IBOutlet weak var alcTextField: UITextField!
     @IBOutlet weak var volTextField: UITextField!
     @IBOutlet weak var sekTextField: UITextField!
+    @IBOutlet weak var resTextField: UITextField!
     
     @IBOutlet weak var commaButton: UIButton!
     
@@ -169,4 +171,14 @@ class CalculatorViewController: UIViewController {
           break
         }
     }
+    
+    @IBAction func resultButtonDidPress(sender: UIButton) {
+//        guard () else {
+//        }
+        let result = calculatorBrain.calculateAPK
+        
+        resTextField.text = String(result)
+        
+    }
+    
 }
