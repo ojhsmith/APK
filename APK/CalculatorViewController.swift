@@ -41,12 +41,10 @@ class CalculatorViewController: UIViewController {
         
         volTextField.hidden = true
         sekTextField.hidden = true
-        
         alcButton.selected = true
+        resButton.enabled = false
         calculatorStateButtons = [self.alcButton, self.volButton, self.sekButton]
-        displayInputs = [self.alcTextField, self.volTextField, self.sekTextField]
-        
-        
+        displayInputs = [self.alcTextField, self.volTextField, self.sekTextField]     
     }
 
     var userIsInTheMiddleOfTypingANumber = false
@@ -75,8 +73,6 @@ class CalculatorViewController: UIViewController {
                     commaButton.enabled = true
                 }
             }
-            
-
         }
     }
     
@@ -125,6 +121,7 @@ class CalculatorViewController: UIViewController {
                 print("does not exist")
                 commaButton.enabled = true
             }
+            
         }
     }
     
@@ -168,6 +165,7 @@ class CalculatorViewController: UIViewController {
     }
     
     // Calculate APK
+    
     
     @IBAction func resultButtonDidPress(sender: UIButton) {
         
