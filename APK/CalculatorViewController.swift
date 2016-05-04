@@ -54,7 +54,7 @@ class CalculatorViewController: UIViewController {
     var price = ""
 
     
-    // Add digits to display
+    // NOTE: Add digits to display
     
     @IBAction func appendDigit(sender: UIButton) {
         
@@ -74,9 +74,6 @@ class CalculatorViewController: UIViewController {
                 }
             }
         }
-        
-        // Enable result button if all inputs are done
-        
         if inputsDone() {
             resButton.enabled = true
         } else {
@@ -85,10 +82,11 @@ class CalculatorViewController: UIViewController {
     }
     
     
-    // Switches display
+    // NOTE: Switches display
 
     @IBAction func calculatorStateButtonDidPress(sender: UIButton) {
         
+
         resTextField.hidden = true
         resButton.selected = false
         resButton.backgroundColor = UIColor.bolagetYellow()
@@ -98,6 +96,8 @@ class CalculatorViewController: UIViewController {
         }
         
         calculatorState = state
+        
+        commaButton.enabled = !activeTextFieldContainsComma()
         
         for button in self.calculatorStateButtons {
             
@@ -122,18 +122,11 @@ class CalculatorViewController: UIViewController {
                 print("hide displayInput \(displayInput.tag)")
                 displayInput.hidden = true
             }
-            
-            if displayInput.text!.rangeOfString(",") != nil {
-                commaButton.enabled = false
-            } else {
-                print("does not exist")
-                commaButton.enabled = true
-            }
         }
     }
     
     
-    // Remove digits from display
+    // NOTE: Remove digits from display
     
     func correctString(textField: UITextField) {
         
@@ -144,15 +137,6 @@ class CalculatorViewController: UIViewController {
         }
         
         textField.text = currentString!.substringToIndex(currentString!.endIndex.predecessor())
-        
-        if textField.text!.rangeOfString(",") != nil {
-            print("exists")
-            commaButton.enabled = false
-        } else {
-            print("does not exist")
-            commaButton.enabled = true
-        }
-
     }
     
     @IBAction func eraseButtonDidPress(sender: UIButton) {
@@ -171,13 +155,14 @@ class CalculatorViewController: UIViewController {
           break
         }
         
-        // TODO: Disable result button when input is missing
-        
         if inputsDone() {
             resButton.enabled = true
         } else {
             resButton.enabled = false
         }
+        
+        commaButton.enabled = !activeTextFieldContainsComma()
+
     }
 
     func inputsDone () -> Bool {
@@ -188,8 +173,18 @@ class CalculatorViewController: UIViewController {
         }
         return true
     }
+    
+    func activeTextFieldContainsComma () -> Bool {
+        for displayInput in displayInputs {
+            if displayInput.tag == calculatorState.rawValue && displayInput.text?.rangeOfString(",") != nil {
+                return true
+            }
+        }
+        return false
+    }
+
  
-    // Calculate APK
+    // NOTE: Calculate APK
     
     @IBAction func resultButtonDidPress(sender: UIButton) {
         
