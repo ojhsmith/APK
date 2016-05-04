@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E12D77711CCE21CB001CB87A /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12D77701CCE21CB001CB87A /* CalculatorBrain.swift */; };
+		E14F5F111CDA318600BA79E9 /* DrinksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14F5F101CDA318600BA79E9 /* DrinksTableViewController.swift */; };
+		E14F5F131CDA34C800BA79E9 /* DrinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14F5F121CDA34C800BA79E9 /* DrinkTableViewCell.swift */; };
 		E1A17B4C1CC4E2E800900517 /* Drink+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A17B4A1CC4E2E800900517 /* Drink+CoreDataProperties.swift */; };
 		E1A17B4D1CC4E2E800900517 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A17B4B1CC4E2E800900517 /* Drink.swift */; };
 		E1A17B4F1CC4E4B000900517 /* DrinkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A17B4E1CC4E4B000900517 /* DrinkController.swift */; };
@@ -42,6 +44,8 @@
 
 /* Begin PBXFileReference section */
 		E12D77701CCE21CB001CB87A /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
+		E14F5F101CDA318600BA79E9 /* DrinksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinksTableViewController.swift; sourceTree = "<group>"; };
+		E14F5F121CDA34C800BA79E9 /* DrinkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkTableViewCell.swift; sourceTree = "<group>"; };
 		E1A17B4A1CC4E2E800900517 /* Drink+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Drink+CoreDataProperties.swift"; path = "../Drink+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E1A17B4B1CC4E2E800900517 /* Drink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Drink.swift; path = ../Drink.swift; sourceTree = "<group>"; };
 		E1A17B4E1CC4E4B000900517 /* DrinkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkController.swift; sourceTree = "<group>"; };
@@ -111,14 +115,16 @@
 		E1A4D3181CC3AC4100437454 /* APK */ = {
 			isa = PBXGroup;
 			children = (
+				E1A17B501CC524F600900517 /* colours.swift */,
+				E1A4D34A1CC4284500437454 /* Helpers.swift */,
 				E1A17B4A1CC4E2E800900517 /* Drink+CoreDataProperties.swift */,
 				E1A17B4B1CC4E2E800900517 /* Drink.swift */,
 				E1A17B4E1CC4E4B000900517 /* DrinkController.swift */,
 				E1A4D3191CC3AC4100437454 /* AppDelegate.swift */,
 				E1A4D31B1CC3AC4100437454 /* CalculatorViewController.swift */,
 				E12D77701CCE21CB001CB87A /* CalculatorBrain.swift */,
-				E1A17B501CC524F600900517 /* colours.swift */,
-				E1A4D34A1CC4284500437454 /* Helpers.swift */,
+				E14F5F101CDA318600BA79E9 /* DrinksTableViewController.swift */,
+				E14F5F121CDA34C800BA79E9 /* DrinkTableViewCell.swift */,
 				E1A4D3251CC3AC4100437454 /* LaunchScreen.storyboard */,
 				E1A4D31D1CC3AC4100437454 /* Main.storyboard */,
 				E1A4D3231CC3AC4100437454 /* Assets.xcassets */,
@@ -280,9 +286,11 @@
 				E1A4D31C1CC3AC4100437454 /* CalculatorViewController.swift in Sources */,
 				E1A4D3221CC3AC4100437454 /* APK.xcdatamodeld in Sources */,
 				E1A17B4C1CC4E2E800900517 /* Drink+CoreDataProperties.swift in Sources */,
+				E14F5F131CDA34C800BA79E9 /* DrinkTableViewCell.swift in Sources */,
 				E1A17B4F1CC4E4B000900517 /* DrinkController.swift in Sources */,
 				E1A4D31A1CC3AC4100437454 /* AppDelegate.swift in Sources */,
 				E1A17B4D1CC4E2E800900517 /* Drink.swift in Sources */,
+				E14F5F111CDA318600BA79E9 /* DrinksTableViewController.swift in Sources */,
 				E12D77711CCE21CB001CB87A /* CalculatorBrain.swift in Sources */,
 				E1A4D34B1CC4284600437454 /* Helpers.swift in Sources */,
 				E1A17B511CC524F600900517 /* colours.swift in Sources */,
