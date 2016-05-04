@@ -8,21 +8,6 @@
 
 import Foundation
 
-// Calculates APK
-
-var operandStack = Array<Float>()
-
-
-
-//extension Double {
-//    func format(f: String) -> String {
-//        return NSString(format: "%\(f)f", self) as String
-//    }
-//}
-//
-//let myDouble = 1.234567
-//println(myDouble.format(".3")
-
 class CalculatorBrain {
     
     func calculateAPK (alcTextField: Double, volTextField: Double, sekTextField: Double) -> Double {
@@ -34,7 +19,5 @@ class CalculatorBrain {
         let rounded = round(result * multiplier) / multiplier
         
         return rounded
-    }
-    
-    
+    } 
 }
