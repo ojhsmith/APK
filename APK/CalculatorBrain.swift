@@ -19,5 +19,13 @@ class CalculatorBrain {
         let rounded = round(result * multiplier) / multiplier
         
         return rounded
-    } 
+    }
+    
+//    newDrink.setValue(calculateAPK, forKey: "result")
+//    
+//    do {
+//    try newDrink.managedObjectContext?.save()
+//    } catch {
+//    print(error)
+//    }
 }

@@ -16,7 +16,8 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     public func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+//        let entityDescription = NSEntityDescription.entityForName("Drink", inManagedObjectContext: self.managedObjectContext)
+//        let newDrink = NSManagedObject(entity: entityDescription!, insertIntoManagedObjectContext: self.managedObjectContext)
         return true
     }
 
