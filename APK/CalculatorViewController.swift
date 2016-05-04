@@ -74,6 +74,14 @@ class CalculatorViewController: UIViewController {
                 }
             }
         }
+        
+        // Enable result button if all inputs are done
+        
+        if inputsDone() {
+            resButton.enabled = true
+        } else {
+            resButton.enabled = false
+        }
     }
     
     
@@ -121,14 +129,14 @@ class CalculatorViewController: UIViewController {
                 print("does not exist")
                 commaButton.enabled = true
             }
-            
         }
     }
     
+    
     // Remove digits from display
     
-    func correctString(textField: UITextField)
-    {
+    func correctString(textField: UITextField) {
+        
         let currentString = textField.text
         
         if currentString?.characters.count == 0 {
@@ -162,24 +170,35 @@ class CalculatorViewController: UIViewController {
         default:
           break
         }
+        
+        // TODO: Disable result button when input is missing
+        
+        if inputsDone() {
+            resButton.enabled = true
+        } else {
+            resButton.enabled = false
+        }
     }
-    
+
+    func inputsDone () -> Bool {
+        for displayInput in displayInputs {
+            if displayInput.text == nil || displayInput.text == "" {
+                return false
+            }
+        }
+        return true
+    }
+ 
     // Calculate APK
-    
     
     @IBAction func resultButtonDidPress(sender: UIButton) {
         
+        resTextField.hidden = false
+        resButton.backgroundColor = UIColor.bolagetGreen()
+        resButton.selected = true
+        
         for displayInput in displayInputs {
-            if displayInput.text == nil {
-                print("not enough values")
-                return
-                
-            } else {
-                displayInput.hidden = true
-                resTextField.hidden = false
-                resButton.backgroundColor = UIColor.bolagetGreen()
-                resButton.selected = true
-            }
+            displayInput.hidden = true
         }
         
         for button in calculatorStateButtons {
