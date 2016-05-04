@@ -54,7 +54,7 @@ class CalculatorViewController: UIViewController {
     var price = ""
 
     
-    // NOTE: Add digits to display
+    // MARK: Add digits to display
     
     @IBAction func appendDigit(sender: UIButton) {
         
@@ -82,7 +82,7 @@ class CalculatorViewController: UIViewController {
     }
     
     
-    // NOTE: Switches display
+    // MARK: Switches display
 
     @IBAction func calculatorStateButtonDidPress(sender: UIButton) {
         
@@ -126,7 +126,7 @@ class CalculatorViewController: UIViewController {
     }
     
     
-    // NOTE: Remove digits from display
+    // MARK: Remove digits from display
     
     func correctString(textField: UITextField) {
         
@@ -184,7 +184,7 @@ class CalculatorViewController: UIViewController {
     }
 
  
-    // NOTE: Calculate APK
+    // MARK: Calculate APK
     
     @IBAction func resultButtonDidPress(sender: UIButton) {
         

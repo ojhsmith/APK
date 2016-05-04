@@ -10,5 +10,7 @@ import UIKit
 
 class DrinkTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var drinkTitle: UILabel!
+    @IBOutlet weak var drinkRes: UILabel!
 
 }

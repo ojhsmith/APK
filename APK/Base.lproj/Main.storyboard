@@ -529,6 +529,10 @@
                                         <constraint firstItem="S6s-Yi-Pwb" firstAttribute="leading" secondItem="u3m-mt-97i" secondAttribute="leading" constant="20" id="jMZ-DP-PVW"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="drinkRes" destination="eTB-Hy-1TF" id="zzl-d5-kuj"/>
+                                    <outlet property="drinkTitle" destination="S6s-Yi-Pwb" id="DY9-6V-hSv"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
