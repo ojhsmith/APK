@@ -10,6 +10,8 @@ import UIKit
 
 class DrinksTableViewController: UITableViewController {
     
+    var selectedIndexPath: NSIndexPath? = nil
+    
     @IBAction func helpButtonDidPress(sender: UIBarButtonItem) {
             performSegueWithIdentifier("HelpSegue", sender: self)
     }
@@ -22,6 +24,41 @@ class DrinksTableViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
     }
     
+    // MARK: Expand cell on tap
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("didSelectRowAtIndexPath was called")
+        var cell = tableView.cellForRowAtIndexPath(indexPath) as! DrinkTableViewCell
+        switch selectedIndexPath {
+        case nil:
+            selectedIndexPath = indexPath
+        default:
+            if selectedIndexPath! == indexPath {
+                selectedIndexPath = nil
+            } else {
+                selectedIndexPath = indexPath
+            }
+        }
+        tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let smallHeight: CGFloat = 70.0
+        let expandedHeight: CGFloat = 100.0
+        let ip = indexPath
+        if selectedIndexPath != nil {
+            if ip == selectedIndexPath! {
+                return expandedHeight
+            } else {
+                return smallHeight
+            }
+        } else {
+            return smallHeight
+        }
+    }
+    
+    // MARK: Style section header
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -29,6 +66,8 @@ class DrinksTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Varunamn"
     }
+
+    // MARK: Style cell content
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
@@ -42,11 +81,5 @@ class DrinksTableViewController: UITableViewController {
         cell.drinkResult.text = "2.25"
         
         return cell
-    }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier("DrinkSegue", sender: self)
-        
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }
