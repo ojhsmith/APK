@@ -10,6 +10,10 @@ import UIKit
 
 class DrinksTableViewController: UITableViewController {
     
+    @IBAction func helpButtonDidPress(sender: UIBarButtonItem) {
+            performSegueWithIdentifier("HelpSegue", sender: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -17,13 +21,17 @@ class DrinksTableViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
     }
     
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("DrinkCell") as! DrinkTableViewCell!
+
+        cell.drinkTitle.text = "Kung"
+        cell.drinkResult.text = "2.25"
         
         return cell
     }
-    
-    
-    
 }
