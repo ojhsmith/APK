@@ -17,12 +17,21 @@ class DrinksTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.separatorStyle = .None
         tableView.estimatedRowHeight = 60
         tableView.rowHeight = UITableViewAutomaticDimension
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Varunamn"
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -33,5 +42,11 @@ class DrinksTableViewController: UITableViewController {
         cell.drinkResult.text = "2.25"
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("DrinkSegue", sender: self)
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }
