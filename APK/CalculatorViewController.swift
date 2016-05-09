@@ -216,6 +216,13 @@ class CalculatorViewController: UIViewController {
     
     @IBAction func saveButtonDidPress(sender: UIBarButtonItem) {
         
+        let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        let drink = Drink(context: managedContext)
+        
         let alert = UIAlertController(title: "Spara uträkning",
                                       message: "Lägg till drycken i din lista för att enkelt kunna jämföra APK senare.",
                                       preferredStyle: .Alert)
@@ -225,8 +232,7 @@ class CalculatorViewController: UIViewController {
                                        handler: { (action:UIAlertAction) -> Void in
                                         
                                         let textField = alert.textFields!.first
-//                                        self.names.append(textField!.text!)
-//                                        self.tableView.reloadData()
+                                        drink.name = textField?.text
         })
         
         let cancelAction = UIAlertAction(title: "Avbryt",

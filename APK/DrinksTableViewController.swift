@@ -12,7 +12,7 @@ import CoreData
 class DrinksTableViewController: UITableViewController {
     
     var selectedIndexPath: NSIndexPath? = nil
-    var drinks = [NSManagedObject]()
+    var drinks: NSArray = [NSManagedObject]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,27 +57,27 @@ class DrinksTableViewController: UITableViewController {
     
     // MARK: Fetch core data
     
-//    override func viewWillAppear(animated: Bool) {
-//        super.viewWillAppear(animated)
-//        
-//        //1
-//        let appDelegate =
-//            UIApplication.sharedApplication().delegate as! AppDelegate
-//        
-//        let managedContext = appDelegate.managedObjectContext
-//        
-//        //2
-//        let fetchRequest = NSFetchRequest(entityName: "Drink")
-//        
-//        //3
-//        do {
-//            let results =
-//                try managedContext.executeFetchRequest(fetchRequest)
-//            drinks = results as! [NSManagedObject]
-//        } catch let error as NSError {
-//            print("Could not fetch \(error), \(error.userInfo)")
-//        }
-//    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //1
+        let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        //2
+        let fetchRequest = NSFetchRequest(entityName: "Drink")
+        
+        //3
+        do {
+            let results =
+                try managedContext.executeFetchRequest(fetchRequest)
+            drinks = results as! [NSManagedObject]
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+    }
     
     
     // MARK: Style section header
@@ -100,10 +100,10 @@ class DrinksTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("DrinkCell") as! DrinkTableViewCell!
 
-        cell.drinkTitle.text = "Clausthaler"
-        cell.drinkResult.text = "2.25"
+//        cell.drinkTitle.text = "Clausthaler Clausthaler Clausthaler"
+//        cell.drinkResult.text = "2.25"
     
-//        cell!.textLabel!.text = drinks.valueForKey("name") as? String
+        cell!.textLabel!.text = drinks.valueForKey("name") as? String
         
         return cell
     }
