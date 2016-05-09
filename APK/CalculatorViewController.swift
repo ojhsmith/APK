@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class CalculatorViewController: UIViewController {
     
@@ -208,5 +209,65 @@ class CalculatorViewController: UIViewController {
         let result = calculatorBrain.calculateAPK(alcValue, volTextField: volValue, sekTextField: sekValue)
         
         resTextField.text = String(result)
+    }
+    
+    // MARK: Save APK
+    
+    @IBAction func saveButtonDidPress(sender: UIBarButtonItem) {
+        
+        let alert = UIAlertController(title: "Spara uträkning",
+                                      message: "Lägg till drycken i din lista för att enkelt kunna jämföra APK senare.",
+                                      preferredStyle: .Alert)
+        
+        let saveAction = UIAlertAction(title: "Spara",
+                                       style: .Default,
+                                       handler: { (action:UIAlertAction) -> Void in
+                                        
+                                        let textField = alert.textFields!.first
+//                                        self.names.append(textField!.text!)
+//                                        self.tableView.reloadData()
+        })
+        
+        let cancelAction = UIAlertAction(title: "Avbryt",
+                                         style: .Default) { (action: UIAlertAction) -> Void in
+        }
+        
+        alert.addTextFieldWithConfigurationHandler {
+            (textField: UITextField) -> Void in
+        }
+        
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        
+        presentViewController(alert,
+                              animated: true,
+                              completion: nil)
+    }
+    
+    func saveDrink(name: String) {
+        //1
+        let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        //2
+        let entity =  NSEntityDescription.entityForName("Drink",
+                                                        inManagedObjectContext:managedContext)
+        
+        let drink = NSManagedObject(entity: entity!,
+                                     insertIntoManagedObjectContext: managedContext)
+        
+        //3
+        drink.setValue(name, forKey: "name")
+        
+        //4
+        do {
+            try managedContext.save()
+            //5
+            drinks.append(drink)
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        }
     }
 }

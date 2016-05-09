@@ -7,14 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
 class DrinksTableViewController: UITableViewController {
     
     var selectedIndexPath: NSIndexPath? = nil
-    
-    @IBAction func helpButtonDidPress(sender: UIBarButtonItem) {
-            performSegueWithIdentifier("HelpSegue", sender: self)
-    }
+    var drinks = [NSManagedObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +58,7 @@ class DrinksTableViewController: UITableViewController {
     // MARK: Style section header
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return drinks.count
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -80,6 +78,13 @@ class DrinksTableViewController: UITableViewController {
         cell.drinkTitle.text = "Kung"
         cell.drinkResult.text = "2.25"
         
+//        cell!.textLabel!.text = drinks.valueForKey("name") as? String
+        
         return cell
     }
+    
+    //    @IBAction func helpButtonDidPress(sender: UIBarButtonItem) {
+    //            performSegueWithIdentifier("HelpSegue", sender: self)
+    //    }
+
 }
