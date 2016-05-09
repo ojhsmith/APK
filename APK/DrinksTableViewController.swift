@@ -13,7 +13,7 @@ class DrinksTableViewController: UITableViewController {
     
     var selectedIndexPath: NSIndexPath? = nil
     var drinks = [NSManagedObject]()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,8 +41,8 @@ class DrinksTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        let smallHeight: CGFloat = 70.0
-        let expandedHeight: CGFloat = 100.0
+        let smallHeight: CGFloat = 60.0
+        let expandedHeight: CGFloat = 180.0
         let ip = indexPath
         if selectedIndexPath != nil {
             if ip == selectedIndexPath! {
@@ -57,33 +57,33 @@ class DrinksTableViewController: UITableViewController {
     
     // MARK: Fetch core data
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        //1
-        let appDelegate =
-            UIApplication.sharedApplication().delegate as! AppDelegate
-        
-        let managedContext = appDelegate.managedObjectContext
-        
-        //2
-        let fetchRequest = NSFetchRequest(entityName: "Drink")
-        
-        //3
-        do {
-            let results =
-                try managedContext.executeFetchRequest(fetchRequest)
-            drinks = results as! [NSManagedObject]
-        } catch let error as NSError {
-            print("Could not fetch \(error), \(error.userInfo)")
-        }
-    }
+//    override func viewWillAppear(animated: Bool) {
+//        super.viewWillAppear(animated)
+//        
+//        //1
+//        let appDelegate =
+//            UIApplication.sharedApplication().delegate as! AppDelegate
+//        
+//        let managedContext = appDelegate.managedObjectContext
+//        
+//        //2
+//        let fetchRequest = NSFetchRequest(entityName: "Drink")
+//        
+//        //3
+//        do {
+//            let results =
+//                try managedContext.executeFetchRequest(fetchRequest)
+//            drinks = results as! [NSManagedObject]
+//        } catch let error as NSError {
+//            print("Could not fetch \(error), \(error.userInfo)")
+//        }
+//    }
     
     
     // MARK: Style section header
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return drinks.count
+        return 1
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -100,9 +100,9 @@ class DrinksTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("DrinkCell") as! DrinkTableViewCell!
 
-        cell.drinkTitle.text = "Kung"
+        cell.drinkTitle.text = "Clausthaler"
         cell.drinkResult.text = "2.25"
-        
+    
 //        cell!.textLabel!.text = drinks.valueForKey("name") as? String
         
         return cell

@@ -518,19 +518,32 @@
                                             <color key="textColor" red="0.78769141435623169" green="0.20719850063323975" blue="0.23934748768806458" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red wine" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6s-Yi-Pwb">
-                                            <rect key="frame" x="20" y="15" width="96" height="29"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Red wine" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6s-Yi-Pwb">
+                                            <rect key="frame" x="20" y="15" width="491" height="29"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="S6s-Yi-Pwb" firstAttribute="top" secondItem="u3m-mt-97i" secondAttribute="topMargin" constant="7" id="75S-l3-4ip"/>
                                         <constraint firstAttribute="trailing" secondItem="eTB-Hy-1TF" secondAttribute="trailing" constant="20" id="UQf-q5-VC6"/>
+                                        <constraint firstItem="eTB-Hy-1TF" firstAttribute="top" secondItem="u3m-mt-97i" secondAttribute="top" constant="15" id="VeQ-Kx-03S"/>
                                         <constraint firstItem="S6s-Yi-Pwb" firstAttribute="centerY" secondItem="u3m-mt-97i" secondAttribute="centerY" id="X8s-Ie-LLy"/>
                                         <constraint firstItem="S6s-Yi-Pwb" firstAttribute="baseline" secondItem="eTB-Hy-1TF" secondAttribute="baseline" id="hAG-kS-Yep"/>
                                         <constraint firstItem="S6s-Yi-Pwb" firstAttribute="leading" secondItem="u3m-mt-97i" secondAttribute="leading" constant="20" id="jMZ-DP-PVW"/>
+                                        <constraint firstItem="S6s-Yi-Pwb" firstAttribute="top" secondItem="u3m-mt-97i" secondAttribute="topMargin" constant="7" id="qM5-Tg-Low"/>
+                                        <constraint firstItem="eTB-Hy-1TF" firstAttribute="leading" secondItem="S6s-Yi-Pwb" secondAttribute="trailing" constant="20" id="v8H-Q8-ypo"/>
+                                        <constraint firstItem="S6s-Yi-Pwb" firstAttribute="top" secondItem="u3m-mt-97i" secondAttribute="top" constant="15" id="ymr-fa-sYA"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="75S-l3-4ip"/>
+                                            <exclude reference="X8s-Ie-LLy"/>
+                                            <exclude reference="hAG-kS-Yep"/>
+                                            <exclude reference="ymr-fa-sYA"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="drinkResult" destination="eTB-Hy-1TF" id="g3t-Ug-fpA"/>
