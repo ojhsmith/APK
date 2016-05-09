@@ -25,6 +25,7 @@ class CalculatorViewController: UIViewController {
     
     var calculatorStateButtons : Array<UIButton> = []
     var displayInputs : Array<UITextField> = []
+    var drinks = [NSManagedObject]()
     
     let calculatorBrain = CalculatorBrain()
     
@@ -252,11 +253,9 @@ class CalculatorViewController: UIViewController {
         let managedContext = appDelegate.managedObjectContext
         
         //2
-        let entity =  NSEntityDescription.entityForName("Drink",
-                                                        inManagedObjectContext:managedContext)
+        let entity =  NSEntityDescription.entityForName("Drink", inManagedObjectContext:managedContext)
         
-        let drink = NSManagedObject(entity: entity!,
-                                     insertIntoManagedObjectContext: managedContext)
+        let drink = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
         
         //3
         drink.setValue(name, forKey: "name")
