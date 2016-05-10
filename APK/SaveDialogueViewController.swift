@@ -14,6 +14,7 @@ class SaveDialogueViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var saveDialogueButton: UIButton!
     @IBOutlet weak var cancelDialogueButton: UIButton!
+    @IBOutlet weak var categoryButton: DesignableButton!
     
     override func viewDidLoad() {
         
