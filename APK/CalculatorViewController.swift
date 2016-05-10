@@ -11,6 +11,8 @@ import CoreData
 
 class CalculatorViewController: UIViewController {
     
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
     @IBOutlet weak var alcButton: UIButton!
     @IBOutlet weak var volButton: UIButton!
     @IBOutlet weak var sekButton: UIButton!
@@ -45,6 +47,7 @@ class CalculatorViewController: UIViewController {
         sekTextField.hidden = true
         alcButton.selected = true
         resButton.enabled = false
+        saveButton.enabled = false
         calculatorStateButtons = [self.alcButton, self.volButton, self.sekButton]
         displayInputs = [self.alcTextField, self.volTextField, self.sekTextField]     
     }
@@ -88,7 +91,7 @@ class CalculatorViewController: UIViewController {
 
     @IBAction func calculatorStateButtonDidPress(sender: UIButton) {
         
-
+        saveButton.enabled = false
         resTextField.hidden = true
         resButton.selected = false
         resButton.backgroundColor = UIColor.bolagetYellow()
@@ -190,6 +193,7 @@ class CalculatorViewController: UIViewController {
     
     @IBAction func resultButtonDidPress(sender: UIButton) {
         
+        saveButton.enabled = true
         resTextField.hidden = false
         resButton.backgroundColor = UIColor.bolagetGreen()
         resButton.selected = true
@@ -214,7 +218,8 @@ class CalculatorViewController: UIViewController {
     
     // MARK: Save APK
     
-    @IBAction func saveButtonDidPress(sender: UIBarButtonItem) {
+    
+        @IBAction func saveButtonDidPress(sender: UIBarButtonItem) {
         
         let appDelegate =
             UIApplication.sharedApplication().delegate as! AppDelegate
@@ -252,14 +257,15 @@ class CalculatorViewController: UIViewController {
     }
     
     func saveDrink(name: String) {
+        
         //1
         let appDelegate =
             UIApplication.sharedApplication().delegate as! AppDelegate
         
-        let managedContext = appDelegate.managedObjectContext
+        let managedContext = appDelegate.self.managedObjectContext
         
         //2
-        let entity =  NSEntityDescription.entityForName("Drink", inManagedObjectContext:managedContext)
+        let entity =  NSEntityDescription.entityForName("Drink", inManagedObjectContext: managedContext)
         
         let drink = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
         
@@ -268,11 +274,14 @@ class CalculatorViewController: UIViewController {
         
         //4
         do {
-            try managedContext.save()
-            //5
-            drinks.append(drink)
+            try drink.managedObjectContext?.save()
+            
+        //5
+        drinks.append(drink)
+            
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
+//            UIAlertController(title: "Hoppsan", message: "Nåt gick snett", preferredStyle: <#T##UIAlertControllerStyle#>)
         }
     }
 }

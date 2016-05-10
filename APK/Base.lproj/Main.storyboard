@@ -484,6 +484,7 @@
                         <outlet property="commaButton" destination="LYl-RX-xwp" id="Emn-mF-rYk"/>
                         <outlet property="resButton" destination="nuc-GH-6lV" id="3i4-5f-oXP"/>
                         <outlet property="resTextField" destination="xAd-ku-EeE" id="Fqs-uz-RLR"/>
+                        <outlet property="saveButton" destination="NAw-sF-aqc" id="bxU-SH-F4K"/>
                         <outlet property="sekButton" destination="tiL-9F-cJ0" id="yIK-9M-zfu"/>
                         <outlet property="sekTextField" destination="GlD-s7-1Ec" id="eXu-8X-uhU"/>
                         <outlet property="volButton" destination="eKO-9V-5vX" id="H1O-cA-CCU"/>

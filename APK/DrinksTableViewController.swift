@@ -12,7 +12,7 @@ import CoreData
 class DrinksTableViewController: UITableViewController {
     
     var selectedIndexPath: NSIndexPath? = nil
-    var drinks: NSArray = [NSManagedObject]()
+    var drinks = [NSManagedObject]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,7 +90,7 @@ class DrinksTableViewController: UITableViewController {
         return "Varunamn"
     }
 
-    // MARK: Style cell content
+    // MARK: Cell content
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
@@ -103,7 +103,11 @@ class DrinksTableViewController: UITableViewController {
 //        cell.drinkTitle.text = "Clausthaler Clausthaler Clausthaler"
 //        cell.drinkResult.text = "2.25"
     
-        cell!.textLabel!.text = drinks.valueForKey("name") as? String
+//        let record = NSFetchedResultsController.objectAtIndexPath(indexPath) as! Drink
+//        
+//        if let name = record.name {
+//            cell.nameLabel.text = name
+//        }
         
         return cell
     }
@@ -113,3 +117,13 @@ class DrinksTableViewController: UITableViewController {
     //    }
 
 }
+
+
+
+
+
+
+
+
+
+
