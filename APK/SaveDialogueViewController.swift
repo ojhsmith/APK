@@ -10,6 +10,7 @@ import UIKit
 
 class SaveDialogueViewController: UIViewController {
     
+    @IBOutlet weak var saveDialogue: SpringImageView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var saveDialogueButton: UIButton!
     @IBOutlet weak var cancelDialogueButton: UIButton!

@@ -476,7 +476,7 @@
                             <color key="tintColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="saveButtonDidPress:" destination="BYZ-38-t0r" id="ZQe-aN-5t0"/>
-                                <segue destination="glC-WY-hJ2" kind="presentation" modalPresentationStyle="overCurrentContext" id="HmU-ko-gIm"/>
+                                <segue destination="glC-WY-hJ2" kind="presentation" animates="NO" modalPresentationStyle="overCurrentContext" id="HmU-ko-gIm"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -584,7 +584,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2UL-wZ-Xd8">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2UL-wZ-Xd8" customClass="SpringImageView" customModule="APK" customModuleProvider="target">
                                 <rect key="frame" x="20" y="88" width="560" height="240"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spara uträkning" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rob-Hc-iY1">
@@ -657,6 +657,10 @@
                                     <constraint firstItem="m1H-dK-yKv" firstAttribute="width" secondItem="2UL-wZ-Xd8" secondAttribute="width" id="uaF-Ep-n1r"/>
                                     <constraint firstAttribute="bottom" secondItem="63Z-iM-UIz" secondAttribute="bottom" id="wZJ-wt-D9T"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="slideUp"/>
+                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="BMv-PV-O8Y"/>
@@ -677,6 +681,7 @@
                         <outlet property="NameTextField" destination="b9Y-Kg-Sn4" id="EC8-0e-uWW"/>
                         <outlet property="cancelDialogueButton" destination="aHV-ze-BAL" id="t2n-aU-xcF"/>
                         <outlet property="nameTextField" destination="b9Y-Kg-Sn4" id="KV3-bH-ztB"/>
+                        <outlet property="saveDialogue" destination="2UL-wZ-Xd8" id="xbA-Gj-QyL"/>
                         <outlet property="saveDialogueButton" destination="63Z-iM-UIz" id="LcY-dG-nnU"/>
                     </connections>
                 </viewController>
