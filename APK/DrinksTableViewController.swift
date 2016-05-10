@@ -93,6 +93,11 @@ class DrinksTableViewController: UITableViewController {
     // MARK: Cell content
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        if let sections = fetchedResultsController.sections {
+//            let sectionInfo = sections[section]
+//            return sectionInfo.numberOfObjects
+//        }
+        
         return 5
     }
     

@@ -475,6 +475,7 @@
                             <color key="tintColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="saveButtonDidPress:" destination="BYZ-38-t0r" id="ZQe-aN-5t0"/>
+                                <segue destination="glC-WY-hJ2" kind="presentation" id="HmU-ko-gIm"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -568,7 +569,58 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CUa-wh-5FD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1045" y="1034"/>
+            <point key="canvasLocation" x="1043" y="1442"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4dV-vj-3sx">
+            <objects>
+                <viewController id="glC-WY-hJ2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZZQ-oH-1BJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="oy5-kn-mEI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IlN-2b-PGX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2UL-wZ-Xd8">
+                                <rect key="frame" x="20" y="40" width="560" height="240"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spara uträkning" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rob-Hc-iY1">
+                                        <rect key="frame" x="185" y="30" width="191" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="28"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dryck" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b9Y-Kg-Sn4">
+                                        <rect key="frame" x="20" y="104" width="520" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="b9Y-Kg-Sn4" firstAttribute="top" secondItem="Rob-Hc-iY1" secondAttribute="bottom" constant="40" id="BMv-PV-O8Y"/>
+                                    <constraint firstAttribute="trailing" secondItem="b9Y-Kg-Sn4" secondAttribute="trailing" constant="20" id="G2m-Wn-G2r"/>
+                                    <constraint firstItem="Rob-Hc-iY1" firstAttribute="centerX" secondItem="2UL-wZ-Xd8" secondAttribute="centerX" id="Zyb-pQ-AGo"/>
+                                    <constraint firstItem="b9Y-Kg-Sn4" firstAttribute="leading" secondItem="2UL-wZ-Xd8" secondAttribute="leading" constant="20" id="d13-W4-WQi"/>
+                                    <constraint firstAttribute="height" constant="240" id="eRM-FJ-8Ad"/>
+                                    <constraint firstItem="Rob-Hc-iY1" firstAttribute="top" secondItem="2UL-wZ-Xd8" secondAttribute="top" constant="30" id="mWl-p0-7ez"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="2UL-wZ-Xd8" secondAttribute="trailing" constant="20" id="QBz-No-UxV"/>
+                            <constraint firstItem="2UL-wZ-Xd8" firstAttribute="top" secondItem="ZZQ-oH-1BJ" secondAttribute="bottom" constant="20" id="Tra-aB-j56"/>
+                            <constraint firstItem="2UL-wZ-Xd8" firstAttribute="leading" secondItem="IlN-2b-PGX" secondAttribute="leading" constant="20" id="cnt-16-1cj"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tgr-VP-xP1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1043" y="717"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6ef-ZR-5xX">
