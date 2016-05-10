@@ -468,7 +468,7 @@
                     <navigationItem key="navigationItem" id="Gv3-yr-MwU">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="hGH-lr-fQr">
                             <connections>
-                                <segue destination="RY4-Dg-MQS" kind="push" identifier="listSegue" id="VKX-XB-dWy"/>
+                                <segue destination="RY4-Dg-MQS" kind="show" identifier="listSegue" id="VKX-XB-dWy"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Spara APK" id="NAw-sF-aqc">
