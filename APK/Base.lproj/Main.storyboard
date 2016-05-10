@@ -600,6 +600,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                         <state key="normal" title="Avbryt"/>
+                                        <connections>
+                                            <segue destination="KP5-1e-qn8" kind="unwind" unwindAction="unwindToViewController:" id="j7E-j7-dpC"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63Z-iM-UIz">
                                         <rect key="frame" x="280" y="160" width="280" height="80"/>
@@ -705,13 +708,13 @@
                     <connections>
                         <outlet property="NameTextField" destination="b9Y-Kg-Sn4" id="EC8-0e-uWW"/>
                         <outlet property="cancelDialogueButton" destination="aHV-ze-BAL" id="t2n-aU-xcF"/>
-                        <outlet property="categoryButton" destination="qQX-TP-bam" id="faj-Z1-wBE"/>
                         <outlet property="nameTextField" destination="b9Y-Kg-Sn4" id="KV3-bH-ztB"/>
                         <outlet property="saveDialogue" destination="2UL-wZ-Xd8" id="xbA-Gj-QyL"/>
                         <outlet property="saveDialogueButton" destination="63Z-iM-UIz" id="LcY-dG-nnU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tgr-VP-xP1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="KP5-1e-qn8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1043" y="717"/>
         </scene>
