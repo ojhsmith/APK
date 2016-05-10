@@ -23,8 +23,15 @@ class SaveDialogueViewController: UIViewController {
     }
     
     @IBAction func saveDialogueButtonDidPress(sender: UIButton) {
-        
-        
-    
+
     }
+    
+//    @IBAction func categoryButtonDidPress(sender: UIButton) {
+//        let categoryViewController: SelectCategoryViewController = self.storyboard!.instantiateViewControllerWithIdentifier("categoryView") as! SelectCategoryViewController
+//        
+//        self.presentViewController(categoryViewController, animated: true) { 
+//            
+//        }
+//    }
+    
 }

@@ -630,12 +630,16 @@
                                             <constraint firstAttribute="width" constant="1" id="xc5-9F-3h8"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qQX-TP-bam" customClass="DesignableButton" customModule="APK" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Dryck" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="b9Y-Kg-Sn4">
+                                        <rect key="frame" x="20" y="101" width="452" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6P7-dz-6BJ" customClass="DesignableButton" customModule="APK" customModuleProvider="target">
                                         <rect key="frame" x="492" y="92" width="48" height="48"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="48" id="Em7-52-U9z"/>
-                                            <constraint firstAttribute="width" constant="48" id="wsZ-DV-k9P"/>
+                                            <constraint firstAttribute="height" constant="48" id="Vav-GE-6T5"/>
+                                            <constraint firstAttribute="width" constant="48" id="oII-op-duo"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -648,26 +652,23 @@
                                                 <real key="value" value="24"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Dryck" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="b9Y-Kg-Sn4">
-                                        <rect key="frame" x="20" y="101" width="452" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
-                                    </textField>
+                                        <connections>
+                                            <segue destination="LiJ-po-Kwg" kind="presentation" modalPresentationStyle="overCurrentContext" id="vHF-0l-iTz"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="xmu-Y3-HrP" secondAttribute="bottom" id="2YD-k9-UNv"/>
                                     <constraint firstItem="xmu-Y3-HrP" firstAttribute="centerX" secondItem="2UL-wZ-Xd8" secondAttribute="centerX" id="5yf-TX-TrL"/>
-                                    <constraint firstItem="b9Y-Kg-Sn4" firstAttribute="trailing" secondItem="qQX-TP-bam" secondAttribute="trailing" constant="-68" id="9wH-qZ-EeL"/>
                                     <constraint firstItem="b9Y-Kg-Sn4" firstAttribute="top" secondItem="Rob-Hc-iY1" secondAttribute="bottom" constant="40" id="BMv-PV-O8Y"/>
                                     <constraint firstItem="m1H-dK-yKv" firstAttribute="centerX" secondItem="2UL-wZ-Xd8" secondAttribute="centerX" id="Bae-rS-PmF"/>
                                     <constraint firstAttribute="trailing" secondItem="63Z-iM-UIz" secondAttribute="trailing" id="CAa-qJ-xPR"/>
                                     <constraint firstItem="aHV-ze-BAL" firstAttribute="width" secondItem="2UL-wZ-Xd8" secondAttribute="width" multiplier="0.5" id="DdW-sc-ew7"/>
+                                    <constraint firstItem="6P7-dz-6BJ" firstAttribute="centerY" secondItem="b9Y-Kg-Sn4" secondAttribute="centerY" id="Fv7-6Q-eOZ"/>
                                     <constraint firstAttribute="trailing" secondItem="b9Y-Kg-Sn4" secondAttribute="trailing" constant="88" id="G2m-Wn-G2r"/>
                                     <constraint firstItem="m1H-dK-yKv" firstAttribute="centerX" secondItem="2UL-wZ-Xd8" secondAttribute="centerX" id="KXr-lf-9uB"/>
-                                    <constraint firstItem="qQX-TP-bam" firstAttribute="centerY" secondItem="b9Y-Kg-Sn4" secondAttribute="centerY" id="PHo-hz-7eG"/>
                                     <constraint firstItem="b9Y-Kg-Sn4" firstAttribute="centerY" secondItem="2UL-wZ-Xd8" secondAttribute="centerY" id="QgV-li-eaV"/>
                                     <constraint firstItem="b9Y-Kg-Sn4" firstAttribute="bottom" secondItem="m1H-dK-yKv" secondAttribute="bottom" constant="-30" id="S79-d0-6t2"/>
                                     <constraint firstItem="Rob-Hc-iY1" firstAttribute="centerX" secondItem="2UL-wZ-Xd8" secondAttribute="centerX" id="Zyb-pQ-AGo"/>
@@ -675,13 +676,13 @@
                                     <constraint firstItem="b9Y-Kg-Sn4" firstAttribute="leading" secondItem="2UL-wZ-Xd8" secondAttribute="leading" constant="20" id="d13-W4-WQi"/>
                                     <constraint firstAttribute="height" constant="240" id="eRM-FJ-8Ad"/>
                                     <constraint firstAttribute="bottom" secondItem="aHV-ze-BAL" secondAttribute="bottom" id="gew-an-exk"/>
+                                    <constraint firstAttribute="trailing" secondItem="6P7-dz-6BJ" secondAttribute="trailing" constant="20" id="hwy-0w-qj7"/>
                                     <constraint firstItem="63Z-iM-UIz" firstAttribute="width" secondItem="2UL-wZ-Xd8" secondAttribute="width" multiplier="0.5" id="iBg-rv-MGT"/>
                                     <constraint firstAttribute="bottom" secondItem="m1H-dK-yKv" secondAttribute="bottom" constant="80" id="iYt-sE-Ejk"/>
                                     <constraint firstItem="Rob-Hc-iY1" firstAttribute="top" secondItem="2UL-wZ-Xd8" secondAttribute="top" constant="30" id="mWl-p0-7ez"/>
                                     <constraint firstItem="aHV-ze-BAL" firstAttribute="leading" secondItem="2UL-wZ-Xd8" secondAttribute="leading" id="s4r-Gy-wq1"/>
                                     <constraint firstItem="m1H-dK-yKv" firstAttribute="width" secondItem="2UL-wZ-Xd8" secondAttribute="width" id="uaF-Ep-n1r"/>
                                     <constraint firstAttribute="bottom" secondItem="63Z-iM-UIz" secondAttribute="bottom" id="wZJ-wt-D9T"/>
-                                    <constraint firstAttribute="trailing" secondItem="qQX-TP-bam" secondAttribute="trailing" constant="20" id="wcm-vm-0N3"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
@@ -721,7 +722,7 @@
         <!--Select Category View Controller-->
         <scene sceneID="bxB-qB-1VO">
             <objects>
-                <viewController id="LiJ-po-Kwg" customClass="SelectCategoryViewController" customModule="APK" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="LiJ-po-Kwg" customClass="SelectCategoryViewController" customModule="APK" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JeA-C1-icp"/>
                         <viewControllerLayoutGuide type="bottom" id="7dX-9g-FnV"/>
@@ -944,7 +945,7 @@
                                 </variation>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.65000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7dX-9g-FnV" firstAttribute="top" secondItem="efS-KO-cB9" secondAttribute="bottom" constant="20" id="KjE-g6-X4n"/>
                             <constraint firstItem="efS-KO-cB9" firstAttribute="top" secondItem="JeA-C1-icp" secondAttribute="bottom" constant="68" id="WhV-a0-c7R"/>
@@ -952,9 +953,6 @@
                             <constraint firstItem="efS-KO-cB9" firstAttribute="leading" secondItem="7YS-a7-ztB" secondAttribute="leading" constant="20" id="yyk-mG-spS"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="saveDialogue" destination="efS-KO-cB9" id="ex9-ij-1nF"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="psd-rm-zOH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
