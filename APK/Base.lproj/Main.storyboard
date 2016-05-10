@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Calculator-->
@@ -597,17 +598,67 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHV-ze-BAL">
+                                        <rect key="frame" x="0.0" y="160" width="280" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="T7J-Pl-KmD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
+                                        <state key="normal" title="Avbryt"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63Z-iM-UIz">
+                                        <rect key="frame" x="280" y="160" width="280" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="rRj-Nm-e9o"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="Spara"/>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m1H-dK-yKv">
+                                        <rect key="frame" x="0.0" y="159" width="560" height="1"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="I3w-Wb-BTj"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xmu-Y3-HrP">
+                                        <rect key="frame" x="280" y="160" width="1" height="80"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="qIT-L1-qsT"/>
+                                            <constraint firstAttribute="width" constant="1" id="xc5-9F-3h8"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="xmu-Y3-HrP" secondAttribute="bottom" id="2YD-k9-UNv"/>
+                                    <constraint firstItem="xmu-Y3-HrP" firstAttribute="centerX" secondItem="2UL-wZ-Xd8" secondAttribute="centerX" id="5yf-TX-TrL"/>
                                     <constraint firstItem="b9Y-Kg-Sn4" firstAttribute="top" secondItem="Rob-Hc-iY1" secondAttribute="bottom" constant="40" id="BMv-PV-O8Y"/>
+                                    <constraint firstItem="m1H-dK-yKv" firstAttribute="centerX" secondItem="2UL-wZ-Xd8" secondAttribute="centerX" id="Bae-rS-PmF"/>
+                                    <constraint firstAttribute="trailing" secondItem="63Z-iM-UIz" secondAttribute="trailing" id="CAa-qJ-xPR"/>
+                                    <constraint firstItem="aHV-ze-BAL" firstAttribute="width" secondItem="2UL-wZ-Xd8" secondAttribute="width" multiplier="0.5" id="DdW-sc-ew7"/>
                                     <constraint firstAttribute="trailing" secondItem="b9Y-Kg-Sn4" secondAttribute="trailing" constant="20" id="G2m-Wn-G2r"/>
+                                    <constraint firstItem="m1H-dK-yKv" firstAttribute="centerX" secondItem="2UL-wZ-Xd8" secondAttribute="centerX" id="KXr-lf-9uB"/>
                                     <constraint firstItem="Rob-Hc-iY1" firstAttribute="centerX" secondItem="2UL-wZ-Xd8" secondAttribute="centerX" id="Zyb-pQ-AGo"/>
+                                    <constraint firstAttribute="bottom" secondItem="m1H-dK-yKv" secondAttribute="bottom" constant="80" id="aGr-EX-KW0"/>
                                     <constraint firstItem="b9Y-Kg-Sn4" firstAttribute="leading" secondItem="2UL-wZ-Xd8" secondAttribute="leading" constant="20" id="d13-W4-WQi"/>
                                     <constraint firstAttribute="height" constant="240" id="eRM-FJ-8Ad"/>
+                                    <constraint firstAttribute="bottom" secondItem="aHV-ze-BAL" secondAttribute="bottom" id="gew-an-exk"/>
+                                    <constraint firstItem="63Z-iM-UIz" firstAttribute="width" secondItem="2UL-wZ-Xd8" secondAttribute="width" multiplier="0.5" id="iBg-rv-MGT"/>
+                                    <constraint firstAttribute="bottom" secondItem="m1H-dK-yKv" secondAttribute="bottom" constant="80" id="iYt-sE-Ejk"/>
                                     <constraint firstItem="Rob-Hc-iY1" firstAttribute="top" secondItem="2UL-wZ-Xd8" secondAttribute="top" constant="30" id="mWl-p0-7ez"/>
+                                    <constraint firstItem="aHV-ze-BAL" firstAttribute="leading" secondItem="2UL-wZ-Xd8" secondAttribute="leading" id="s4r-Gy-wq1"/>
+                                    <constraint firstItem="m1H-dK-yKv" firstAttribute="width" secondItem="2UL-wZ-Xd8" secondAttribute="width" id="uaF-Ep-n1r"/>
+                                    <constraint firstAttribute="bottom" secondItem="63Z-iM-UIz" secondAttribute="bottom" id="wZJ-wt-D9T"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Bae-rS-PmF"/>
+                                        <exclude reference="iYt-sE-Ejk"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
