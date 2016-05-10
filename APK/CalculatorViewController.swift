@@ -27,7 +27,6 @@ class CalculatorViewController: UIViewController {
     
     var calculatorStateButtons : Array<UIButton> = []
     var displayInputs : Array<UITextField> = []
-    var drinks = [NSManagedObject]()
     
     let calculatorBrain = CalculatorBrain()
     
@@ -248,40 +247,12 @@ class CalculatorViewController: UIViewController {
             (textField: UITextField) -> Void in
         }
         
-        alert.addAction(saveAction)
+
         alert.addAction(cancelAction)
+        alert.addAction(saveAction)
         
         presentViewController(alert,
                               animated: true,
                               completion: nil)
-    }
-    
-    func saveDrink(name: String) {
-        
-        //1
-        let appDelegate =
-            UIApplication.sharedApplication().delegate as! AppDelegate
-        
-        let managedContext = appDelegate.self.managedObjectContext
-        
-        //2
-        let entity =  NSEntityDescription.entityForName("Drink", inManagedObjectContext: managedContext)
-        
-        let drink = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
-        
-        //3
-        drink.setValue(name, forKey: "name")
-        
-        //4
-        do {
-            try drink.managedObjectContext?.save()
-            
-        //5
-        drinks.append(drink)
-            
-        } catch let error as NSError  {
-            print("Could not save \(error), \(error.userInfo)")
-//            UIAlertController(title: "Hoppsan", message: "Nåt gick snett", preferredStyle: <#T##UIAlertControllerStyle#>)
-        }
     }
 }
