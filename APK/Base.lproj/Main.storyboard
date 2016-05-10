@@ -216,23 +216,6 @@
                                     <action selector="appendDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hEK-ld-Chx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aik-UI-53k">
-                                <rect key="frame" x="0.0" y="216" width="150" height="80"/>
-                                <color key="backgroundColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="cSm-o1-85w"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="n4T-a4-3df"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="32"/>
-                                <color key="tintColor" red="0.020095564199999999" green="0.54542955189999998" blue="0.88506690489999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="7">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="appendDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lw5-RD-68N"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rS2-YP-5oX">
                                 <rect key="frame" x="150" y="216" width="150" height="80"/>
                                 <color key="backgroundColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -369,6 +352,23 @@
                                 </state>
                                 <connections>
                                     <action selector="calculatorStateButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Gs-yf-cqu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aik-UI-53k">
+                                <rect key="frame" x="0.0" y="216" width="150" height="80"/>
+                                <color key="backgroundColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="cSm-o1-85w"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="n4T-a4-3df"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="32"/>
+                                <color key="tintColor" red="0.020095564199999999" green="0.54542955189999998" blue="0.88506690489999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="7">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="appendDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lw5-RD-68N"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -593,10 +593,10 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dryck" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b9Y-Kg-Sn4">
-                                        <rect key="frame" x="20" y="104" width="520" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Dryck" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="b9Y-Kg-Sn4">
+                                        <rect key="frame" x="20" y="109" width="520" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="done"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHV-ze-BAL">
                                         <rect key="frame" x="0.0" y="160" width="280" height="80"/>
@@ -641,6 +641,7 @@
                                     <constraint firstItem="aHV-ze-BAL" firstAttribute="width" secondItem="2UL-wZ-Xd8" secondAttribute="width" multiplier="0.5" id="DdW-sc-ew7"/>
                                     <constraint firstAttribute="trailing" secondItem="b9Y-Kg-Sn4" secondAttribute="trailing" constant="20" id="G2m-Wn-G2r"/>
                                     <constraint firstItem="m1H-dK-yKv" firstAttribute="centerX" secondItem="2UL-wZ-Xd8" secondAttribute="centerX" id="KXr-lf-9uB"/>
+                                    <constraint firstItem="b9Y-Kg-Sn4" firstAttribute="centerY" secondItem="2UL-wZ-Xd8" secondAttribute="centerY" id="QgV-li-eaV"/>
                                     <constraint firstItem="Rob-Hc-iY1" firstAttribute="centerX" secondItem="2UL-wZ-Xd8" secondAttribute="centerX" id="Zyb-pQ-AGo"/>
                                     <constraint firstAttribute="bottom" secondItem="m1H-dK-yKv" secondAttribute="bottom" constant="80" id="aGr-EX-KW0"/>
                                     <constraint firstItem="b9Y-Kg-Sn4" firstAttribute="leading" secondItem="2UL-wZ-Xd8" secondAttribute="leading" constant="20" id="d13-W4-WQi"/>
@@ -655,6 +656,7 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="BMv-PV-O8Y"/>
                                         <exclude reference="Bae-rS-PmF"/>
                                         <exclude reference="iYt-sE-Ejk"/>
                                     </mask>
