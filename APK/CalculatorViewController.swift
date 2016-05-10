@@ -215,44 +215,10 @@ class CalculatorViewController: UIViewController {
         resTextField.text = String(result)
     }
     
-    // MARK: Save APK
-//    
-//    
-//        @IBAction func saveButtonDidPress(sender: UIBarButtonItem) {
-//        
-//        let appDelegate =
-//            UIApplication.sharedApplication().delegate as! AppDelegate
-//        
-//        let managedContext = appDelegate.managedObjectContext
-//        
-//        let drink = Drink(context: managedContext)
-//        
-//        let alert = UIAlertController(title: "Spara uträkning",
-//                                      message: "Lägg till drycken i din lista för att enkelt kunna jämföra APK senare.",
-//                                      preferredStyle: .Alert)
-//        
-//        let saveAction = UIAlertAction(title: "Spara",
-//                                       style: .Default,
-//                                       handler: { (action:UIAlertAction) -> Void in
-//                                        
-//                                        let textField = alert.textFields!.first
-//                                        drink.name = textField?.text
-//        })
-//        
-//        let cancelAction = UIAlertAction(title: "Avbryt",
-//                                         style: .Default) { (action: UIAlertAction) -> Void in
-//        }
-//        
-//        alert.addTextFieldWithConfigurationHandler {
-//            (textField: UITextField) -> Void in
-//        }
-//        
-//
-//        alert.addAction(cancelAction)
-//        alert.addAction(saveAction)
-//        
-//        presentViewController(alert,
-//                              animated: true,
-//                              completion: nil)
-//    }
+        // MARK: Save APK
+    
+    
+        @IBAction func saveButtonDidPress(sender: UIBarButtonItem) {
+
+    }
 }

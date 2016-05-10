@@ -476,7 +476,7 @@
                             <color key="tintColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="saveButtonDidPress:" destination="BYZ-38-t0r" id="ZQe-aN-5t0"/>
-                                <segue destination="glC-WY-hJ2" kind="presentation" id="HmU-ko-gIm"/>
+                                <segue destination="glC-WY-hJ2" kind="presentation" modalPresentationStyle="overCurrentContext" id="HmU-ko-gIm"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -572,10 +572,10 @@
             </objects>
             <point key="canvasLocation" x="1043" y="1442"/>
         </scene>
-        <!--View Controller-->
+        <!--Save Dialogue View Controller-->
         <scene sceneID="4dV-vj-3sx">
             <objects>
-                <viewController id="glC-WY-hJ2" sceneMemberID="viewController">
+                <viewController id="glC-WY-hJ2" customClass="SaveDialogueViewController" customModule="APK" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZZQ-oH-1BJ"/>
                         <viewControllerLayoutGuide type="bottom" id="oy5-kn-mEI"/>
@@ -585,7 +585,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2UL-wZ-Xd8">
-                                <rect key="frame" x="20" y="40" width="560" height="240"/>
+                                <rect key="frame" x="20" y="88" width="560" height="240"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spara uträkning" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rob-Hc-iY1">
                                         <rect key="frame" x="185" y="30" width="191" height="34"/>
@@ -593,11 +593,6 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Dryck" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="b9Y-Kg-Sn4">
-                                        <rect key="frame" x="20" y="109" width="520" height="22"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="done"/>
-                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHV-ze-BAL">
                                         <rect key="frame" x="0.0" y="160" width="280" height="80"/>
                                         <constraints>
@@ -613,6 +608,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="Spara"/>
+                                        <connections>
+                                            <action selector="saveDialogueButtonDidPress:" destination="glC-WY-hJ2" eventType="touchUpInside" id="yvD-Iw-noB"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m1H-dK-yKv">
                                         <rect key="frame" x="0.0" y="159" width="560" height="1"/>
@@ -629,6 +627,11 @@
                                             <constraint firstAttribute="width" constant="1" id="xc5-9F-3h8"/>
                                         </constraints>
                                     </view>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Dryck" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="b9Y-Kg-Sn4">
+                                        <rect key="frame" x="20" y="109" width="520" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -663,13 +666,19 @@
                                 </variation>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.65000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="2UL-wZ-Xd8" secondAttribute="trailing" constant="20" id="QBz-No-UxV"/>
-                            <constraint firstItem="2UL-wZ-Xd8" firstAttribute="top" secondItem="ZZQ-oH-1BJ" secondAttribute="bottom" constant="20" id="Tra-aB-j56"/>
+                            <constraint firstItem="2UL-wZ-Xd8" firstAttribute="top" secondItem="ZZQ-oH-1BJ" secondAttribute="bottom" constant="68" id="Tra-aB-j56"/>
                             <constraint firstItem="2UL-wZ-Xd8" firstAttribute="leading" secondItem="IlN-2b-PGX" secondAttribute="leading" constant="20" id="cnt-16-1cj"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="NameTextField" destination="b9Y-Kg-Sn4" id="EC8-0e-uWW"/>
+                        <outlet property="cancelDialogueButton" destination="aHV-ze-BAL" id="t2n-aU-xcF"/>
+                        <outlet property="nameTextField" destination="b9Y-Kg-Sn4" id="KV3-bH-ztB"/>
+                        <outlet property="saveDialogueButton" destination="63Z-iM-UIz" id="LcY-dG-nnU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tgr-VP-xP1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
