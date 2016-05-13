@@ -27,11 +27,14 @@ class SaveDialogueViewController: UIViewController {
     }
     
 //    @IBAction func categoryButtonDidPress(sender: UIButton) {
-//        let categoryViewController: SelectCategoryViewController = self.storyboard!.instantiateViewControllerWithIdentifier("categoryView") as! SelectCategoryViewController
 //        
-//        self.presentViewController(categoryViewController, animated: true) { 
-//            
-//        }
+//        let categoryViewController = SelectCategoryViewController()
+//
+//        pa
 //    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        //
+    }
     
 }

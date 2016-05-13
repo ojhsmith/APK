@@ -52,6 +52,7 @@
 		E1A4D3271CC3AC4100437454 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A4D3251CC3AC4100437454 /* LaunchScreen.storyboard */; };
 		E1A4D3321CC3AC4100437454 /* APKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A4D3311CC3AC4100437454 /* APKTests.swift */; };
 		E1A4D33D1CC3AC4100437454 /* APKUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A4D33C1CC3AC4100437454 /* APKUITests.swift */; };
+		E1DE7AD11CE62893003AD0C6 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DE7AD01CE62893003AD0C6 /* Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +125,7 @@
 		E1A4D3381CC3AC4100437454 /* APKUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APKUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A4D33C1CC3AC4100437454 /* APKUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APKUITests.swift; sourceTree = "<group>"; };
 		E1A4D33E1CC3AC4100437454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1DE7AD01CE62893003AD0C6 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +224,7 @@
 				E14F5F121CDA34C800BA79E9 /* DrinkTableViewCell.swift */,
 				E192321F1CE2280D00286DC8 /* SaveDialogueViewController.swift */,
 				E192325D1CE23A3400286DC8 /* SelectCategoryViewController.swift */,
+				E1DE7AD01CE62893003AD0C6 /* Category.swift */,
 				E1A4D3251CC3AC4100437454 /* LaunchScreen.storyboard */,
 				E1A4D31D1CC3AC4100437454 /* Main.storyboard */,
 				E1A4D3231CC3AC4100437454 /* Assets.xcassets */,
@@ -417,6 +420,7 @@
 				E1A17B511CC524F600900517 /* colours.swift in Sources */,
 				E19232491CE22BA800286DC8 /* DesignableTextView.swift in Sources */,
 				E192324D1CE22BA800286DC8 /* KeyboardLayoutConstraint.swift in Sources */,
+				E1DE7AD11CE62893003AD0C6 /* Category.swift in Sources */,
 				E19232541CE22BA800286DC8 /* SpringButton.swift in Sources */,
 				E19232471CE22BA800286DC8 /* DesignableTabBarController.swift in Sources */,
 				E19232411CE22BA800286DC8 /* AsyncImageView.swift in Sources */,

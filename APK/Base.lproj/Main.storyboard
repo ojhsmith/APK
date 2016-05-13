@@ -52,12 +52,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xAd-ku-EeE">
-                                <rect key="frame" x="20" y="105" width="560" height="67"/>
-                                <color key="textColor" red="0.99963909390000005" green="1" blue="0.99975615740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SgE-2c-7e2">
                                 <rect key="frame" x="150" y="456" width="150" height="80"/>
                                 <color key="backgroundColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -371,6 +365,12 @@
                                     <action selector="appendDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lw5-RD-68N"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xAd-ku-EeE">
+                                <rect key="frame" x="20" y="105" width="560" height="67"/>
+                                <color key="textColor" red="0.99963909390000005" green="1" blue="0.99975615740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -476,7 +476,7 @@
                             <color key="tintColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="saveButtonDidPress:" destination="BYZ-38-t0r" id="ZQe-aN-5t0"/>
-                                <segue destination="glC-WY-hJ2" kind="presentation" animates="NO" modalPresentationStyle="overCurrentContext" id="HmU-ko-gIm"/>
+                                <segue destination="glC-WY-hJ2" kind="presentation" identifier="SaveDrinkSequel" animates="NO" modalPresentationStyle="overCurrentContext" id="HmU-ko-gIm"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -584,13 +584,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2UL-wZ-Xd8" customClass="SpringImageView" customModule="APK" customModuleProvider="target">
-                                <rect key="frame" x="20" y="88" width="560" height="240"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2UL-wZ-Xd8" customClass="SpringImageView" customModule="APK" customModuleProvider="target">
+                                <rect key="frame" x="20" y="85" width="560" height="240"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spara uträkning" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rob-Hc-iY1">
                                         <rect key="frame" x="185" y="30" width="191" height="34"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="28"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHV-ze-BAL">
@@ -737,146 +737,50 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Varugrupp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IkS-xv-c5n">
                                         <rect key="frame" x="216" y="30" width="128" height="34"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="28"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Övrig" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daJ-G4-nu9">
                                         <rect key="frame" x="20" y="101" width="57" height="29"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qVg-wH-P4w" customClass="DesignableButton" customModule="APK" customModuleProvider="target">
-                                        <rect key="frame" x="492" y="92" width="48" height="48"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="48" id="Njf-3Z-Bvi"/>
-                                            <constraint firstAttribute="width" constant="48" id="RSe-Af-t22"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="24"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Öl" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4b8-Df-A3M">
                                         <rect key="frame" x="20" y="159" width="23" height="29"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fHx-VT-QgV" customClass="DesignableButton" customModule="APK" customModuleProvider="target">
-                                        <rect key="frame" x="492" y="150" width="48" height="48"/>
-                                        <color key="backgroundColor" red="0.85506623983383179" green="0.63000792264938354" blue="0.22724369168281555" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="48" id="cns-1K-cAA"/>
-                                            <constraint firstAttribute="height" constant="48" id="seE-ZE-Wpf"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="24"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rōtt vin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5w-uL-XZ3">
                                         <rect key="frame" x="20" y="217" width="78" height="29"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RnG-ak-zRB" customClass="DesignableButton" customModule="APK" customModuleProvider="target">
-                                        <rect key="frame" x="492" y="208" width="48" height="48"/>
-                                        <color key="backgroundColor" red="0.76344525814056396" green="0.17515495419502258" blue="0.19089418649673462" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="48" id="0j5-jZ-HWc"/>
-                                            <constraint firstAttribute="height" constant="48" id="xbc-sC-Dlh"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="24"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vitt vin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMx-FT-fVy">
                                         <rect key="frame" x="20" y="275" width="71" height="29"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l9W-fj-IqN" customClass="DesignableButton" customModule="APK" customModuleProvider="target">
-                                        <rect key="frame" x="492" y="266" width="48" height="48"/>
-                                        <color key="backgroundColor" red="0.85479921102523804" green="0.83234018087387085" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="48" id="7ci-W9-QfX"/>
-                                            <constraint firstAttribute="height" constant="48" id="XQH-5y-uG7"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="24"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Whiskey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7g-dt-fPV">
                                         <rect key="frame" x="20" y="333" width="88" height="29"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZZe-kc-nnS" customClass="DesignableButton" customModule="APK" customModuleProvider="target">
-                                        <rect key="frame" x="492" y="324" width="48" height="48"/>
-                                        <color key="backgroundColor" red="0.0081975469365715981" green="0.39024457335472107" blue="0.71704012155532837" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="48" id="UjO-ZC-zzY"/>
-                                            <constraint firstAttribute="height" constant="48" id="mM1-ti-g8x"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="24"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alkoholfritt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOz-k8-CQI">
                                         <rect key="frame" x="20" y="391" width="112" height="29"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jtq-Kz-NKx" customClass="DesignableButton" customModule="APK" customModuleProvider="target">
-                                        <rect key="frame" x="492" y="382" width="48" height="48"/>
-                                        <color key="backgroundColor" red="0.0064631206914782524" green="0.70931333303451538" blue="0.8346589207649231" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hcc-6u-9g5" customClass="DesignableButton" customModule="APK" customModuleProvider="target">
+                                        <rect key="frame" x="492" y="92" width="48" height="48"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="48" id="4y0-ZE-sU6"/>
-                                            <constraint firstAttribute="height" constant="48" id="lCv-dz-pvx"/>
+                                            <constraint firstAttribute="width" constant="48" id="W4s-ad-maN"/>
+                                            <constraint firstAttribute="height" constant="48" id="aUk-HN-123"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -889,42 +793,149 @@
                                                 <real key="value" value="24"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                    </view>
+                                        <connections>
+                                            <segue destination="ncv-HO-OXY" kind="unwind" unwindAction="unwindToViewController:" id="aAM-Pr-EnV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hnd-G9-Vd9" customClass="DesignableButton" customModule="APK" customModuleProvider="target">
+                                        <rect key="frame" x="492" y="208" width="48" height="48"/>
+                                        <color key="backgroundColor" red="0.73840779066085815" green="0.15730738639831543" blue="0.15799924731254578" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="48" id="OGD-ib-y9N"/>
+                                            <constraint firstAttribute="height" constant="48" id="WnL-kJ-Zcy"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="24"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="ncv-HO-OXY" kind="unwind" unwindAction="unwindToViewController:" id="zKE-8J-eoK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFq-ZF-Cd7" customClass="DesignableButton" customModule="APK" customModuleProvider="target">
+                                        <rect key="frame" x="492" y="266" width="48" height="48"/>
+                                        <color key="backgroundColor" red="0.83222991228103638" green="0.81759887933731079" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="48" id="Aou-s3-pDO"/>
+                                            <constraint firstAttribute="height" constant="48" id="sBd-LK-iPh"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="24"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="ncv-HO-OXY" kind="unwind" unwindAction="unwindToViewController:" id="2hs-ue-OcZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLx-7H-OM4" customClass="DesignableButton" customModule="APK" customModuleProvider="target">
+                                        <rect key="frame" x="492" y="324" width="48" height="48"/>
+                                        <color key="backgroundColor" red="0.020272316411137581" green="0.33350092172622681" blue="0.69003552198410034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="48" id="IRJ-WR-Nye"/>
+                                            <constraint firstAttribute="height" constant="48" id="We0-RC-6oB"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="24"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="ncv-HO-OXY" kind="unwind" unwindAction="unwindToViewController:" id="p0V-4b-x8U"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5f-bZ-Tb9" customClass="DesignableButton" customModule="APK" customModuleProvider="target">
+                                        <rect key="frame" x="492" y="382" width="48" height="48"/>
+                                        <color key="backgroundColor" red="0.0" green="0.66959375143051147" blue="0.81689125299453735" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="0iv-fb-zcA"/>
+                                            <constraint firstAttribute="width" constant="48" id="ywr-aB-icd"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="24"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="ncv-HO-OXY" kind="unwind" unwindAction="unwindToViewController:" id="8bm-of-hCA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PFH-Uc-u1X" customClass="DesignableButton" customModule="APK" customModuleProvider="target">
+                                        <rect key="frame" x="492" y="150" width="48" height="48"/>
+                                        <color key="backgroundColor" red="0.8369869589805603" green="0.59543007612228394" blue="0.16175994277000427" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="GuR-Ho-QQt"/>
+                                            <constraint firstAttribute="width" constant="48" id="uFa-KJ-dio"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="24"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="ncv-HO-OXY" kind="unwind" unwindAction="unwindToViewController:" id="7rX-ds-bdx"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="l9W-fj-IqN" firstAttribute="centerY" secondItem="fMx-FT-fVy" secondAttribute="centerY" id="3Mv-BE-LRZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="fHx-VT-QgV" secondAttribute="trailing" constant="20" id="7nX-FJ-gF2"/>
                                     <constraint firstItem="IkS-xv-c5n" firstAttribute="centerX" secondItem="efS-KO-cB9" secondAttribute="centerX" id="7vi-Ma-TqX"/>
                                     <constraint firstItem="m5w-uL-XZ3" firstAttribute="leading" secondItem="efS-KO-cB9" secondAttribute="leading" constant="20" id="Acu-ft-stR"/>
                                     <constraint firstItem="daJ-G4-nu9" firstAttribute="leading" secondItem="efS-KO-cB9" secondAttribute="leading" constant="20" id="BCo-rv-cz5"/>
-                                    <constraint firstAttribute="trailing" secondItem="jtq-Kz-NKx" secondAttribute="trailing" constant="20" id="COs-xD-qmt"/>
-                                    <constraint firstItem="fHx-VT-QgV" firstAttribute="centerY" secondItem="4b8-Df-A3M" secondAttribute="centerY" id="E7Q-jA-ZCY"/>
+                                    <constraint firstAttribute="trailing" secondItem="PFH-Uc-u1X" secondAttribute="trailing" constant="20" id="DbZ-O5-PJH"/>
+                                    <constraint firstItem="bLx-7H-OM4" firstAttribute="centerY" secondItem="g7g-dt-fPV" secondAttribute="centerY" id="Fce-Oq-cET"/>
                                     <constraint firstItem="IOz-k8-CQI" firstAttribute="top" secondItem="g7g-dt-fPV" secondAttribute="bottom" constant="29" id="GXo-0p-K6N"/>
-                                    <constraint firstItem="RnG-ak-zRB" firstAttribute="leading" secondItem="m5w-uL-XZ3" secondAttribute="trailing" constant="20" id="I85-Mv-Crb"/>
-                                    <constraint firstItem="fHx-VT-QgV" firstAttribute="leading" secondItem="4b8-Df-A3M" secondAttribute="trailing" constant="20" id="JvQ-UT-iS4"/>
-                                    <constraint firstItem="ZZe-kc-nnS" firstAttribute="leading" secondItem="g7g-dt-fPV" secondAttribute="trailing" constant="20" id="MVh-pl-egP"/>
-                                    <constraint firstAttribute="trailing" secondItem="l9W-fj-IqN" secondAttribute="trailing" constant="20" id="P1I-QT-Mqe"/>
+                                    <constraint firstItem="B5f-bZ-Tb9" firstAttribute="centerY" secondItem="IOz-k8-CQI" secondAttribute="centerY" id="KEA-rQ-ffp"/>
+                                    <constraint firstAttribute="trailing" secondItem="hnd-G9-Vd9" secondAttribute="trailing" constant="20" id="PI8-bJ-TzM"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hcc-6u-9g5" secondAttribute="trailing" constant="20" id="PLR-xh-eus"/>
+                                    <constraint firstItem="hnd-G9-Vd9" firstAttribute="centerY" secondItem="m5w-uL-XZ3" secondAttribute="centerY" id="PpK-a9-dSR"/>
                                     <constraint firstAttribute="height" constant="240" id="PyY-xP-yKa"/>
-                                    <constraint firstItem="qVg-wH-P4w" firstAttribute="trailing" secondItem="daJ-G4-nu9" secondAttribute="trailing" constant="-20" id="RkJ-BV-3mf"/>
-                                    <constraint firstItem="qVg-wH-P4w" firstAttribute="centerY" secondItem="daJ-G4-nu9" secondAttribute="centerY" id="UEW-M5-whN"/>
-                                    <constraint firstAttribute="trailing" secondItem="qVg-wH-P4w" secondAttribute="trailing" constant="20" id="UYM-rD-neE"/>
-                                    <constraint firstItem="ZZe-kc-nnS" firstAttribute="centerY" secondItem="g7g-dt-fPV" secondAttribute="centerY" id="ZX4-AP-6zb"/>
+                                    <constraint firstAttribute="trailing" secondItem="VFq-ZF-Cd7" secondAttribute="trailing" constant="20" id="Ra6-pj-wZd"/>
+                                    <constraint firstItem="VFq-ZF-Cd7" firstAttribute="centerY" secondItem="fMx-FT-fVy" secondAttribute="centerY" id="U3t-9P-CDN"/>
                                     <constraint firstItem="IOz-k8-CQI" firstAttribute="leading" secondItem="efS-KO-cB9" secondAttribute="leading" constant="20" id="aQE-qF-csa"/>
                                     <constraint firstItem="fMx-FT-fVy" firstAttribute="top" secondItem="m5w-uL-XZ3" secondAttribute="bottom" constant="29" id="afz-EX-fcE"/>
-                                    <constraint firstItem="jtq-Kz-NKx" firstAttribute="leading" secondItem="IOz-k8-CQI" secondAttribute="trailing" constant="20" id="bMm-Xs-KOL"/>
                                     <constraint firstItem="4b8-Df-A3M" firstAttribute="leading" secondItem="efS-KO-cB9" secondAttribute="leading" constant="20" id="bgj-b5-6nV"/>
-                                    <constraint firstItem="jtq-Kz-NKx" firstAttribute="centerY" secondItem="IOz-k8-CQI" secondAttribute="centerY" id="dlv-5k-1Ek"/>
                                     <constraint firstItem="g7g-dt-fPV" firstAttribute="leading" secondItem="efS-KO-cB9" secondAttribute="leading" constant="20" id="eiw-Cm-ouN"/>
                                     <constraint firstItem="4b8-Df-A3M" firstAttribute="top" secondItem="daJ-G4-nu9" secondAttribute="bottom" constant="29" id="f4T-71-Raj"/>
-                                    <constraint firstAttribute="trailing" secondItem="ZZe-kc-nnS" secondAttribute="trailing" constant="20" id="f6A-Bk-LUN"/>
-                                    <constraint firstItem="RnG-ak-zRB" firstAttribute="centerY" secondItem="m5w-uL-XZ3" secondAttribute="centerY" id="huV-Aq-QpN"/>
+                                    <constraint firstItem="PFH-Uc-u1X" firstAttribute="centerY" secondItem="4b8-Df-A3M" secondAttribute="centerY" id="gDF-Kq-6c1"/>
                                     <constraint firstItem="fMx-FT-fVy" firstAttribute="leading" secondItem="efS-KO-cB9" secondAttribute="leading" constant="20" id="j3m-6J-n1Z"/>
                                     <constraint firstItem="daJ-G4-nu9" firstAttribute="top" secondItem="efS-KO-cB9" secondAttribute="top" constant="101" id="kw5-tJ-neS"/>
                                     <constraint firstItem="IkS-xv-c5n" firstAttribute="top" secondItem="efS-KO-cB9" secondAttribute="top" constant="30" id="nMr-aP-0By"/>
-                                    <constraint firstItem="l9W-fj-IqN" firstAttribute="leading" secondItem="fMx-FT-fVy" secondAttribute="trailing" constant="20" id="pAk-Li-hO7"/>
-                                    <constraint firstAttribute="trailing" secondItem="RnG-ak-zRB" secondAttribute="trailing" constant="20" id="twW-Wh-420"/>
+                                    <constraint firstAttribute="trailing" secondItem="B5f-bZ-Tb9" secondAttribute="trailing" constant="20" id="qhE-qW-RLv"/>
+                                    <constraint firstAttribute="trailing" secondItem="bLx-7H-OM4" secondAttribute="trailing" constant="20" id="qoZ-zw-mbx"/>
+                                    <constraint firstItem="Hcc-6u-9g5" firstAttribute="centerY" secondItem="daJ-G4-nu9" secondAttribute="centerY" id="rlf-4Z-sYl"/>
                                     <constraint firstItem="g7g-dt-fPV" firstAttribute="top" secondItem="fMx-FT-fVy" secondAttribute="bottom" constant="29" id="v3i-dj-KZq"/>
                                     <constraint firstItem="m5w-uL-XZ3" firstAttribute="top" secondItem="4b8-Df-A3M" secondAttribute="bottom" constant="29" id="wVl-JQ-9UN"/>
                                 </constraints>
@@ -935,12 +946,6 @@
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="PyY-xP-yKa"/>
-                                        <exclude reference="RkJ-BV-3mf"/>
-                                        <exclude reference="JvQ-UT-iS4"/>
-                                        <exclude reference="I85-Mv-Crb"/>
-                                        <exclude reference="pAk-Li-hO7"/>
-                                        <exclude reference="MVh-pl-egP"/>
-                                        <exclude reference="bMm-Xs-KOL"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -953,10 +958,19 @@
                             <constraint firstItem="efS-KO-cB9" firstAttribute="leading" secondItem="7YS-a7-ztB" secondAttribute="leading" constant="20" id="yyk-mG-spS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="alkoholfrittCategoryButton" destination="B5f-bZ-Tb9" id="Knp-4b-43L"/>
+                        <outlet property="olCategoryButton" destination="PFH-Uc-u1X" id="KCp-5e-7he"/>
+                        <outlet property="ovrigCategoryButton" destination="Hcc-6u-9g5" id="5xt-rJ-dZb"/>
+                        <outlet property="rottVinCategoryButton" destination="hnd-G9-Vd9" id="Hlk-CR-6Qh"/>
+                        <outlet property="vittVinCategoryButton" destination="VFq-ZF-Cd7" id="3Bt-aS-Z7M"/>
+                        <outlet property="whiskeyCategoryButton" destination="bLx-7H-OM4" id="2yd-3k-u5y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="psd-rm-zOH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ncv-HO-OXY" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1781" y="711"/>
+            <point key="canvasLocation" x="1781" y="717"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6ef-ZR-5xX">
