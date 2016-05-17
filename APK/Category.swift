@@ -8,8 +8,17 @@
 
 import Foundation
 
-class Category {
+enum CategoryName: Int {
     
+    case Any
+    case Beer
+    case RedWine
+    case WhiteWine
+    case Whiskey
+    case AlkoholFree
+}
+
+class Category {
     var name : String?
     var color : NSData?
 }

@@ -8,6 +8,13 @@
 
 import UIKit
 
+protocol SelectCategoryViewControllerDelegate : class {
+    
+    func selectCategoryViewControllerDidSelectCategory(selectCategoryViewController: SelectCategoryViewController, category: CategoryName)
+    
+}
+
+
 class SelectCategoryViewController: UIViewController {
     
     @IBOutlet weak var ovrigCategoryButton: DesignableButton!
@@ -16,5 +23,14 @@ class SelectCategoryViewController: UIViewController {
     @IBOutlet weak var vittVinCategoryButton: DesignableButton!
     @IBOutlet weak var whiskeyCategoryButton: DesignableButton!
     @IBOutlet weak var alkoholfrittCategoryButton: DesignableButton!
+    
+    weak var delegate: SelectCategoryViewControllerDelegate?
+
+    @IBAction func categoryButtonDidPress(sender: UIButton) {
+        
+        if let category = CategoryName(rawValue: sender.tag) {
+        delegate?.selectCategoryViewControllerDidSelectCategory(self, category: category)
+        }
+    }
 
 }

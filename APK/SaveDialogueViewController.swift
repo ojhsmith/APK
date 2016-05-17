@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SaveDialogueViewController: UIViewController {
+class SaveDialogueViewController: UIViewController, SelectCategoryViewControllerDelegate {
     
     @IBOutlet weak var saveDialogue: SpringImageView!
     @IBOutlet weak var nameTextField: UITextField!
@@ -34,7 +34,15 @@ class SaveDialogueViewController: UIViewController {
 //    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //
+        
+        if let selectCategoryViewController = segue.destinationViewController as? SelectCategoryViewController{
+            selectCategoryViewController.delegate = self
+        }
+    }
+    
+    func selectCategoryViewControllerDidSelectCategory(selectCategoryViewController: SelectCategoryViewController, category: CategoryName)
+    {
+        print(category)
     }
     
 }
