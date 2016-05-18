@@ -8,14 +8,14 @@
 
 import Foundation
 
-enum CategoryName: Int {
+enum CategoryName: String {
     
-    case Any
-    case Beer
-    case RedWine
-    case WhiteWine
-    case Whiskey
-    case AlkoholFree
+    case Any            = "Övrig"
+    case Beer           = "Öl"
+    case RedWine        = "Rōtt vin"
+    case WhiteWine      = "Vitt vin"
+    case Whiskey        = "Whiskey"
+    case AlkoholFree    = "Alkoholfritt"
 }
 
 class Category {
