@@ -585,15 +585,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2UL-wZ-Xd8" customClass="SpringImageView" customModule="APK" customModuleProvider="target">
-                                <rect key="frame" x="20" y="85" width="560" height="240"/>
+                                <rect key="frame" x="20" y="88" width="560" height="240"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spara uträkning" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rob-Hc-iY1">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Spara uträkning" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rob-Hc-iY1">
                                         <rect key="frame" x="185" y="30" width="191" height="34"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="28"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHV-ze-BAL">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHV-ze-BAL">
                                         <rect key="frame" x="0.0" y="160" width="280" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="T7J-Pl-KmD"/>
@@ -604,7 +604,7 @@
                                             <segue destination="KP5-1e-qn8" kind="unwind" unwindAction="unwindToViewController:" id="j7E-j7-dpC"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63Z-iM-UIz">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63Z-iM-UIz">
                                         <rect key="frame" x="280" y="160" width="280" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="rRj-Nm-e9o"/>
@@ -615,14 +615,14 @@
                                             <action selector="saveDialogueButtonDidPress:" destination="glC-WY-hJ2" eventType="touchUpInside" id="yvD-Iw-noB"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m1H-dK-yKv">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m1H-dK-yKv">
                                         <rect key="frame" x="0.0" y="159" width="560" height="1"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="I3w-Wb-BTj"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xmu-Y3-HrP">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xmu-Y3-HrP">
                                         <rect key="frame" x="280" y="160" width="1" height="80"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -630,7 +630,7 @@
                                             <constraint firstAttribute="width" constant="1" id="xc5-9F-3h8"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6P7-dz-6BJ" customClass="DesignableButton" customModule="APK" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6P7-dz-6BJ" customClass="DesignableButton" customModule="APK" customModuleProvider="target">
                                         <rect key="frame" x="492" y="92" width="48" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="Vav-GE-6T5"/>
@@ -651,8 +651,8 @@
                                             <segue destination="LiJ-po-Kwg" kind="presentation" animates="NO" modalPresentationStyle="overCurrentContext" id="vHF-0l-iTz"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Dryck" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="b9Y-Kg-Sn4">
-                                        <rect key="frame" x="20" y="101" width="452" height="29"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Dryck" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="b9Y-Kg-Sn4">
+                                        <rect key="frame" x="20" y="101" width="64.5" height="29"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                     </textField>
@@ -705,6 +705,11 @@
                             <constraint firstItem="2UL-wZ-Xd8" firstAttribute="top" secondItem="ZZQ-oH-1BJ" secondAttribute="bottom" constant="68" id="Tra-aB-j56"/>
                             <constraint firstItem="2UL-wZ-Xd8" firstAttribute="leading" secondItem="IlN-2b-PGX" secondAttribute="leading" constant="20" id="cnt-16-1cj"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="cnt-16-1cj"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="NameTextField" destination="b9Y-Kg-Sn4" id="EC8-0e-uWW"/>
@@ -864,6 +869,7 @@
                                         <state key="normal" title="Övrig"/>
                                         <connections>
                                             <action selector="categoryButtonDidPress:" destination="LiJ-po-Kwg" eventType="touchUpInside" id="DeE-KQ-aaa"/>
+                                            <segue destination="ncv-HO-OXY" kind="unwind" unwindAction="unwindToViewController:" id="anJ-T3-Zit"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ex2-Qm-8P9">
@@ -876,6 +882,7 @@
                                         <state key="normal" title="Öl"/>
                                         <connections>
                                             <action selector="categoryButtonDidPress:" destination="LiJ-po-Kwg" eventType="touchUpInside" id="1KN-vU-xX4"/>
+                                            <segue destination="ncv-HO-OXY" kind="unwind" unwindAction="unwindToViewController:" id="Gfd-MA-G7G"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvz-xp-tZt">
@@ -965,21 +972,31 @@
                                     <constraint firstAttribute="trailing" secondItem="WGT-Dz-TEu" secondAttribute="trailing" constant="20" id="zhm-ZN-s0u"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="fadeIn"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="efS-KO-cB9" firstAttribute="top" secondItem="JeA-C1-icp" secondAttribute="bottom" constant="68" id="Kvs-8c-afu"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="efS-KO-cB9" secondAttribute="leading" id="fgu-MB-ZLc"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="efS-KO-cB9" secondAttribute="leading" id="SJX-Zs-QCQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="efS-KO-cB9" secondAttribute="trailing" id="dJH-hU-dGX"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="efS-KO-cB9" secondAttribute="leading" constant="20" id="fgu-MB-ZLc"/>
                             <constraint firstItem="efS-KO-cB9" firstAttribute="centerX" secondItem="7YS-a7-ztB" secondAttribute="centerX" id="iie-Pd-5uO"/>
                             <constraint firstItem="7dX-9g-FnV" firstAttribute="top" secondItem="efS-KO-cB9" secondAttribute="bottom" constant="20" id="kvB-F4-Vvk"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="efS-KO-cB9" secondAttribute="trailing" id="svv-N7-w8r"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="efS-KO-cB9" secondAttribute="trailing" constant="20" id="svv-N7-w8r"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="fgu-MB-ZLc"/>
+                                <exclude reference="svv-N7-w8r"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="psd-rm-zOH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ncv-HO-OXY" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1781" y="717"/>
         </scene>
