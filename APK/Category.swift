@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum CategoryName: String {
     
@@ -16,6 +17,17 @@ enum CategoryName: String {
     case WhiteWine      = "Vitt vin"
     case Whiskey        = "Whiskey"
     case AlkoholFree    = "Alkoholfritt"
+    
+    func color() -> UIColor {
+        switch self {
+        case Any            : return UIColor.whiteColor()
+        case Beer           : return UIColor.bolagetBeer()
+        case RedWine        : return UIColor.bolagetRedWine()
+        case WhiteWine      : return UIColor.bolagetWhiteWine()
+        case Whiskey        : return UIColor.bolagetWhiskey()
+        case AlkoholFree    : return UIColor.bolagetAlcoholFree()
+        }
+    }
 }
 
 class Category {

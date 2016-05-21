@@ -26,12 +26,9 @@ class SaveDialogueViewController: UIViewController, SelectCategoryViewController
 
     }
     
-//    @IBAction func categoryButtonDidPress(sender: UIButton) {
-//        
-//        let categoryViewController = SelectCategoryViewController()
-//
-//        pa
-//    }
+    @IBAction func categoryButtonDidPress(sender: UIButton) {
+
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         

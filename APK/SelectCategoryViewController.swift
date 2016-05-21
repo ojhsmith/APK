@@ -27,5 +27,4 @@ class SelectCategoryViewController: UIViewController {
             delegate?.selectCategoryViewControllerDidSelectCategory(self, category: category)
         }
     }
-
 }
