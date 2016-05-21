@@ -26,5 +26,7 @@ class SelectCategoryViewController: UIViewController {
         if let buttonTitle = sender.titleLabel?.text, let category = CategoryName(rawValue:buttonTitle){
             delegate?.selectCategoryViewControllerDidSelectCategory(self, category: category)
         }
+        
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }

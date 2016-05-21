@@ -26,10 +26,6 @@ class SaveDialogueViewController: UIViewController, SelectCategoryViewController
 
     }
     
-    @IBAction func categoryButtonDidPress(sender: UIButton) {
-
-    }
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if let selectCategoryViewController = segue.destinationViewController as? SelectCategoryViewController{
@@ -39,7 +35,7 @@ class SaveDialogueViewController: UIViewController, SelectCategoryViewController
     
     func selectCategoryViewControllerDidSelectCategory(selectCategoryViewController: SelectCategoryViewController, category: CategoryName)
     {
-        print(category)
+        categoryButton.backgroundColor = category.color()
     }
     
 }

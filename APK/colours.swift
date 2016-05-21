@@ -19,7 +19,7 @@ extension UIColor {
         return UIColor(red:0.00, green:0.65, blue:0.28, alpha:1.00)
     }
     static func bolagetBeer() -> UIColor {
-        return UIColor(red:0.00, green:0.65, blue:0.28, alpha:1.00)
+        return UIColor(red:213/255, green:150/255, blue:51/255, alpha:1.00)
     }
     
     static func bolagetRedWine() -> UIColor {
