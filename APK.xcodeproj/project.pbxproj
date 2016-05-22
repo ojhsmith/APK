@@ -41,7 +41,6 @@
 		E192325B1CE22BA800286DC8 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E192323E1CE22BA800286DC8 /* TransitionZoom.swift */; };
 		E192325C1CE22BA800286DC8 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E192323F1CE22BA800286DC8 /* UnwindSegue.swift */; };
 		E192325E1CE23A3400286DC8 /* SelectCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E192325D1CE23A3400286DC8 /* SelectCategoryViewController.swift */; };
-		E1A17B4C1CC4E2E800900517 /* Drink+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A17B4A1CC4E2E800900517 /* Drink+CoreDataProperties.swift */; };
 		E1A17B4D1CC4E2E800900517 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A17B4B1CC4E2E800900517 /* Drink.swift */; };
 		E1A17B511CC524F600900517 /* colours.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A17B501CC524F600900517 /* colours.swift */; };
 		E1A4D31A1CC3AC4100437454 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A4D3191CC3AC4100437454 /* AppDelegate.swift */; };
@@ -53,6 +52,7 @@
 		E1A4D3321CC3AC4100437454 /* APKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A4D3311CC3AC4100437454 /* APKTests.swift */; };
 		E1A4D33D1CC3AC4100437454 /* APKUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A4D33C1CC3AC4100437454 /* APKUITests.swift */; };
 		E1DE7AD11CE62893003AD0C6 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DE7AD01CE62893003AD0C6 /* Category.swift */; };
+		E1EBEED81CF1DCF300ACF541 /* Drink+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EBEED71CF1DCF300ACF541 /* Drink+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,7 +108,6 @@
 		E192323E1CE22BA800286DC8 /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
 		E192323F1CE22BA800286DC8 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
 		E192325D1CE23A3400286DC8 /* SelectCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCategoryViewController.swift; sourceTree = "<group>"; };
-		E1A17B4A1CC4E2E800900517 /* Drink+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Drink+CoreDataProperties.swift"; path = "../Drink+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E1A17B4B1CC4E2E800900517 /* Drink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Drink.swift; path = ../Drink.swift; sourceTree = "<group>"; };
 		E1A17B501CC524F600900517 /* colours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = colours.swift; sourceTree = "<group>"; };
 		E1A4D3161CC3AC4100437454 /* APK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APK.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +125,7 @@
 		E1A4D33C1CC3AC4100437454 /* APKUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APKUITests.swift; sourceTree = "<group>"; };
 		E1A4D33E1CC3AC4100437454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1DE7AD01CE62893003AD0C6 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		E1EBEED71CF1DCF300ACF541 /* Drink+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Drink+CoreDataProperties.swift"; path = "../Drink+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,7 +215,7 @@
 			children = (
 				E19232211CE22BA800286DC8 /* Spring */,
 				E1A17B501CC524F600900517 /* colours.swift */,
-				E1A17B4A1CC4E2E800900517 /* Drink+CoreDataProperties.swift */,
+				E1EBEED71CF1DCF300ACF541 /* Drink+CoreDataProperties.swift */,
 				E1A17B4B1CC4E2E800900517 /* Drink.swift */,
 				E1DE7AD01CE62893003AD0C6 /* Category.swift */,
 				E1A4D3191CC3AC4100437454 /* AppDelegate.swift */,
@@ -395,7 +395,6 @@
 				E192324E1CE22BA800286DC8 /* LoadingView.swift in Sources */,
 				E192325E1CE23A3400286DC8 /* SelectCategoryViewController.swift in Sources */,
 				E192325C1CE22BA800286DC8 /* UnwindSegue.swift in Sources */,
-				E1A17B4C1CC4E2E800900517 /* Drink+CoreDataProperties.swift in Sources */,
 				E19232421CE22BA800286DC8 /* AutoTextView.swift in Sources */,
 				E19232501CE22BA800286DC8 /* Misc.swift in Sources */,
 				E14F5F131CDA34C800BA79E9 /* DrinkTableViewCell.swift in Sources */,
@@ -404,6 +403,7 @@
 				E19232481CE22BA800286DC8 /* DesignableTextField.swift in Sources */,
 				E19232201CE2280D00286DC8 /* SaveDialogueViewController.swift in Sources */,
 				E192325A1CE22BA800286DC8 /* TransitionManager.swift in Sources */,
+				E1EBEED81CF1DCF300ACF541 /* Drink+CoreDataProperties.swift in Sources */,
 				E19232441CE22BA800286DC8 /* DesignableButton.swift in Sources */,
 				E19232561CE22BA800286DC8 /* SpringLabel.swift in Sources */,
 				E192324A1CE22BA800286DC8 /* DesignableView.swift in Sources */,

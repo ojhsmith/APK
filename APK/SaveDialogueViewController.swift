@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class SaveDialogueViewController: UIViewController, SelectCategoryViewControllerDelegate {
     
@@ -34,10 +35,18 @@ class SaveDialogueViewController: UIViewController, SelectCategoryViewController
             return
         }
         
-//        if let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
-//            let context: NSManagedObjectContext = appDelegate.managedObjectContext
-//            let drink = Drink(context: context)
-//        }
+        if let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
+            let context: NSManagedObjectContext = appDelegate.managedObjectContext
+            let newDrink = Drink(context: context)
+            newDrink.name = drinkName
+            newDrink.result = drinkResult
+            
+            do {
+                try newDrink.managedObjectContext?.save()
+            } catch {
+                print(error)
+            }
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
