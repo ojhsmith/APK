@@ -500,9 +500,9 @@
         <!--Sparade uträkningar-->
         <scene sceneID="nzR-zI-jSr">
             <objects>
-                <tableViewController id="RY4-Dg-MQS" customClass="DrinksTableViewController" customModule="APK" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="DrinksTableViewController" id="RY4-Dg-MQS" customClass="DrinksTableViewController" customModule="APK" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="60" sectionFooterHeight="1" id="hP5-Or-eXh">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -613,7 +613,7 @@
                                         <state key="normal" title="Spara"/>
                                         <connections>
                                             <action selector="saveDialogueButtonDidPress:" destination="glC-WY-hJ2" eventType="touchUpInside" id="yvD-Iw-noB"/>
-                                            <segue destination="RY4-Dg-MQS" kind="presentation" id="5Ra-Hq-3HE"/>
+                                            <segue destination="KP5-1e-qn8" kind="unwind" unwindAction="unwindToViewController:" id="tVy-IR-09t"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m1H-dK-yKv">
@@ -652,7 +652,7 @@
                                             <segue destination="LiJ-po-Kwg" kind="presentation" animates="NO" modalPresentationStyle="overCurrentContext" id="vHF-0l-iTz"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Dryck" adjustsFontSizeToFit="NO" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="b9Y-Kg-Sn4">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Dryck" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="b9Y-Kg-Sn4">
                                         <rect key="frame" x="20" y="86" width="452" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="Nct-8u-Iic"/>
@@ -1047,7 +1047,4 @@
         <image name="menu" width="22" height="16"/>
         <image name="selectedStateBG" width="80" height="80"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="5Ra-Hq-3HE"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -51,7 +51,6 @@ class CalculatorViewController: UIViewController {
         saveButton.enabled = false
         calculatorStateButtons = [self.alcButton, self.volButton, self.sekButton]
         displayInputs = [self.alcTextField, self.volTextField, self.sekTextField]
-        
         displayInputs.map({$0.text = "1"})
     }
 
@@ -225,6 +224,20 @@ class CalculatorViewController: UIViewController {
         if segue.identifier == "SaveDrinkSegue" {
             if let saveDialogueViewController = segue.destinationViewController as? SaveDialogueViewController{
                 saveDialogueViewController.drinkResult = result
+            }
+        }
+    }
+    
+        // MARK: Show tableview after save
+    
+    override func unwindToViewController(sender: UIStoryboardSegue) {
+        
+        if let saveDialogueViewController = sender.sourceViewController as? SaveDialogueViewController{
+            if saveDialogueViewController.saved == true {
+                let secondViewController = self.storyboard!.instantiateViewControllerWithIdentifier("DrinksTableViewController") as! DrinksTableViewController
+                
+                self.navigationController!.pushViewController(secondViewController, animated: true)
+
             }
         }
     }

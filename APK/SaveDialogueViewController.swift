@@ -20,6 +20,9 @@ class SaveDialogueViewController: UIViewController, SelectCategoryViewController
     
     var drinkCategory: CategoryName = .Any
     var drinkResult = 0.0
+    var saved = false
+    
+    let limitLength = 10
     
     override func viewDidLoad() {
         nameTextField.becomeFirstResponder()
@@ -43,6 +46,7 @@ class SaveDialogueViewController: UIViewController, SelectCategoryViewController
             
             do {
                 try newDrink.managedObjectContext?.save()
+                saved = true
             } catch {
                 print(error)
             }
