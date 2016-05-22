@@ -30,6 +30,8 @@ class CalculatorViewController: UIViewController {
     
     let calculatorBrain = CalculatorBrain()
     
+    var result = 0.0
+    
     enum CalculatorState: Int {
         case AlcoholInputState
         case VolumeInputState
@@ -208,23 +210,22 @@ class CalculatorViewController: UIViewController {
             button.backgroundColor = UIColor.bolagetYellow()
         }
 
-        guard var alcValue = Double(alcTextField.text!), var volValue = Double(volTextField.text!), var sekValue = Double(sekTextField.text!)  else {
+        guard let alcValue = Double(alcTextField.text!), let volValue = Double(volTextField.text!), let sekValue = Double(sekTextField.text!)  else {
             return
         }
 
-        let result = calculatorBrain.calculateAPK(alcValue, volTextField: volValue, sekTextField: sekValue)
+        result = calculatorBrain.calculateAPK(alcValue, volTextField: volValue, sekTextField: sekValue)
         
         resTextField.text = String(result)
     }
     
         // MARK: Save APK
-    
-    
-        @IBAction func saveButtonDidPress(sender: UIBarButtonItem) {
-            
-            
-            
-
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "SaveDrinkSegue" {
+            if let saveDialogueViewController = segue.destinationViewController as? SaveDialogueViewController{
+                saveDialogueViewController.drinkResult = result
+            }
+        }
     }
-
 }

@@ -476,7 +476,7 @@
                             <color key="tintColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="saveButtonDidPress:" destination="BYZ-38-t0r" id="ZQe-aN-5t0"/>
-                                <segue destination="glC-WY-hJ2" kind="presentation" identifier="SaveDrinkSequel" animates="NO" modalPresentationStyle="overCurrentContext" id="HmU-ko-gIm"/>
+                                <segue destination="glC-WY-hJ2" kind="presentation" identifier="SaveDrinkSegue" animates="NO" modalPresentationStyle="overCurrentContext" id="HmU-ko-gIm"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

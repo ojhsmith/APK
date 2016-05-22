@@ -16,6 +16,8 @@ class SaveDialogueViewController: UIViewController, SelectCategoryViewController
     @IBOutlet weak var cancelDialogueButton: UIButton!
     @IBOutlet weak var categoryButton: DesignableButton!
     
+    var drinkResult = 0.0
+    
     override func viewDidLoad() {
         
         nameTextField.becomeFirstResponder()
