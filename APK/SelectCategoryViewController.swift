@@ -17,8 +17,6 @@ protocol SelectCategoryViewControllerDelegate : class {
 
 class SelectCategoryViewController: UIViewController {
     
-    
-    
     weak var delegate: SelectCategoryViewControllerDelegate?
 
     @IBAction func categoryButtonDidPress(sender: UIButton) {

@@ -101,8 +101,9 @@ class DrinksTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("DrinkCell") as! DrinkTableViewCell!
         
         if let drink = drinks[indexPath.row] as? Drink{
-          cell.drinkResult.text = String(drink.result ?? 0)
+            cell.drinkResult.text = String(drink.result ?? 0)
             cell.drinkTitle.text = drink.name
+            cell.drinkResult.textColor = (CategoryName(rawValue: drink.category ?? "") ?? .Any).color()
         }
         
         

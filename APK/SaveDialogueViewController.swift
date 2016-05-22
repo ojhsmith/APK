@@ -40,6 +40,7 @@ class SaveDialogueViewController: UIViewController, SelectCategoryViewController
             let newDrink = Drink(context: context)
             newDrink.name = drinkName
             newDrink.result = drinkResult
+            newDrink.category = drinkCategory.rawValue
             
             do {
                 try newDrink.managedObjectContext?.save()

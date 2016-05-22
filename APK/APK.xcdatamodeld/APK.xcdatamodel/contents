@@ -3,15 +3,15 @@
     <entity name="Category" representedClassName=".Category" syncable="YES">
         <attribute name="color" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="drinks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Drink" inverseName="category" inverseEntity="Drink" syncable="YES"/>
+        <relationship name="drinks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Drink" syncable="YES"/>
     </entity>
     <entity name="Drink" representedClassName=".Drink" syncable="YES">
         <attribute name="alcoholPercentage" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="result" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="volume" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
-        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="drinks" inverseEntity="Category" syncable="YES"/>
     </entity>
     <elements>
         <element name="Category" positionX="162" positionY="2" width="128" height="88"/>
