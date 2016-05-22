@@ -10,12 +10,14 @@ import UIKit
 
 class SaveDialogueViewController: UIViewController, SelectCategoryViewControllerDelegate {
     
+    @IBOutlet weak var dialogueHeader: UILabel!
     @IBOutlet weak var saveDialogue: SpringImageView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var saveDialogueButton: UIButton!
     @IBOutlet weak var cancelDialogueButton: UIButton!
     @IBOutlet weak var categoryButton: DesignableButton!
     
+    var drinkCategory: CategoryName = .Any
     var drinkResult = 0.0
     
     override func viewDidLoad() {
@@ -25,7 +27,17 @@ class SaveDialogueViewController: UIViewController, SelectCategoryViewController
     }
     
     @IBAction func saveDialogueButtonDidPress(sender: UIButton) {
-
+        
+        guard let drinkName = nameTextField.text where drinkName != "" else {
+            dialogueHeader.text = "Namnge dryck"
+            // TODO: shake animation
+            return
+        }
+        
+//        if let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
+//            let context: NSManagedObjectContext = appDelegate.managedObjectContext
+//            let drink = Drink(context: context)
+//        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -38,6 +50,7 @@ class SaveDialogueViewController: UIViewController, SelectCategoryViewController
     func selectCategoryViewControllerDidSelectCategory(selectCategoryViewController: SelectCategoryViewController, category: CategoryName)
     {
         categoryButton.backgroundColor = category.color()
+        drinkCategory = category
     }
     
 }

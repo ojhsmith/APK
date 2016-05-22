@@ -725,6 +725,7 @@
                         <outlet property="NameTextField" destination="b9Y-Kg-Sn4" id="EC8-0e-uWW"/>
                         <outlet property="cancelDialogueButton" destination="aHV-ze-BAL" id="t2n-aU-xcF"/>
                         <outlet property="categoryButton" destination="6P7-dz-6BJ" id="ddd-2I-zIX"/>
+                        <outlet property="dialogueHeader" destination="Rob-Hc-iY1" id="IPM-cc-BlA"/>
                         <outlet property="nameTextField" destination="b9Y-Kg-Sn4" id="KV3-bH-ztB"/>
                         <outlet property="saveDialogue" destination="2UL-wZ-Xd8" id="xbA-Gj-QyL"/>
                         <outlet property="saveDialogueButton" destination="63Z-iM-UIz" id="LcY-dG-nnU"/>
