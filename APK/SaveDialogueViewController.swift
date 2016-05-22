@@ -29,8 +29,8 @@ class SaveDialogueViewController: UIViewController, SelectCategoryViewController
         
     }
     
-    @IBAction func saveDialogueButtonDidPress(sender: UIButton) {
-        
+    func saveDialogueButtonDidPress(sender: UIButton) {
+        saved = true
         guard let drinkName = nameTextField.text where drinkName != "" else {
             dialogueHeader.text = "Namnge dryck"
             // TODO: shake animation
@@ -46,7 +46,6 @@ class SaveDialogueViewController: UIViewController, SelectCategoryViewController
             
             do {
                 try newDrink.managedObjectContext?.save()
-                saved = true
             } catch {
                 print(error)
             }
@@ -55,10 +54,18 @@ class SaveDialogueViewController: UIViewController, SelectCategoryViewController
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
+        if let _ = segue.destinationViewController as? CalculatorViewController{
+            if let button = sender as? UIButton where button.currentTitle == "Spara" {
+               saveDialogueButtonDidPress(button)
+            }
+        }
+        
         if let selectCategoryViewController = segue.destinationViewController as? SelectCategoryViewController{
             selectCategoryViewController.delegate = self
         }
     }
+    
+    
     
     func selectCategoryViewControllerDidSelectCategory(selectCategoryViewController: SelectCategoryViewController, category: CategoryName)
     {

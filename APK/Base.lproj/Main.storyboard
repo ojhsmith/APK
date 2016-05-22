@@ -612,7 +612,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="Spara"/>
                                         <connections>
-                                            <action selector="saveDialogueButtonDidPress:" destination="glC-WY-hJ2" eventType="touchUpInside" id="yvD-Iw-noB"/>
                                             <segue destination="KP5-1e-qn8" kind="unwind" unwindAction="unwindToViewController:" id="tVy-IR-09t"/>
                                         </connections>
                                     </button>
