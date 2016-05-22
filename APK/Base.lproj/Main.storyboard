@@ -502,7 +502,7 @@
             <objects>
                 <tableViewController id="RY4-Dg-MQS" customClass="DrinksTableViewController" customModule="APK" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="60" sectionFooterHeight="1" id="hP5-Or-eXh">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -613,6 +613,7 @@
                                         <state key="normal" title="Spara"/>
                                         <connections>
                                             <action selector="saveDialogueButtonDidPress:" destination="glC-WY-hJ2" eventType="touchUpInside" id="yvD-Iw-noB"/>
+                                            <segue destination="RY4-Dg-MQS" kind="presentation" id="5Ra-Hq-3HE"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m1H-dK-yKv">
@@ -630,11 +631,6 @@
                                             <constraint firstAttribute="width" constant="1" id="xc5-9F-3h8"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Dryck" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="b9Y-Kg-Sn4">
-                                        <rect key="frame" x="20" y="101" width="65" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
-                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6P7-dz-6BJ" customClass="DesignableButton" customModule="APK" customModuleProvider="target">
                                         <rect key="frame" x="492" y="92" width="48" height="48"/>
                                         <constraints>
@@ -656,14 +652,30 @@
                                             <segue destination="LiJ-po-Kwg" kind="presentation" animates="NO" modalPresentationStyle="overCurrentContext" id="vHF-0l-iTz"/>
                                         </connections>
                                     </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Dryck" adjustsFontSizeToFit="NO" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="b9Y-Kg-Sn4">
+                                        <rect key="frame" x="20" y="86" width="452" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="Nct-8u-Iic"/>
+                                            <constraint firstAttribute="width" constant="460" id="qiQ-4u-i0M"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="qiQ-4u-i0M"/>
+                                            </mask>
+                                        </variation>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="xmu-Y3-HrP" secondAttribute="bottom" id="2YD-k9-UNv"/>
                                     <constraint firstItem="xmu-Y3-HrP" firstAttribute="centerX" secondItem="2UL-wZ-Xd8" secondAttribute="centerX" id="5yf-TX-TrL"/>
+                                    <constraint firstItem="m1H-dK-yKv" firstAttribute="top" secondItem="b9Y-Kg-Sn4" secondAttribute="bottom" constant="13" id="7Zu-c7-wFZ"/>
                                     <constraint firstItem="b9Y-Kg-Sn4" firstAttribute="top" secondItem="Rob-Hc-iY1" secondAttribute="bottom" constant="40" id="BMv-PV-O8Y"/>
                                     <constraint firstItem="m1H-dK-yKv" firstAttribute="centerX" secondItem="2UL-wZ-Xd8" secondAttribute="centerX" id="Bae-rS-PmF"/>
+                                    <constraint firstItem="b9Y-Kg-Sn4" firstAttribute="trailing" secondItem="6P7-dz-6BJ" secondAttribute="trailing" constant="-68" id="Bwa-av-G58"/>
                                     <constraint firstAttribute="trailing" secondItem="63Z-iM-UIz" secondAttribute="trailing" id="CAa-qJ-xPR"/>
                                     <constraint firstItem="aHV-ze-BAL" firstAttribute="width" secondItem="2UL-wZ-Xd8" secondAttribute="width" multiplier="0.5" id="DdW-sc-ew7"/>
                                     <constraint firstItem="6P7-dz-6BJ" firstAttribute="centerY" secondItem="b9Y-Kg-Sn4" secondAttribute="centerY" id="Fv7-6Q-eOZ"/>
@@ -693,6 +705,7 @@
                                         <exclude reference="BMv-PV-O8Y"/>
                                         <exclude reference="G2m-Wn-G2r"/>
                                         <exclude reference="QgV-li-eaV"/>
+                                        <exclude reference="S79-d0-6t2"/>
                                         <exclude reference="Bae-rS-PmF"/>
                                         <exclude reference="iYt-sE-Ejk"/>
                                     </mask>
@@ -1034,4 +1047,7 @@
         <image name="menu" width="22" height="16"/>
         <image name="selectedStateBG" width="80" height="80"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="5Ra-Hq-3HE"/>
+    </inferredMetricsTieBreakers>
 </document>

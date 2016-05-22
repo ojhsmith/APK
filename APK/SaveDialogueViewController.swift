@@ -22,7 +22,6 @@ class SaveDialogueViewController: UIViewController, SelectCategoryViewController
     var drinkResult = 0.0
     
     override func viewDidLoad() {
-        
         nameTextField.becomeFirstResponder()
         
     }

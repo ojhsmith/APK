@@ -103,7 +103,12 @@ class DrinksTableViewController: UITableViewController {
         if let drink = drinks[indexPath.row] as? Drink{
             cell.drinkResult.text = String(drink.result ?? 0)
             cell.drinkTitle.text = drink.name
-            cell.drinkResult.textColor = (CategoryName(rawValue: drink.category ?? "") ?? .Any).color()
+            
+            let category = (CategoryName(rawValue: drink.category ?? "") ?? .Any)
+            cell.drinkResult.textColor = category.color()
+            if category == .Any {
+                cell.drinkResult.textColor = UIColor.blackColor()
+            }
         }
         
         
