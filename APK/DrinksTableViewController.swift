@@ -131,8 +131,13 @@ class DrinksTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
+
+                drinks.removeAtIndex(indexPath.row)
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+            }
             // handle delete (by removing the data from your array and updating the tableview)
-        }
+        
     }
     
     //    @IBAction func helpButtonDidPress(sender: UIBarButtonItem) {
