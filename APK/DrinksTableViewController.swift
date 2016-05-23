@@ -132,8 +132,22 @@ class DrinksTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
 
+            switch editingStyle {
+            case .Delete:
+                // remove the deleted item from the model
+                let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                let context:NSManagedObjectContext = appDel.managedObjectContext
+                context.deleteObject(drinks[indexPath.row] as NSManagedObject)
                 drinks.removeAtIndex(indexPath.row)
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+//                context.save(nil)
+                
+                //tableView.reloadData()
+                // remove the deleted item from the `UITableView`
+                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            default:
+                return
+                
+            }
             
             }
             // handle delete (by removing the data from your array and updating the tableview)
