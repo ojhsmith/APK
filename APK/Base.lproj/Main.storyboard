@@ -512,7 +512,7 @@
                                 <rect key="frame" x="0.0" y="60" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T5S-ZA-OTp" id="u3m-mt-97i">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.34" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTB-Hy-1TF">
@@ -564,6 +564,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Hjälp" id="2SM-NK-TqZ">
                             <connections>
                                 <action selector="helpButtonDidPress:" destination="RY4-Dg-MQS" id="Vjn-eN-5e3"/>
+                                <segue destination="0ob-5k-eCi" kind="presentation" identifier="" modalTransitionStyle="flipHorizontal" id="ghL-C4-d7G"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1021,6 +1022,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="psd-rm-zOH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1781" y="717"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="FM9-Zu-fVY">
+            <objects>
+                <tableViewController id="0ob-5k-eCi" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pnW-Fj-Kdh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ZIf-b8-hcK">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZIf-b8-hcK" id="ip8-CD-5NR">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="0ob-5k-eCi" id="nWm-o8-QHR"/>
+                            <outlet property="delegate" destination="0ob-5k-eCi" id="01V-XL-tur"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="caB-xp-Go3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1781" y="1442"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6ef-ZR-5xX">
