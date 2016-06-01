@@ -114,17 +114,6 @@ class DrinksTableViewController: UITableViewController {
             }
         }
         
-        
-
-//        cell.drinkTitle.text = "Clausthaler Clausthaler Clausthaler"
-//        cell.drinkResult.text = "2.25"
-    
-//        let record = NSFetchedResultsController.objectAtIndexPath(indexPath) as! Drink
-//        
-//        if let name = record.name {
-//            cell.nameLabel.text = name
-//        }
-        
         return cell
     }
     
@@ -132,34 +121,30 @@ class DrinksTableViewController: UITableViewController {
         return true
     }
     
-//    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-//        if (editingStyle == UITableViewCellEditingStyle.Delete) {
-//
-//            switch editingStyle {
-//            case .Delete:
-//                // remove the deleted item from the model
-//                let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-//                let context:NSManagedObjectContext = appDel.managedObjectContext
-//                context.deleteObject(drinks[indexPath.row] as NSManagedObject)
-//                drinks.removeAtIndex(indexPath.row)
-////                context.save(nil)
-//                
-//                //tableView.reloadData()
-//                // remove the deleted item from the `UITableView`
-//                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-//            default:
-//                return
-//                
-//            }
-//            
-//            }
-            // handle delete (by removing the data from your array and updating the tableview)
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+
+            switch editingStyle {
+            case .Delete:
+                // remove the deleted item from the model
+                let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                let context:NSManagedObjectContext = appDel.managedObjectContext
+                context.deleteObject(drinks[indexPath.row] as NSManagedObject)
+                drinks.removeAtIndex(indexPath.row)
+//                context.save(nil)
+//                tableView.reloadData()
+                // remove the deleted item from the `UITableView`
+                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            default:
+                return
+                
+            }
+            
+            }
+//             handle delete (by removing the data from your array and updating the tableview)
         
-//    }
+    }
     
-    //    @IBAction func helpButtonDidPress(sender: UIBarButtonItem) {
-    //            performSegueWithIdentifier("HelpSegue", sender: self)
-    //    }
 
 }
 

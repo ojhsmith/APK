@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E12D77711CCE21CB001CB87A /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12D77701CCE21CB001CB87A /* CalculatorBrain.swift */; };
+		E1494F101CF3C2140012EA85 /* HelpUITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1494F0F1CF3C2140012EA85 /* HelpUITableViewController.swift */; };
 		E14F5F111CDA318600BA79E9 /* DrinksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14F5F101CDA318600BA79E9 /* DrinksTableViewController.swift */; };
 		E14F5F131CDA34C800BA79E9 /* DrinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14F5F121CDA34C800BA79E9 /* DrinkTableViewCell.swift */; };
 		E19232201CE2280D00286DC8 /* SaveDialogueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E192321F1CE2280D00286DC8 /* SaveDialogueViewController.swift */; };
@@ -74,6 +75,7 @@
 
 /* Begin PBXFileReference section */
 		E12D77701CCE21CB001CB87A /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
+		E1494F0F1CF3C2140012EA85 /* HelpUITableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpUITableViewController.swift; sourceTree = "<group>"; };
 		E14F5F101CDA318600BA79E9 /* DrinksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinksTableViewController.swift; sourceTree = "<group>"; };
 		E14F5F121CDA34C800BA79E9 /* DrinkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkTableViewCell.swift; sourceTree = "<group>"; };
 		E192321F1CE2280D00286DC8 /* SaveDialogueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveDialogueViewController.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				E14F5F121CDA34C800BA79E9 /* DrinkTableViewCell.swift */,
 				E192325D1CE23A3400286DC8 /* SelectCategoryViewController.swift */,
 				E192321F1CE2280D00286DC8 /* SaveDialogueViewController.swift */,
+				E1494F0F1CF3C2140012EA85 /* HelpUITableViewController.swift */,
 				E1A4D3251CC3AC4100437454 /* LaunchScreen.storyboard */,
 				E1A4D31D1CC3AC4100437454 /* Main.storyboard */,
 				E1A4D3231CC3AC4100437454 /* Assets.xcassets */,
@@ -320,6 +323,7 @@
 				TargetAttributes = {
 					E1A4D3151CC3AC4100437454 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = RGL959FDVZ;
 					};
 					E1A4D32C1CC3AC4100437454 = {
 						CreatedOnToolsVersion = 7.3;
@@ -385,6 +389,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1494F101CF3C2140012EA85 /* HelpUITableViewController.swift in Sources */,
 				E19232511CE22BA800286DC8 /* SoundPlayer.swift in Sources */,
 				E19232451CE22BA800286DC8 /* DesignableImageView.swift in Sources */,
 				E19232401CE22BA800286DC8 /* AsyncButton.swift in Sources */,
@@ -566,10 +571,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = APK/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = oskarsmith.APK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -579,10 +586,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = APK/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = oskarsmith.APK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

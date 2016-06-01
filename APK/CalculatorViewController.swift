@@ -51,7 +51,7 @@ class CalculatorViewController: UIViewController {
         saveButton.enabled = false
         calculatorStateButtons = [self.alcButton, self.volButton, self.sekButton]
         displayInputs = [self.alcTextField, self.volTextField, self.sekTextField]
-        displayInputs.map({$0.text = "1"})
+//        displayInputs.map({$0.text = "1"})
     }
 
     var userIsInTheMiddleOfTypingANumber = false
