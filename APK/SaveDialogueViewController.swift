@@ -30,6 +30,7 @@ class SaveDialogueViewController: UIViewController, SelectCategoryViewController
     }
     
     func saveDialogueButtonDidPress(sender: UIButton) {
+        
         saved = true
         guard let drinkName = nameTextField.text where drinkName != "" else {
             dialogueHeader.text = "Namnge dryck"
@@ -43,6 +44,7 @@ class SaveDialogueViewController: UIViewController, SelectCategoryViewController
             newDrink.name = drinkName
             newDrink.result = drinkResult
             newDrink.category = drinkCategory.rawValue
+            newDrink.date = NSDate()
             
             do {
                 try newDrink.managedObjectContext?.save()
