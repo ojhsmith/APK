@@ -69,10 +69,10 @@ class DrinksTableViewController: UITableViewController {
         
         //2
         let fetchRequest = NSFetchRequest(entityName: "Drink")
-       // let sortCategoryDescriptor = NSSortDescriptor(key: "category", ascending: false)
+        let sortCategoryDescriptor = NSSortDescriptor(key: "category", ascending: false)
         let sortOrderDescriptor = NSSortDescriptor(key: "date", ascending: false)
-        fetchRequest.sortDescriptors = [sortOrderDescriptor]
-        
+        fetchRequest.sortDescriptors = [sortCategoryDescriptor, sortOrderDescriptor]
+
         //3
         do {
             let results =

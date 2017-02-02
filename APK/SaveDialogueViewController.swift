@@ -9,6 +9,16 @@
 import UIKit
 import CoreData
 
+public extension UIView {
+    func shake() {
+        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        animation.duration = 0.6
+        animation.values = [-20.0, 20.0, -20.0, 20.0, -10.0, 10.0, -5.0, 5.0, 0.0 ]
+        layer.addAnimation(animation, forKey: "shake")
+    }
+}
+
 class SaveDialogueViewController: UIViewController, SelectCategoryViewControllerDelegate {
     
     @IBOutlet weak var dialogueHeader: UILabel!
@@ -22,7 +32,6 @@ class SaveDialogueViewController: UIViewController, SelectCategoryViewController
     var drinkResult = 0.0
     var saved = false
     
-    let limitLength = 10
     
     override func viewDidLoad() {
         nameTextField.becomeFirstResponder()
@@ -34,7 +43,8 @@ class SaveDialogueViewController: UIViewController, SelectCategoryViewController
         saved = true
         guard let drinkName = nameTextField.text where drinkName != "" else {
             dialogueHeader.text = "Namnge dryck"
-            // TODO: shake animation
+            saveDialogue.shake()
+            
             return
         }
         
@@ -66,7 +76,6 @@ class SaveDialogueViewController: UIViewController, SelectCategoryViewController
             selectCategoryViewController.delegate = self
         }
     }
-    
     
     
     func selectCategoryViewControllerDidSelectCategory(selectCategoryViewController: SelectCategoryViewController, category: CategoryName)
