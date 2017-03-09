@@ -658,7 +658,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="Spara"/>
                                         <connections>
-                                            <segue destination="KP5-1e-qn8" kind="unwind" unwindAction="unwindToViewController:" id="tVy-IR-09t"/>
+                                            <action selector="saveDialogueButtonDidPress:" destination="glC-WY-hJ2" eventType="touchUpInside" id="3Z4-o6-YLu"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -739,7 +739,7 @@
                         <outlet property="dialogueHeader" destination="Rob-Hc-iY1" id="IPM-cc-BlA"/>
                         <outlet property="nameTextField" destination="b9Y-Kg-Sn4" id="KV3-bH-ztB"/>
                         <outlet property="saveDialogue" destination="2UL-wZ-Xd8" id="xbA-Gj-QyL"/>
-                        <outlet property="saveDialogueButton" destination="63Z-iM-UIz" id="LcY-dG-nnU"/>
+                        <outlet property="saveDialogueButton" destination="63Z-iM-UIz" id="wi0-FX-a9S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tgr-VP-xP1" userLabel="First Responder" sceneMemberID="firstResponder"/>

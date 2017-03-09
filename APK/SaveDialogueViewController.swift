@@ -41,7 +41,6 @@ class SaveDialogueViewController: UIViewController, SelectCategoryViewController
 }
 
     func saveDrink() -> Bool {
-        saved = true
         guard let drinkName = nameTextField.text where drinkName != "" else {
             dialogueHeader.text = "Namnge dryck"
             saveDialogue.shake()
@@ -59,7 +58,7 @@ class SaveDialogueViewController: UIViewController, SelectCategoryViewController
             
             do {
                 try newDrink.managedObjectContext?.save()
-                return false
+                return true
             } catch {
                 dialogueHeader.text = "Error saving drink"
                 saveDialogue.shake()
@@ -67,12 +66,11 @@ class SaveDialogueViewController: UIViewController, SelectCategoryViewController
             }
     }
     
-    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject!) -> Bool {
-       return self.saveDrink() // so here you try and save the drink! When that succeeds it wil return 'true' so we return true to the question wether it should perform the dam segue or not. If it fails, we retun NO dont perform the segue
-    }
-    
-    func saveDialogueButtonDidPress(sender: UIButton) {
-        self.performSegueWithIdentifier(<#T##identifier: String##String#>, sender: <#T##AnyObject?#>)
+    @IBAction func saveDialogueButtonDidPress(sender: UIButton) {
+        if self.saveDrink() {
+            saved = true
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
     }
 
 //    
