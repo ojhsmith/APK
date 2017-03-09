@@ -19,8 +19,7 @@ public extension UIView {
     }
 }
 
-class SaveDialogueViewController: UIViewController, SelectCategoryViewControllerDelegate {
-    
+class SaveDialogueViewController: UIViewController, SelectCategoryViewControllerDelegate {    
     @IBOutlet weak var dialogueHeader: UILabel!
     @IBOutlet weak var saveDialogue: SpringImageView!
     @IBOutlet weak var nameTextField: UITextField!
@@ -38,17 +37,19 @@ class SaveDialogueViewController: UIViewController, SelectCategoryViewController
         
     }
     
-    func saveDialogueButtonDidPress(sender: UIButton) {
-        
+    func selectCategoryViewControllerDidSelectCategory(selectCategoryViewController: SelectCategoryViewController, category: CategoryName){
+}
+
+    func saveDrink() -> Bool {
         saved = true
         guard let drinkName = nameTextField.text where drinkName != "" else {
             dialogueHeader.text = "Namnge dryck"
             saveDialogue.shake()
             
-            return
+            return false
         }
         
-        if let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
+        let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             let context: NSManagedObjectContext = appDelegate.managedObjectContext
             let newDrink = Drink(context: context)
             newDrink.name = drinkName
@@ -58,30 +59,41 @@ class SaveDialogueViewController: UIViewController, SelectCategoryViewController
             
             do {
                 try newDrink.managedObjectContext?.save()
+                return false
             } catch {
-                print(error)
+                dialogueHeader.text = "Error saving drink"
+                saveDialogue.shake()
+                return false
             }
-        }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        if let _ = segue.destinationViewController as? CalculatorViewController{
-            if let button = sender as? UIButton where button.currentTitle == "Spara" {
-               saveDialogueButtonDidPress(button)
-            }
-        }
-        
-        if let selectCategoryViewController = segue.destinationViewController as? SelectCategoryViewController{
-            selectCategoryViewController.delegate = self
-        }
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject!) -> Bool {
+       return self.saveDrink() // so here you try and save the drink! When that succeeds it wil return 'true' so we return true to the question wether it should perform the dam segue or not. If it fails, we retun NO dont perform the segue
     }
     
-    
-    func selectCategoryViewControllerDidSelectCategory(selectCategoryViewController: SelectCategoryViewController, category: CategoryName)
-    {
-        categoryButton.backgroundColor = category.color()
-        drinkCategory = category
+    func saveDialogueButtonDidPress(sender: UIButton) {
+        self.performSegueWithIdentifier(<#T##identifier: String##String#>, sender: <#T##AnyObject?#>)
     }
+
+//    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        
+//        if let _ = segue.destinationViewController as? CalculatorViewController{
+//            if let button = sender as? UIButton where button.currentTitle == "Spara" {
+//               saveDialogueButtonDidPress(button)
+//            }
+//        }
+//        
+//        if let selectCategoryViewController = segue.destinationViewController as? SelectCategoryViewController{
+//            selectCategoryViewController.delegate = self
+//        }
+//    }
+//    
+//    
+//    func selectCategoryViewControllerDidSelectCategory(selectCategoryViewController: SelectCategoryViewController, category: CategoryName)
+//    {
+//        categoryButton.backgroundColor = category.color()
+//        drinkCategory = category
+//    }
     
 }

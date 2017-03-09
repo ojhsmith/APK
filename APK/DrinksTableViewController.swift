@@ -26,7 +26,6 @@ class DrinksTableViewController: UITableViewController {
     // MARK: Expand cell on tap
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("didSelectRowAtIndexPath was called")
         var cell = tableView.cellForRowAtIndexPath(indexPath) as! DrinkTableViewCell
         switch selectedIndexPath {
         case nil:
