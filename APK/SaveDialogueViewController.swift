@@ -71,27 +71,5 @@ class SaveDialogueViewController: UIViewController, SelectCategoryViewController
             saved = true
             self.dismissViewControllerAnimated(true, completion: nil)
         }
-    }
-
-//    
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        
-//        if let _ = segue.destinationViewController as? CalculatorViewController{
-//            if let button = sender as? UIButton where button.currentTitle == "Spara" {
-//               saveDialogueButtonDidPress(button)
-//            }
-//        }
-//        
-//        if let selectCategoryViewController = segue.destinationViewController as? SelectCategoryViewController{
-//            selectCategoryViewController.delegate = self
-//        }
-//    }
-//    
-//    
-//    func selectCategoryViewControllerDidSelectCategory(selectCategoryViewController: SelectCategoryViewController, category: CategoryName)
-//    {
-//        categoryButton.backgroundColor = category.color()
-//        drinkCategory = category
-//    }
-    
+    }    
 }
