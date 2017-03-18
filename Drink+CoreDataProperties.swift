@@ -23,8 +23,8 @@ extension Drink {
     @NSManaged var category: String?
 
     func resultString() -> String {
-        let resultFormatter            = NumberFormatter()
-        resultFormatter.numberStyle    = .decimal
+        let resultFormatter = NumberFormatter()
+        resultFormatter.numberStyle = .decimal
         resultFormatter.maximumFractionDigits = 2
         resultFormatter.minimumFractionDigits = 1
 

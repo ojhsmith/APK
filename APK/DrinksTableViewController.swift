@@ -94,7 +94,7 @@ class DrinksTableViewController: UITableViewController {
     // MARK: Cell content
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-                return drinks.count
+        return drinks.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
