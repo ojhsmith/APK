@@ -28,11 +28,11 @@ struct SoundPlayer {
     static var filename : String?
     static var enabled : Bool = true
     
-    fileprivate struct Internal {
+    private struct Internal {
         static var cache = [URL:SystemSoundID]()
     }
     
-    static func playSound(_ soundFile: String) {
+    static func playSound(soundFile: String) {
         
         if !enabled {
             return
@@ -54,7 +54,7 @@ struct SoundPlayer {
         }
     }
     
-    static func play(_ file: String) {
-        self.playSound(file)
+    static func play(file: String) {
+        self.playSound(soundFile: file)
     }
 }

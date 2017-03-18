@@ -22,37 +22,37 @@
 
 import UIKit
 
-@IBDesignable open class DesignableTextView: SpringTextView {
+@IBDesignable public class DesignableTextView: SpringTextView {
     
-    @IBInspectable open var borderColor: UIColor = UIColor.clear {
+    @IBInspectable public var borderColor: UIColor = UIColor.clear {
         didSet {
             layer.borderColor = borderColor.cgColor
         }
     }
     
-    @IBInspectable open var borderWidth: CGFloat = 0 {
+    @IBInspectable public var borderWidth: CGFloat = 0 {
         didSet {
             layer.borderWidth = borderWidth
         }
     }
     
-    @IBInspectable open var cornerRadius: CGFloat = 0 {
+    @IBInspectable public var cornerRadius: CGFloat = 0 {
         didSet {
             layer.cornerRadius = cornerRadius
         }
     }
 
-    @IBInspectable open var lineHeight: CGFloat = 1.5 {
+    @IBInspectable public var lineHeight: CGFloat = 1.5 {
         didSet {
             let font = UIFont(name: self.font!.fontName, size: self.font!.pointSize)
             let text = self.text
             
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.lineSpacing = lineHeight
-            
+
             let attributedString = NSMutableAttributedString(string: text!)
-            attributedString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, attributedString.length))
-            attributedString.addAttribute(NSFontAttributeName, value: font!, range: NSMakeRange(0, attributedString.length))
+            attributedString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSRange(location: 0, length: attributedString.length))
+            attributedString.addAttribute(NSFontAttributeName, value: font!, range: NSRange(location: 0, length: attributedString.length))
             
             self.attributedText = attributedString
         }

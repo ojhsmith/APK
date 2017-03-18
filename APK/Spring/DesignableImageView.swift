@@ -22,21 +22,21 @@
 
 import UIKit
 
-@IBDesignable open class DesignableImageView: SpringImageView {
+@IBDesignable public class DesignableImageView: SpringImageView {
     
-    @IBInspectable open var borderColor: UIColor = UIColor.clear {
+    @IBInspectable public var borderColor: UIColor = UIColor.clear {
         didSet {
             layer.borderColor = borderColor.cgColor
         }
     }
     
-    @IBInspectable open var borderWidth: CGFloat = 0 {
+    @IBInspectable public var borderWidth: CGFloat = 0 {
         didSet {
             layer.borderWidth = borderWidth
         }
     }
     
-    @IBInspectable open var cornerRadius: CGFloat = 0 {
+    @IBInspectable public var cornerRadius: CGFloat = 0 {
         didSet {
             layer.cornerRadius = cornerRadius
         }

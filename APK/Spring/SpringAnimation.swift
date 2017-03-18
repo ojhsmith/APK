@@ -22,8 +22,8 @@
 
 import UIKit
 
-@objc open class SpringAnimation: NSObject {
-    open class func spring(_ duration: TimeInterval, animations: @escaping () -> Void) {
+@objc public class SpringAnimation: NSObject {
+    public class func spring(duration: TimeInterval, animations: @escaping () -> Void) {
         UIView.animate(
             withDuration: duration,
             delay: 0,
@@ -37,7 +37,7 @@ import UIKit
         )
     }
 
-    open class func springEaseIn(_ duration: TimeInterval, animations: (() -> Void)!) {
+    public class func springEaseIn(duration: TimeInterval, animations: (() -> Void)!) {
         UIView.animate(
             withDuration: duration,
             delay: 0,
@@ -49,7 +49,7 @@ import UIKit
         )
     }
 
-    open class func springEaseOut(_ duration: TimeInterval, animations: (() -> Void)!) {
+    public class func springEaseOut(duration: TimeInterval, animations: (() -> Void)!) {
         UIView.animate(
             withDuration: duration,
             delay: 0,
@@ -60,7 +60,7 @@ import UIKit
         )
     }
 
-    open class func springEaseInOut(_ duration: TimeInterval, animations: (() -> Void)!) {
+    public class func springEaseInOut(duration: TimeInterval, animations: (() -> Void)!) {
         UIView.animate(
             withDuration: duration,
             delay: 0,
@@ -71,7 +71,7 @@ import UIKit
         )
     }
 
-    open class func springLinear(_ duration: TimeInterval, animations: (() -> Void)!) {
+    public class func springLinear(duration: TimeInterval, animations: (() -> Void)!) {
         UIView.animate(
             withDuration: duration,
             delay: 0,
@@ -82,7 +82,7 @@ import UIKit
         )
     }
 
-    open class func springWithDelay(_ duration: TimeInterval, delay: TimeInterval, animations: (() -> Void)!) {
+    public class func springWithDelay(duration: TimeInterval, delay: TimeInterval, animations: (() -> Void)!) {
         UIView.animate(
             withDuration: duration,
             delay: delay,
@@ -95,7 +95,7 @@ import UIKit
         )
     }
 
-    open class func springWithCompletion(_ duration: TimeInterval, animations: (() -> Void)!, completion: ((Bool) -> Void)!) {
+    public class func springWithCompletion(duration: TimeInterval, animations: (() -> Void)!, completion: ((Bool) -> Void)!) {
         UIView.animate(
             withDuration: duration,
             delay: 0,

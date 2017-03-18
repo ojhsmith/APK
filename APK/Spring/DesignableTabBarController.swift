@@ -94,25 +94,25 @@ import UIKit
         
         for item in self.tabBar.items as [UITabBarItem]! {
             if let image = item.image {
-                item.image = image.imageWithColor(self.normalTint).withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+                item.image = image.imageWithColor(tintColor: self.normalTint).withRenderingMode(UIImageRenderingMode.alwaysOriginal)
             }
         }
     }
 }
 
 extension UIImage {
-    func imageWithColor(_ tintColor: UIColor) -> UIImage {
+    func imageWithColor(tintColor: UIColor) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
         
         let context = UIGraphicsGetCurrentContext()
-        context?.translateBy(x: 0, y: self.size.height)
-        context?.scaleBy(x: 1.0, y: -1.0);
-        context?.setBlendMode(CGBlendMode.normal)
+        context!.translateBy(x: 0, y: self.size.height)
+        context!.scaleBy(x: 1.0, y: -1.0);
+        context!.setBlendMode(CGBlendMode.normal)
         
-        let rect = CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height) as CGRect
+        let rect = CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height)
         context?.clip(to: rect, mask: self.cgImage!)
         tintColor.setFill()
-        context?.fill(rect)
+        context!.fill(rect)
         
         let newImage = UIGraphicsGetImageFromCurrentImageContext()! as UIImage
         UIGraphicsEndImageContext()

@@ -22,12 +22,12 @@
 
 import UIKit
 
-open class TransitionManager: NSObject, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
+public class TransitionManager: NSObject, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
     
     var isPresenting = true
     var duration = 0.3
     
-    open func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+    public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let container = transitionContext.containerView
         let fromView = transitionContext.view(forKey: UITransitionContextViewKey.from)!
         let toView = transitionContext.view(forKey: UITransitionContextViewKey.to)!
@@ -37,7 +37,7 @@ open class TransitionManager: NSObject, UIViewControllerTransitioningDelegate, U
             toView.transform = CGAffineTransform(translationX: 0, y: container.frame.size.height)
             container.addSubview(fromView)
             container.addSubview(toView)
-            SpringAnimation.springEaseInOut(duration) {
+            SpringAnimation.springEaseInOut(duration: duration) {
                 fromView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
                 fromView.alpha = 0.5
                 toView.transform = CGAffineTransform.identity
@@ -58,28 +58,28 @@ open class TransitionManager: NSObject, UIViewControllerTransitioningDelegate, U
             container.addSubview(toView)
             container.addSubview(fromView)
 
-            SpringAnimation.springEaseInOut(duration) {
+            SpringAnimation.springEaseInOut(duration: duration) {
                 fromView.transform = CGAffineTransform(translationX: 0, y: fromView.frame.size.height)
                 toView.transform = CGAffineTransform.identity
                 toView.alpha = 1
             }
         }
         
-        delay(duration, closure: {
+        delay(delay: duration, closure: {
             transitionContext.completeTransition(true)
         })
     }
     
-    open func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+    public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return duration
     }
     
-    open func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    public func animationController(forPresentedController presented: UIViewController, presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         isPresenting = true
         return self
     }
     
-    open func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         isPresenting = false
         return self
     }
