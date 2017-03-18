@@ -19,7 +19,7 @@ public extension UIView {
     }
 }
 
-class SaveDialogueViewController: UIViewController, SelectCategoryViewControllerDelegate {    
+class SaveDialogueViewController: UIViewController {
     @IBOutlet weak var dialogueHeader: UILabel!
     @IBOutlet weak var saveDialogue: SpringImageView!
     @IBOutlet weak var nameTextField: UITextField!
@@ -27,18 +27,18 @@ class SaveDialogueViewController: UIViewController, SelectCategoryViewController
     @IBOutlet weak var cancelDialogueButton: UIButton!
     @IBOutlet weak var categoryButton: DesignableButton!
     
-    var drinkCategory: CategoryName = .Other
+    var drinkCategory: CategoryName = .Other {
+        didSet {
+            categoryButton.backgroundColor = self.drinkCategory.color()
+        }
+    }
     var drinkResult = 0.0
     var saved = false
-    
-    
+
     override func viewDidLoad() {
         nameTextField.becomeFirstResponder()
         
     }
-    
-    func selectCategoryViewControllerDidSelectCategory(_ selectCategoryViewController: SelectCategoryViewController, category: CategoryName){
-}
 
     func saveDrink() -> Bool {
         guard let drinkName = nameTextField.text, drinkName != "" else {
@@ -71,5 +71,19 @@ class SaveDialogueViewController: UIViewController, SelectCategoryViewController
             saved = true
             self.dismiss(animated: true, completion: nil)
         }
-    }    
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "selectCategorySegue" {
+            let selectCategoryViewController = segue.destination as! SelectCategoryViewController
+            selectCategoryViewController.delegate = self
+        }
+    }
+}
+
+extension SaveDialogueViewController: SelectCategoryViewControllerDelegate {
+    
+    func selectCategoryViewControllerDidSelectCategory(_ selectCategoryViewController: SelectCategoryViewController, category: CategoryName) {
+        self.drinkCategory = category
+    }
 }
