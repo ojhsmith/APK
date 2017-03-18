@@ -11,13 +11,13 @@ import CoreData
 
 class DrinksTableViewController: UITableViewController {
     
-    var selectedIndexPath: NSIndexPath? = nil
+    var selectedIndexPath: IndexPath? = nil
     var drinks = [NSManagedObject]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.separatorStyle = .None
+        tableView.separatorStyle = .none
         tableView.estimatedRowHeight = 60
         tableView.rowHeight = UITableViewAutomaticDimension
         
@@ -25,8 +25,8 @@ class DrinksTableViewController: UITableViewController {
     
     // MARK: Expand cell on tap
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var cell = tableView.cellForRowAtIndexPath(indexPath) as! DrinkTableViewCell
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var cell = tableView.cellForRow(at: indexPath) as! DrinkTableViewCell
         switch selectedIndexPath {
         case nil:
             selectedIndexPath = indexPath
@@ -37,10 +37,10 @@ class DrinksTableViewController: UITableViewController {
                 selectedIndexPath = indexPath
             }
         }
-        tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let smallHeight: CGFloat = 60.0
         let expandedHeight: CGFloat = 180.0
         let ip = indexPath
@@ -57,17 +57,17 @@ class DrinksTableViewController: UITableViewController {
     
     // MARK: Fetch core data
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         //1
         let appDelegate =
-            UIApplication.sharedApplication().delegate as! AppDelegate
+            UIApplication.shared.delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext
         
         //2
-        let fetchRequest = NSFetchRequest(entityName: "Drink")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Drink")
         let sortCategoryDescriptor = NSSortDescriptor(key: "category", ascending: false)
         let sortOrderDescriptor = NSSortDescriptor(key: "date", ascending: false)
         fetchRequest.sortDescriptors = [sortCategoryDescriptor, sortOrderDescriptor]
@@ -75,7 +75,7 @@ class DrinksTableViewController: UITableViewController {
         //3
         do {
             let results =
-                try managedContext.executeFetchRequest(fetchRequest)
+                try managedContext.fetch(fetchRequest)
             drinks = results as! [NSManagedObject]
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
@@ -85,56 +85,56 @@ class DrinksTableViewController: UITableViewController {
     
     // MARK: Style section header
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Varunamn"
     }
 
     // MARK: Cell content
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
                 return drinks.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("DrinkCell") as! DrinkTableViewCell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DrinkCell") as! DrinkTableViewCell!
         
         if let drink = drinks[indexPath.row] as? Drink{
-            cell.drinkResult.text = String(drink.result ?? 0)
-            cell.drinkTitle.text = drink.name
+            cell?.drinkResult.text = String(describing: drink.result ?? 0)
+            cell?.drinkTitle.text = drink.name
             
             let category = (CategoryName(rawValue: drink.category ?? "") ?? .Any)
             cell.drinkResult.textColor = category.color()
             if category == .Any {
-                cell.drinkResult.textColor = UIColor.blackColor()
+                cell?.drinkResult.textColor = UIColor.black
             }
         }
         
-        return cell
+        return cell!
     }
     
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
 
             switch editingStyle {
-            case .Delete:
+            case .delete:
                 // remove the deleted item from the model
-                let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
                 let context:NSManagedObjectContext = appDel.managedObjectContext
-                context.deleteObject(drinks[indexPath.row] as NSManagedObject)
-                drinks.removeAtIndex(indexPath.row)
+                context.delete(drinks[indexPath.row] as NSManagedObject)
+                drinks.remove(at: indexPath.row)
 //                context.save(nil)
 //                tableView.reloadData()
                 // remove the deleted item from the `UITableView`
-                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                self.tableView.deleteRows(at: [indexPath], with: .fade)
             default:
                 return
                 

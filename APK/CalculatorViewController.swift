@@ -33,22 +33,22 @@ class CalculatorViewController: UIViewController {
     var result = 0.0
     
     enum CalculatorState: Int {
-        case AlcoholInputState
-        case VolumeInputState
-        case PriceInputState
-        case ResultInputState
+        case alcoholInputState
+        case volumeInputState
+        case priceInputState
+        case resultInputState
     }
     
-    var calculatorState: CalculatorState = .AlcoholInputState
+    var calculatorState: CalculatorState = .alcoholInputState
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        volTextField.hidden = true
-        sekTextField.hidden = true
-        alcButton.selected = true
-        resButton.enabled = false
-        saveButton.enabled = false
+        volTextField.isHidden = true
+        sekTextField.isHidden = true
+        alcButton.isSelected = true
+        resButton.isEnabled = false
+        saveButton.isEnabled = false
         calculatorStateButtons = [self.alcButton, self.volButton, self.sekButton]
         displayInputs = [self.alcTextField, self.volTextField, self.sekTextField]
 //        displayInputs.map({$0.text = "1"})
@@ -63,7 +63,7 @@ class CalculatorViewController: UIViewController {
     
     // MARK: Add digits to display
     
-    @IBAction func appendDigit(sender: UIButton) {
+    @IBAction func appendDigit(_ sender: UIButton) {
         
         let digit = sender.currentTitle
         
@@ -72,27 +72,27 @@ class CalculatorViewController: UIViewController {
             if(displayInput.tag == calculatorState.rawValue) {
                 displayInput.text =  displayInput.text! + digit!
                 
-                if displayInput.text?.rangeOfString(".") != nil {
-                    commaButton.enabled = false
-                } else {                    commaButton.enabled = true
+                if displayInput.text?.range(of: ".") != nil {
+                    commaButton.isEnabled = false
+                } else {                    commaButton.isEnabled = true
                 }
             }
         }
         if inputsDone() {
-            resButton.enabled = true
+            resButton.isEnabled = true
         } else {
-            resButton.enabled = false
+            resButton.isEnabled = false
         }
     }
     
     
     // MARK: Switches display
 
-    @IBAction func calculatorStateButtonDidPress(sender: UIButton) {
+    @IBAction func calculatorStateButtonDidPress(_ sender: UIButton) {
         
-        saveButton.enabled = false
-        resTextField.hidden = true
-        resButton.selected = false
+        saveButton.isEnabled = false
+        resTextField.isHidden = true
+        resButton.isSelected = false
         resButton.backgroundColor = UIColor.bolagetYellow()
         
         guard let state = CalculatorState(rawValue: sender.tag) else {
@@ -101,25 +101,25 @@ class CalculatorViewController: UIViewController {
         
         calculatorState = state
         
-        commaButton.enabled = !activeTextFieldContainsComma()
+        commaButton.isEnabled = !activeTextFieldContainsComma()
         
         for button in self.calculatorStateButtons {
             
             if button == sender {
                 button.backgroundColor = UIColor.bolagetGreen()
-                button.selected = true
+                button.isSelected = true
             }
             else {
-                button.selected = false
+                button.isSelected = false
                 button.backgroundColor = UIColor.bolagetYellow()
             }
         }
         
         for displayInput in displayInputs {
             if displayInput.tag == calculatorState.rawValue {
-                displayInput.hidden = false
+                displayInput.isHidden = false
             } else {
-                displayInput.hidden = true
+                displayInput.isHidden = true
             }
         }
     }
@@ -127,7 +127,7 @@ class CalculatorViewController: UIViewController {
     
     // MARK: Remove digits from display
     
-    func correctString(textField: UITextField) {
+    func correctString(_ textField: UITextField) {
         
         let currentString = textField.text
         
@@ -135,19 +135,19 @@ class CalculatorViewController: UIViewController {
             return
         }
         
-        textField.text = currentString!.substringToIndex(currentString!.endIndex.predecessor())
+        textField.text = currentString!.substring(to: currentString!.characters.index(before: currentString!.endIndex))
     }
     
-    @IBAction func eraseButtonDidPress(sender: UIButton) {
+    @IBAction func eraseButtonDidPress(_ sender: UIButton) {
         
         switch calculatorState {
-        case .AlcoholInputState:
+        case .alcoholInputState:
             correctString(self.alcTextField)
             break
-        case .VolumeInputState:
+        case .volumeInputState:
             correctString(self.volTextField)
             break
-        case .PriceInputState:
+        case .priceInputState:
             correctString(self.sekTextField)
             break
         default:
@@ -155,12 +155,12 @@ class CalculatorViewController: UIViewController {
         }
         
         if inputsDone() {
-            resButton.enabled = true
+            resButton.isEnabled = true
         } else {
-            resButton.enabled = false
+            resButton.isEnabled = false
         }
         
-        commaButton.enabled = !activeTextFieldContainsComma()
+        commaButton.isEnabled = !activeTextFieldContainsComma()
 
     }
 
@@ -175,7 +175,7 @@ class CalculatorViewController: UIViewController {
     
     func activeTextFieldContainsComma () -> Bool {
         for displayInput in displayInputs {
-            if displayInput.tag == calculatorState.rawValue && displayInput.text?.rangeOfString(".") != nil {
+            if displayInput.tag == calculatorState.rawValue && displayInput.text?.range(of: ".") != nil {
                 return true
             }
         }
@@ -185,19 +185,19 @@ class CalculatorViewController: UIViewController {
  
     // MARK: Calculate APK
     
-    @IBAction func resultButtonDidPress(sender: UIButton) {
+    @IBAction func resultButtonDidPress(_ sender: UIButton) {
         
-        saveButton.enabled = true
-        resTextField.hidden = false
+        saveButton.isEnabled = true
+        resTextField.isHidden = false
         resButton.backgroundColor = UIColor.bolagetGreen()
-        resButton.selected = true
+        resButton.isSelected = true
         
         for displayInput in displayInputs {
-            displayInput.hidden = true
+            displayInput.isHidden = true
         }
         
         for button in calculatorStateButtons {
-            button.selected = false
+            button.isSelected = false
             button.backgroundColor = UIColor.bolagetYellow()
         }
 
@@ -211,10 +211,10 @@ class CalculatorViewController: UIViewController {
     }
     
         // MARK: Save APK
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "SaveDrinkSegue" {
-            if let saveDialogueViewController = segue.destinationViewController as? SaveDialogueViewController{
+            if let saveDialogueViewController = segue.destination as? SaveDialogueViewController{
                 saveDialogueViewController.drinkResult = result
             }
         }
@@ -222,11 +222,11 @@ class CalculatorViewController: UIViewController {
     
         // MARK: Show tableview after save
     
-    override func unwindToViewController(sender: UIStoryboardSegue) {
+    override func unwindToViewController(_ sender: UIStoryboardSegue) {
         
-        if let saveDialogueViewController = sender.sourceViewController as? SaveDialogueViewController{
+        if let saveDialogueViewController = sender.source as? SaveDialogueViewController{
             if saveDialogueViewController.saved == true {
-                let secondViewController = self.storyboard!.instantiateViewControllerWithIdentifier("DrinksTableViewController") as! DrinksTableViewController
+                let secondViewController = self.storyboard!.instantiateViewController(withIdentifier: "DrinksTableViewController") as! DrinksTableViewController
                 
                 self.navigationController!.pushViewController(secondViewController, animated: true)
 

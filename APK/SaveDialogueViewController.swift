@@ -15,7 +15,7 @@ public extension UIView {
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
         animation.duration = 0.6
         animation.values = [-20.0, 20.0, -20.0, 20.0, -10.0, 10.0, -5.0, 5.0, 0.0 ]
-        layer.addAnimation(animation, forKey: "shake")
+        layer.add(animation, forKey: "shake")
     }
 }
 
@@ -37,24 +37,24 @@ class SaveDialogueViewController: UIViewController, SelectCategoryViewController
         
     }
     
-    func selectCategoryViewControllerDidSelectCategory(selectCategoryViewController: SelectCategoryViewController, category: CategoryName){
+    func selectCategoryViewControllerDidSelectCategory(_ selectCategoryViewController: SelectCategoryViewController, category: CategoryName){
 }
 
     func saveDrink() -> Bool {
-        guard let drinkName = nameTextField.text where drinkName != "" else {
+        guard let drinkName = nameTextField.text, drinkName != "" else {
             dialogueHeader.text = "Namnge dryck"
             saveDialogue.shake()
             
             return false
         }
         
-        let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
             let context: NSManagedObjectContext = appDelegate.managedObjectContext
             let newDrink = Drink(context: context)
             newDrink.name = drinkName
-            newDrink.result = drinkResult
+            newDrink.result = drinkResult as NSNumber?
             newDrink.category = drinkCategory.rawValue
-            newDrink.date = NSDate()
+            newDrink.date = Date()
             
             do {
                 try newDrink.managedObjectContext?.save()
@@ -66,10 +66,10 @@ class SaveDialogueViewController: UIViewController, SelectCategoryViewController
             }
     }
     
-    @IBAction func saveDialogueButtonDidPress(sender: UIButton) {
+    @IBAction func saveDialogueButtonDidPress(_ sender: UIButton) {
         if self.saveDrink() {
             saved = true
-            self.dismissViewControllerAnimated(true, completion: nil)
+            self.dismiss(animated: true, completion: nil)
         }
     }    
 }

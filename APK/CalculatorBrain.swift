@@ -10,7 +10,7 @@ import Foundation
 
 class CalculatorBrain {
     
-    func calculateAPK (alcTextField: Double, volTextField: Double, sekTextField: Double) -> Double {
+    func calculateAPK (_ alcTextField: Double, volTextField: Double, sekTextField: Double) -> Double {
         
         let result = ((alcTextField/100) * volTextField) / sekTextField
         

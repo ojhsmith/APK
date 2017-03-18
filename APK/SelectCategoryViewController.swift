@@ -10,7 +10,7 @@ import UIKit
 
 protocol SelectCategoryViewControllerDelegate : class {
     
-    func selectCategoryViewControllerDidSelectCategory(selectCategoryViewController: SelectCategoryViewController, category: CategoryName)
+    func selectCategoryViewControllerDidSelectCategory(_ selectCategoryViewController: SelectCategoryViewController, category: CategoryName)
     
 }
 
@@ -19,12 +19,12 @@ class SelectCategoryViewController: UIViewController {
     
     weak var delegate: SelectCategoryViewControllerDelegate?
 
-    @IBAction func categoryButtonDidPress(sender: UIButton) {
+    @IBAction func categoryButtonDidPress(_ sender: UIButton) {
 
         if let buttonTitle = sender.titleLabel?.text, let category = CategoryName(rawValue:buttonTitle){
             delegate?.selectCategoryViewControllerDidSelectCategory(self, category: category)
         }
         
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 }
