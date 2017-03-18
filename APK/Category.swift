@@ -11,7 +11,7 @@ import UIKit
 
 enum CategoryName: String {
     
-    case Any            = "Övrig"
+    case Other            = "Övrig"
     case Beer           = "Öl"
     case RedWine        = "Rōtt vin"
     case WhiteWine      = "Vitt vin"
@@ -20,7 +20,7 @@ enum CategoryName: String {
     
     func color() -> UIColor {
         switch self {
-        case is Any            : return UIColor.white
+        case .Other          : return UIColor.white
         case .Beer           : return UIColor.bolagetBeer()
         case .RedWine        : return UIColor.bolagetRedWine()
         case .WhiteWine      : return UIColor.bolagetWhiteWine()

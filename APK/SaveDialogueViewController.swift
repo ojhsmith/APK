@@ -27,7 +27,7 @@ class SaveDialogueViewController: UIViewController, SelectCategoryViewController
     @IBOutlet weak var cancelDialogueButton: UIButton!
     @IBOutlet weak var categoryButton: DesignableButton!
     
-    var drinkCategory: CategoryName = .Any
+    var drinkCategory: CategoryName = .Other
     var drinkResult = 0.0
     var saved = false
     

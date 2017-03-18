@@ -26,7 +26,6 @@ class DrinksTableViewController: UITableViewController {
     // MARK: Expand cell on tap
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var cell = tableView.cellForRow(at: indexPath) as! DrinkTableViewCell
         switch selectedIndexPath {
         case nil:
             selectedIndexPath = indexPath
@@ -101,20 +100,20 @@ class DrinksTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DrinkCell") as! DrinkTableViewCell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DrinkCell") as! DrinkTableViewCell
         
         if let drink = drinks[indexPath.row] as? Drink{
-            cell?.drinkResult.text = String(describing: drink.result ?? 0)
-            cell?.drinkTitle.text = drink.name
+            cell.drinkResult.text = String(describing: drink.result ?? 0)
+            cell.drinkTitle.text = drink.name
             
-            let category = (CategoryName(rawValue: drink.category ?? "") ?? .Any)
+            let category = (CategoryName(rawValue: drink.category ?? "") ?? .Other)
             cell.drinkResult.textColor = category.color()
-            if category == .Any {
-                cell?.drinkResult.textColor = UIColor.black
+            if category == .Other {
+                cell.drinkResult.textColor = UIColor.black
             }
         }
         
-        return cell!
+        return cell
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
