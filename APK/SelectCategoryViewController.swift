@@ -20,8 +20,15 @@ class SelectCategoryViewController: UIViewController {
     weak var delegate: SelectCategoryViewControllerDelegate?
 
     @IBAction func categoryButtonDidPress(_ sender: UIButton) {
-
-        if let buttonTitle = sender.titleLabel?.text, let category = CategoryName(rawValue:buttonTitle){
+//        let buttonTitle = sender.titleLabel?.text
+//        if buttonTitle != nil {
+//        let category = CategoryName(rawValue: buttonTitle!)
+//            if category != nil {
+//
+//            }
+//        }
+    
+        if let buttonTitle = sender.titleLabel?.text, let category = CategoryName(rawValue:buttonTitle) {
             delegate?.selectCategoryViewControllerDidSelectCategory(self, category: category)
         }
         
