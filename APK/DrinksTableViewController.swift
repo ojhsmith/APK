@@ -80,8 +80,7 @@ class DrinksTableViewController: UITableViewController {
             print("Could not fetch \(error), \(error.userInfo)")
         }
     }
-    
-    
+
     // MARK: Style section header
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -119,15 +118,15 @@ class DrinksTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-    
+
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
 
             switch editingStyle {
             case .delete:
                 // remove the deleted item from the model
-                let appDel:AppDelegate = UIApplication.shared.delegate as! AppDelegate
-                let context:NSManagedObjectContext = appDel.managedObjectContext
+                let appDel: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+                let context: NSManagedObjectContext = appDel.managedObjectContext
                 context.delete(drinks[indexPath.row] as NSManagedObject)
                 drinks.remove(at: indexPath.row)
 //                context.save(nil)
@@ -136,15 +135,9 @@ class DrinksTableViewController: UITableViewController {
                 self.tableView.deleteRows(at: [indexPath], with: .fade)
             default:
                 return
-                
             }
-            
-            }
-//             handle delete (by removing the data from your array and updating the tableview)
-        
+        }
     }
-    
-
 }
 
 
