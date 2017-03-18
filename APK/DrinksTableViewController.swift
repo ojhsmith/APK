@@ -103,7 +103,7 @@ class DrinksTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DrinkCell") as! DrinkTableViewCell
         
         if let drink = drinks[indexPath.row] as? Drink{
-            cell.drinkResult.text = String(describing: drink.result ?? 0)
+            cell.drinkResult.text = drink.resultString()
             cell.drinkTitle.text = drink.name
             
             let category = (CategoryName(rawValue: drink.category ?? "") ?? .Other)

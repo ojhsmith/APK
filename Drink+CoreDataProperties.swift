@@ -22,4 +22,13 @@ extension Drink {
     @NSManaged var date: Date?
     @NSManaged var category: String?
 
+    func resultString() -> String {
+        let resultFormatter            = NumberFormatter()
+        resultFormatter.numberStyle    = .decimal
+        resultFormatter.maximumFractionDigits = 2
+        resultFormatter.minimumFractionDigits = 1
+
+        return resultFormatter.string(from: self.result ?? 0) ?? ""
+    }
+
 }
