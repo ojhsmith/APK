@@ -19,7 +19,7 @@ extension Drink {
     @NSManaged var price: NSNumber?
     @NSManaged var result: NSNumber?
     @NSManaged var volume: NSNumber?
-    @NSManaged var date: NSDate?
+    @NSManaged var date: Date?
     @NSManaged var category: String?
 
 }
