@@ -512,7 +512,7 @@
                                 <rect key="frame" x="0.0" y="60" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T5S-ZA-OTp" id="u3m-mt-97i">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.34" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTB-Hy-1TF">
@@ -633,7 +633,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="LiJ-po-Kwg" kind="presentation" animates="NO" modalPresentationStyle="overCurrentContext" id="vHF-0l-iTz"/>
+                                            <segue destination="LiJ-po-Kwg" kind="presentation" identifier="saveDrinkSegue" animates="NO" modalPresentationStyle="overCurrentContext" id="vHF-0l-iTz"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Dryck" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="b9Y-Kg-Sn4">
@@ -650,15 +650,15 @@
                                             </mask>
                                         </variation>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63Z-iM-UIz">
-                                        <rect key="frame" x="280" y="160" width="280" height="80"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="63Z-iM-UIz">
+                                        <rect key="frame" x="280" y="159" width="280" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="rRj-Nm-e9o"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="Spara"/>
                                         <connections>
-                                            <segue destination="KP5-1e-qn8" kind="unwind" unwindAction="unwindToViewController:" id="tVy-IR-09t"/>
+                                            <action selector="saveDialogueButtonDidPress:" destination="glC-WY-hJ2" eventType="touchUpInside" id="3Z4-o6-YLu"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -739,7 +739,7 @@
                         <outlet property="dialogueHeader" destination="Rob-Hc-iY1" id="IPM-cc-BlA"/>
                         <outlet property="nameTextField" destination="b9Y-Kg-Sn4" id="KV3-bH-ztB"/>
                         <outlet property="saveDialogue" destination="2UL-wZ-Xd8" id="xbA-Gj-QyL"/>
-                        <outlet property="saveDialogueButton" destination="63Z-iM-UIz" id="LcY-dG-nnU"/>
+                        <outlet property="saveDialogueButton" destination="63Z-iM-UIz" id="wi0-FX-a9S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tgr-VP-xP1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1034,7 +1034,7 @@
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZIf-b8-hcK" id="ip8-CD-5NR">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>

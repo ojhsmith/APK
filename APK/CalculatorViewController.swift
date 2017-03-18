@@ -73,11 +73,8 @@ class CalculatorViewController: UIViewController {
                 displayInput.text =  displayInput.text! + digit!
                 
                 if displayInput.text?.rangeOfString(".") != nil {
-                    print("exists")
                     commaButton.enabled = false
-                } else {
-                    print("does not exist")
-                    commaButton.enabled = true
+                } else {                    commaButton.enabled = true
                 }
             }
         }
@@ -119,14 +116,9 @@ class CalculatorViewController: UIViewController {
         }
         
         for displayInput in displayInputs {
-            
-            print(displayInput.text)
-            
             if displayInput.tag == calculatorState.rawValue {
-                print("show displayInput \(displayInput.tag)")
                 displayInput.hidden = false
             } else {
-                print("hide displayInput \(displayInput.tag)")
                 displayInput.hidden = true
             }
         }

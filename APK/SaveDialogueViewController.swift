@@ -19,8 +19,7 @@ public extension UIView {
     }
 }
 
-class SaveDialogueViewController: UIViewController, SelectCategoryViewControllerDelegate {
-    
+class SaveDialogueViewController: UIViewController, SelectCategoryViewControllerDelegate {    
     @IBOutlet weak var dialogueHeader: UILabel!
     @IBOutlet weak var saveDialogue: SpringImageView!
     @IBOutlet weak var nameTextField: UITextField!
@@ -38,17 +37,18 @@ class SaveDialogueViewController: UIViewController, SelectCategoryViewController
         
     }
     
-    func saveDialogueButtonDidPress(sender: UIButton) {
-        
-        saved = true
+    func selectCategoryViewControllerDidSelectCategory(selectCategoryViewController: SelectCategoryViewController, category: CategoryName){
+}
+
+    func saveDrink() -> Bool {
         guard let drinkName = nameTextField.text where drinkName != "" else {
             dialogueHeader.text = "Namnge dryck"
             saveDialogue.shake()
             
-            return
+            return false
         }
         
-        if let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as? AppDelegate {
+        let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             let context: NSManagedObjectContext = appDelegate.managedObjectContext
             let newDrink = Drink(context: context)
             newDrink.name = drinkName
@@ -58,30 +58,18 @@ class SaveDialogueViewController: UIViewController, SelectCategoryViewController
             
             do {
                 try newDrink.managedObjectContext?.save()
+                return true
             } catch {
-                print(error)
+                dialogueHeader.text = "Error saving drink"
+                saveDialogue.shake()
+                return false
             }
-        }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        if let _ = segue.destinationViewController as? CalculatorViewController{
-            if let button = sender as? UIButton where button.currentTitle == "Spara" {
-               saveDialogueButtonDidPress(button)
-            }
+    @IBAction func saveDialogueButtonDidPress(sender: UIButton) {
+        if self.saveDrink() {
+            saved = true
+            self.dismissViewControllerAnimated(true, completion: nil)
         }
-        
-        if let selectCategoryViewController = segue.destinationViewController as? SelectCategoryViewController{
-            selectCategoryViewController.delegate = self
-        }
-    }
-    
-    
-    func selectCategoryViewControllerDidSelectCategory(selectCategoryViewController: SelectCategoryViewController, category: CategoryName)
-    {
-        categoryButton.backgroundColor = category.color()
-        drinkCategory = category
-    }
-    
+    }    
 }
