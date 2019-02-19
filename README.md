@@ -4,7 +4,7 @@ This project is a simple iOS app that aims to help with finding the drink that g
 
 <h2>Background</h2>
 
-In Sweden the alcohol consumption is limited to the offers of 'Systembolaget'. I built this app as a fun way for me to learn Swift and I am grateful for any feedback on the code. As it is my first project I kept it small but more features are planned for the future such as inegration with the API from Systembolaget.
+In Sweden the alcohol consumption is limited to the offers of 'Systembolaget'. I built this app as a fun way for me to learn Swift and I am grateful for any feedback on the code. As it is my first project I kept it small but more features are planned for the future such as integration with the API from Systembolaget.
 
 <h2>Usage</h2>
 
