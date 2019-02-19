@@ -12,8 +12,11 @@ By entering the alcohol percentage, volume, and price, it calculates the amount 
 
 <h2>Screenshots</h2>
 ![Homescreen](https://freight.cargocollective.com/w/1250/i/c675e7f4b34b7f26db14e605206eb6518fab036473cd2ccb4f719f8f78ef3f3f/cAlc_37.png)
+
 ![Save drink](https://freight.cargocollective.com/w/1250/i/080ee813c49b4ea1e889af8c56ef9fc93233ae122ce7ac36b0bc6ba29dea7702/apk_01.png)
+
 ![Drink categories](https://freight.cargocollective.com/w/1250/i/c08a2bf9a07517ee26ccdbdce12e11a93f4dc469abac73a5ace0e8bdd3fd972b/apk_02.png)
+
 ![Saved drinks](https://freight.cargocollective.com/w/1250/i/1a54944b222134a57c08be04568b352daa7bfda64bae2a95079a186952c80de5/apk_03.png)
 
 <h2>Acknowledgements</h2>
