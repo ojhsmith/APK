@@ -11,6 +11,7 @@ In Sweden the alcohol consumption is limited to the offers of 'Systembolaget'. I
 By entering the alcohol percentage, volume, and price, it calculates the amount of alcohol that you get for one swedish krona. You can save the value for later reference. 
 
 <h2>Screenshots</h2>
+
 ![Homescreen](https://freight.cargocollective.com/w/1250/i/c675e7f4b34b7f26db14e605206eb6518fab036473cd2ccb4f719f8f78ef3f3f/cAlc_37.png)
 
 ![Save drink](https://freight.cargocollective.com/w/1250/i/080ee813c49b4ea1e889af8c56ef9fc93233ae122ce7ac36b0bc6ba29dea7702/apk_01.png)
@@ -21,6 +22,7 @@ By entering the alcohol percentage, volume, and price, it calculates the amount 
 
 <h2>Acknowledgements</h2>
 I was following the design+code course by Meng To and implemented the 'Spring' animation framework he provides <a href="https://github.com/MengTo/Spring">here</a>
+
 I want to thank Marijn Schilling for mentoring me and contributing to the project.
 
 
