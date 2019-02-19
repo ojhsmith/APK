@@ -10,4 +10,6 @@ By entering the alcohol percentage, volume, and price, it calculates the amount 
 
 In Sweden the alcohol consumption is limited to the offers of 'Systembolaget'. I built this app as a fun way for me to learn Swift and am grateful for any feedback on the code. As it is my first project I kept it small but more features are planned for the future such as inegration with the API from Systembolaget.
 
+<h2>Case study</h2>
 
+You can read more about the project on my portfolio <a href="https://oskarsmith.se/Alculator">here</h>
