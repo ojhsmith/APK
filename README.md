@@ -1,6 +1,6 @@
 # APK (Alcohol per krona) for iOS
 
-This project is a simple iOS app that aims to help with finding the drink that gives the most 'bang for the buck'. It was built as an excersise in iOS development. 
+This project is a simple iOS app that aims to help with finding the drink that gives the most 'bang for the buck'. It was built as an exercise in iOS development. 
 
 <h2>Background</h2>
 
